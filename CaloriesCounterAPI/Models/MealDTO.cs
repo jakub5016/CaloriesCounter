@@ -1,11 +1,9 @@
 ﻿namespace CaloriesCounterAPI.Models
 {
-    public class Meal
+    public class MealDTO
     {
         public int Id { get; set; }
-
         public string Type { get; set; }
-
-        public virtual ICollection<ProductAdded>? ProductsAdded { get; set; }
+        public ICollection<ProductAddedDTO> ProductsAdded { get; set; }
     }
 }

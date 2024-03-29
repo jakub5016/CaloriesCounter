@@ -5,7 +5,7 @@
 namespace CaloriesCounterAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class Controllersfix : Migration
+    public partial class DTO : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

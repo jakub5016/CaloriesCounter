@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using CaloriesCounterAPI.Data;
 using CaloriesCounterAPI.Models;
 using Microsoft.CodeAnalysis;
+using System.Net;
 
 namespace CaloriesCounterAPI.Controllers
 {
@@ -77,19 +78,49 @@ namespace CaloriesCounterAPI.Controllers
         // POST: api/ProductAddeds
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<ProductAdded>> PostProductAdded(int mealId, int productId)
+        public async Task<ActionResult<ProductAddedDTO>> PostProductAdded(int mealId, int productId)
         {
-            var newProductAdded = new ProductAdded
+            var meal = await _context.Meal.FindAsync(mealId);
+            if (meal == null)
+            {
+                return NotFound("Meal not found");
+            }
+
+            var product = await _context.Product.FindAsync(productId);
+            if (product == null)
+            {
+                return NotFound("Product not found");
+            }
+
+            var productAdded = new ProductAdded
             {
                 MealId = mealId,
                 ProductId = productId
             };
 
-            _context.ProductAdded.Add(newProductAdded);
-            await _context.SaveChangesAsync();
+            _context.ProductAdded.Add(productAdded);
 
-            return CreatedAtAction("GetProductAdded", new { id = newProductAdded.Id }, newProductAdded);
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                return BadRequest("Failed to update the meal or product. Please try again.");
+            }
+
+            var productAddedDTO = new ProductAddedDTO
+            {
+                Id = productAdded.Id,
+                MealId = productAdded.MealId,
+                ProductId = productAdded.ProductId
+            };
+
+            return CreatedAtAction("GetProductAdded", new { id = productAddedDTO.Id }, productAddedDTO);
         }
+
+
+
 
         // DELETE: api/ProductAddeds/5
         [HttpDelete("{id}")]

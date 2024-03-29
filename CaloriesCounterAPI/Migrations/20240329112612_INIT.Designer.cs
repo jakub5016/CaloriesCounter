@@ -11,8 +11,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace CaloriesCounterAPI.Migrations
 {
     [DbContext(typeof(CaloriesCounterAPIContext))]
-    [Migration("20240328183845_Controllers-fix")]
-    partial class Controllersfix
+    [Migration("20240329112612_INIT")]
+    partial class INIT
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -99,7 +99,7 @@ namespace CaloriesCounterAPI.Migrations
                         .IsRequired();
 
                     b.HasOne("CaloriesCounterAPI.Models.Product", "Product")
-                        .WithMany("PorductsAdded")
+                        .WithMany("ProductAddeds")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -116,7 +116,7 @@ namespace CaloriesCounterAPI.Migrations
 
             modelBuilder.Entity("CaloriesCounterAPI.Models.Product", b =>
                 {
-                    b.Navigation("PorductsAdded");
+                    b.Navigation("ProductAddeds");
                 });
 #pragma warning restore 612, 618
         }

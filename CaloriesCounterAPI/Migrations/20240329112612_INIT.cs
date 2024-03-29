@@ -6,22 +6,39 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace CaloriesCounterAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class fix : Migration
+    public partial class INIT : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(
-                name: "FK_Product_Meal_MealId",
-                table: "Product");
+            migrationBuilder.CreateTable(
+                name: "Meal",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Type = table.Column<string>(type: "text", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Meal", x => x.Id);
+                });
 
-            migrationBuilder.DropIndex(
-                name: "IX_Product_MealId",
-                table: "Product");
-
-            migrationBuilder.DropColumn(
-                name: "MealId",
-                table: "Product");
+            migrationBuilder.CreateTable(
+                name: "Product",
+                columns: table => new
+                {
+                    ID = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Name = table.Column<string>(type: "text", nullable: false),
+                    Kcal = table.Column<int>(type: "integer", nullable: false),
+                    Fat = table.Column<int>(type: "integer", nullable: false),
+                    Carbs = table.Column<int>(type: "integer", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Product", x => x.ID);
+                });
 
             migrationBuilder.CreateTable(
                 name: "ProductAdded",
@@ -66,23 +83,11 @@ namespace CaloriesCounterAPI.Migrations
             migrationBuilder.DropTable(
                 name: "ProductAdded");
 
-            migrationBuilder.AddColumn<int>(
-                name: "MealId",
-                table: "Product",
-                type: "integer",
-                nullable: true);
+            migrationBuilder.DropTable(
+                name: "Meal");
 
-            migrationBuilder.CreateIndex(
-                name: "IX_Product_MealId",
-                table: "Product",
-                column: "MealId");
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_Product_Meal_MealId",
-                table: "Product",
-                column: "MealId",
-                principalTable: "Meal",
-                principalColumn: "Id");
+            migrationBuilder.DropTable(
+                name: "Product");
         }
     }
 }
