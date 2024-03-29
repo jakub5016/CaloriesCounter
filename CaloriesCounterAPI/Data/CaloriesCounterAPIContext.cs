@@ -15,5 +15,7 @@ namespace CaloriesCounterAPI.Data
         }
 
         public DbSet<CaloriesCounterAPI.Models.Product> Product { get; set; } = default!;
+        public DbSet<CaloriesCounterAPI.Models.ProductAdded> ProductAdded { get; set; } = default!;
+        public DbSet<CaloriesCounterAPI.Models.Meal> Meal { get; set; } = default!;
     }
 }
