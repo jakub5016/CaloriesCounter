@@ -78,45 +78,27 @@ namespace CaloriesCounterAPI.Controllers
         // POST: api/ProductAddeds
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<ProductAddedDTO>> PostProductAdded(int mealId, int productId)
+        public async Task<ActionResult<ProductAdded>> PostProductAdded(int mealId, int productId)
         {
-            var meal = await _context.Meal.FindAsync(mealId);
-            if (meal == null)
-            {
-                return NotFound("Meal not found");
-            }
-
             var product = await _context.Product.FindAsync(productId);
-            if (product == null)
+            var meal = await _context.Meal.FindAsync(mealId);
+
+            if (product == null || meal == null)
             {
-                return NotFound("Product not found");
+                return BadRequest("Invalid product ID or meal ID.");
             }
 
-            var productAdded = new ProductAdded
+            // Assuming you have a junction table named ProductMeal
+            var productMeal = new ProductAdded
             {
-                MealId = mealId,
-                ProductId = productId
+                ProductId = productId,
+                MealId = mealId
             };
 
-            _context.ProductAdded.Add(productAdded);
+            _context.ProductAdded.Add(productMeal);
+            await _context.SaveChangesAsync();
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                return BadRequest("Failed to update the meal or product. Please try again.");
-            }
-
-            var productAddedDTO = new ProductAddedDTO
-            {
-                Id = productAdded.Id,
-                MealId = productAdded.MealId,
-                ProductId = productAdded.ProductId
-            };
-
-            return CreatedAtAction("GetProductAdded", new { id = productAddedDTO.Id }, productAddedDTO);
+            return Ok("Product added to meal successfully.");
         }
 
 

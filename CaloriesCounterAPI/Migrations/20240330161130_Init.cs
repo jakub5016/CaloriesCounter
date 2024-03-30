@@ -6,7 +6,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace CaloriesCounterAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class INIT : Migration
+    public partial class Init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -44,14 +44,13 @@ namespace CaloriesCounterAPI.Migrations
                 name: "ProductAdded",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    ProductId = table.Column<int>(type: "integer", nullable: false),
                     MealId = table.Column<int>(type: "integer", nullable: false),
-                    ProductId = table.Column<int>(type: "integer", nullable: false)
+                    Id = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ProductAdded", x => x.Id);
+                    table.PrimaryKey("PK_ProductAdded", x => new { x.ProductId, x.MealId });
                     table.ForeignKey(
                         name: "FK_ProductAdded_Meal_MealId",
                         column: x => x.MealId,
@@ -70,11 +69,6 @@ namespace CaloriesCounterAPI.Migrations
                 name: "IX_ProductAdded_MealId",
                 table: "ProductAdded",
                 column: "MealId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ProductAdded_ProductId",
-                table: "ProductAdded",
-                column: "ProductId");
         }
 
         /// <inheritdoc />

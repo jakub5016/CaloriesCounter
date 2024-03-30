@@ -66,23 +66,18 @@ namespace CaloriesCounterAPI.Migrations
 
             modelBuilder.Entity("CaloriesCounterAPI.Models.ProductAdded", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
+                    b.Property<int>("ProductId")
                         .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<int>("MealId")
                         .HasColumnType("integer");
 
-                    b.Property<int>("ProductId")
+                    b.Property<int>("Id")
                         .HasColumnType("integer");
 
-                    b.HasKey("Id");
+                    b.HasKey("ProductId", "MealId");
 
                     b.HasIndex("MealId");
-
-                    b.HasIndex("ProductId");
 
                     b.ToTable("ProductAdded");
                 });
