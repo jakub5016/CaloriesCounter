@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using CaloriesCounterAPI.Data;
 using CaloriesCounterAPI.Models;
+using CaloriesCounterAPI.DTO;
 
 namespace CaloriesCounterAPI.Controllers
 {
@@ -76,12 +77,36 @@ namespace CaloriesCounterAPI.Controllers
         // POST: api/Meals
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Meal>> PostMeal(Meal meal)
+        public async Task<ActionResult<Meal>> PostMeal(CreateMealDTO mealDTO)
         {
+            var meal = new Meal
+            {
+                Type = mealDTO.Type,
+                Date = mealDTO.Date
+            };
+
+            if (mealDTO.ProductIds != null)
+            {
+                meal.Products = new List<Product>();
+                foreach (var id in mealDTO.ProductIds)
+                {
+                    var newProduct = _context.Product.Find(id);
+                    if (newProduct != null)
+                    {
+                        meal.Products.Add(newProduct);
+
+                    }
+                    else
+                    {
+                        return NoContent() ;
+                    }
+                }
+            }
+
             _context.Meal.Add(meal);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetMeal", new { id = meal.Id }, meal);
+            return Ok(await _context.Meal.Include(m => m.Products).ToListAsync());
         }
 
         // DELETE: api/Meals/5

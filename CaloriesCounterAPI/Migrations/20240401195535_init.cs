@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
@@ -6,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace CaloriesCounterAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class Init : Migration
+    public partial class init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -17,7 +18,8 @@ namespace CaloriesCounterAPI.Migrations
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Type = table.Column<string>(type: "text", nullable: false)
+                    Type = table.Column<string>(type: "text", nullable: false),
+                    Date = table.Column<DateOnly>(type: "date", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -33,7 +35,8 @@ namespace CaloriesCounterAPI.Migrations
                     Name = table.Column<string>(type: "text", nullable: false),
                     Kcal = table.Column<int>(type: "integer", nullable: false),
                     Fat = table.Column<int>(type: "integer", nullable: false),
-                    Carbs = table.Column<int>(type: "integer", nullable: false)
+                    Carbs = table.Column<int>(type: "integer", nullable: false),
+                    Protein = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -41,41 +44,40 @@ namespace CaloriesCounterAPI.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ProductAdded",
+                name: "MealProduct",
                 columns: table => new
                 {
-                    ProductId = table.Column<int>(type: "integer", nullable: false),
-                    MealId = table.Column<int>(type: "integer", nullable: false),
-                    Id = table.Column<int>(type: "integer", nullable: false)
+                    MealsId = table.Column<int>(type: "integer", nullable: false),
+                    ProductsID = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ProductAdded", x => new { x.ProductId, x.MealId });
+                    table.PrimaryKey("PK_MealProduct", x => new { x.MealsId, x.ProductsID });
                     table.ForeignKey(
-                        name: "FK_ProductAdded_Meal_MealId",
-                        column: x => x.MealId,
+                        name: "FK_MealProduct_Meal_MealsId",
+                        column: x => x.MealsId,
                         principalTable: "Meal",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_ProductAdded_Product_ProductId",
-                        column: x => x.ProductId,
+                        name: "FK_MealProduct_Product_ProductsID",
+                        column: x => x.ProductsID,
                         principalTable: "Product",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_ProductAdded_MealId",
-                table: "ProductAdded",
-                column: "MealId");
+                name: "IX_MealProduct_ProductsID",
+                table: "MealProduct",
+                column: "ProductsID");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "ProductAdded");
+                name: "MealProduct");
 
             migrationBuilder.DropTable(
                 name: "Meal");
