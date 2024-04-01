@@ -26,21 +26,21 @@ namespace CaloriesCounterAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Meal>>> GetMeal()
         {
-            return await _context.Meal.ToListAsync();
+            return await _context.Meal.Include(m => m.Products).ToListAsync();
         }
 
         // GET: api/Meals/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Meal>> GetMeal(int id)
+        [HttpGet("{Date}")]
+        public async Task<ActionResult<List<Meal>>> GetMealsByDate(DateOnly Date)
         {
-            var meal = await _context.Meal.FindAsync(id);
+            var mealList = await _context.Meal.Where(m => m.Date.CompareTo(Date) == 0).Include(m=> m.Products).ToListAsync();
 
-            if (meal == null)
+            if (mealList == null)
             {
                 return NotFound();
             }
 
-            return meal;
+            return mealList;
         }
 
         // PUT: api/Meals/5
