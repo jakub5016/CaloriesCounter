@@ -46,11 +46,24 @@ namespace CaloriesCounterAPI.Controllers
         // PUT: api/Meals/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutMeal(int id, Meal meal)
+        public async Task<IActionResult> PutMeal(int id, EditMealDTO mealDTO)
         {
-            if (id != meal.Id)
+            var meal = await _context.Meal.Include(m => m.Products).FirstOrDefaultAsync(m => m.Id == id);
+            meal.Type = mealDTO.Type;
+            meal.Date = mealDTO.Date;
+            meal.Products.Clear();
+
+
+            foreach (var index in mealDTO.ProductIds)
             {
-                return BadRequest();
+                var product = await _context.Product.FindAsync(index);
+
+                if (product == null) 
+                { 
+                    return NoContent();
+                }
+
+                meal.Products.Add(product);
             }
 
             _context.Entry(meal).State = EntityState.Modified;
@@ -71,7 +84,7 @@ namespace CaloriesCounterAPI.Controllers
                 }
             }
 
-            return NoContent();
+            return Ok("Meal succesfully modified");
         }
 
         // POST: api/Meals
