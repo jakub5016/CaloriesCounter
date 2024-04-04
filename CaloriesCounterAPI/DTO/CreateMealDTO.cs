@@ -9,5 +9,7 @@ namespace CaloriesCounterAPI.DTO
         public DateOnly Date { get; set; }
 
         public List<int>? ProductIds { get; set; }
+
+        public List<int>? AmmoutOfProduct { get; set; }
     }
 }

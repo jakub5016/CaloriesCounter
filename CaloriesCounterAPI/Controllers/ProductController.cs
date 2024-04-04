@@ -1,12 +1,14 @@
 ﻿using CaloriesCounterAPI.Data;
 using CaloriesCounterAPI.DTO;
 using CaloriesCounterAPI.Models;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace CaloriesCounterAPI.Controllers
 {
+    [EnableCors("FrontendPolicy")]
     [Route("api/[controller]")]
     [ApiController]
     public class ProductControler : ControllerBase
@@ -24,6 +26,20 @@ namespace CaloriesCounterAPI.Controllers
         {
 
             return await _context.Product.ToListAsync();
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Product>> GetProductById(int id)
+        {
+            var product = _context.Product.Find(id);
+            if (product != null)
+            {
+                return Ok(product);
+            }
+            else
+            {
+                return NotFound();
+            }
         }
 
         [HttpPost]

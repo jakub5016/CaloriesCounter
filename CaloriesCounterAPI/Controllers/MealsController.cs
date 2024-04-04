@@ -8,9 +8,11 @@ using Microsoft.EntityFrameworkCore;
 using CaloriesCounterAPI.Data;
 using CaloriesCounterAPI.Models;
 using CaloriesCounterAPI.DTO;
+using Microsoft.AspNetCore.Cors;
 
 namespace CaloriesCounterAPI.Controllers
 {
+    [EnableCors("FrontendPolicy")]
     [Route("api/[controller]")]
     [ApiController]
     public class MealsController : ControllerBase
@@ -33,7 +35,8 @@ namespace CaloriesCounterAPI.Controllers
         [HttpGet("{Date}")]
         public async Task<ActionResult<List<Meal>>> GetMealsByDate(DateOnly Date)
         {
-            var mealList = await _context.Meal.Where(m => m.Date.CompareTo(Date) == 0).Include(m=> m.Products).ToListAsync();
+            var mealList = await _context.Meal.Where(m => m.Date.CompareTo(Date) == 0)
+                .Include(m=> m.Products).OrderBy(m=> m.Type).ToListAsync();
 
             if (mealList == null)
             {
@@ -50,6 +53,7 @@ namespace CaloriesCounterAPI.Controllers
         {
             var meal = await _context.Meal.Include(m => m.Products).FirstOrDefaultAsync(m => m.Id == id);
             meal.Type = mealDTO.Type;
+            meal.AmmoutOfProduct = mealDTO.AmmoutOfProduct;
             meal.Date = mealDTO.Date;
             meal.Products.Clear();
 
@@ -65,6 +69,11 @@ namespace CaloriesCounterAPI.Controllers
 
                 meal.Products.Add(product);
             }
+
+            if (!meal.calculateKcalForMeal())
+            {
+                return NoContent();
+            };
 
             _context.Entry(meal).State = EntityState.Modified;
 
@@ -95,6 +104,7 @@ namespace CaloriesCounterAPI.Controllers
             var meal = new Meal
             {
                 Type = mealDTO.Type,
+                AmmoutOfProduct = mealDTO.AmmoutOfProduct,
                 Date = mealDTO.Date
             };
 
@@ -115,6 +125,11 @@ namespace CaloriesCounterAPI.Controllers
                     }
                 }
             }
+
+            if (!meal.calculateKcalForMeal())
+            {
+                return NoContent();
+            };
 
             _context.Meal.Add(meal);
             await _context.SaveChangesAsync();

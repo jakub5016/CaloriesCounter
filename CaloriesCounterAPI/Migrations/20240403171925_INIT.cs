@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -19,7 +20,9 @@ namespace CaloriesCounterAPI.Migrations
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Type = table.Column<int>(type: "integer", nullable: false),
-                    Date = table.Column<DateOnly>(type: "date", nullable: false)
+                    Date = table.Column<DateOnly>(type: "date", nullable: false),
+                    AmmoutOfProduct = table.Column<List<int>>(type: "integer[]", nullable: true),
+                    KcalForMeal = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
