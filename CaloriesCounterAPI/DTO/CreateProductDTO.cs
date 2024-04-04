@@ -12,6 +12,7 @@ namespace CaloriesCounterAPI.DTO
         public int Carbs { get; set; }
 
         public int Protein { get; set; }
-        public List<int>? MealIDs { get; set; }
+        // to nie jest nigdzie uzywane 
+        //public List<int>? MealIDs { get; set; }
     }
 }

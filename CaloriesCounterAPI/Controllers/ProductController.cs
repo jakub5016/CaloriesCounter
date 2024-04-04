@@ -59,5 +59,20 @@ namespace CaloriesCounterAPI.Controllers
             await _context.SaveChangesAsync();
             return Ok();
         }
+        //wyszukiwanie po nazwie
+        [HttpPost("search")]
+        public async Task<ActionResult<IEnumerable<Product>>> SearchProductByName(String search)
+        {
+            var products = await _context.Product
+                .Where(p => p.Name.ToLower().Contains(search.ToLower()))
+                .ToListAsync();
+
+            if (products == null || products.Count == 0)
+            {
+                return NotFound();
+            }
+
+            return products;
+        }
     }
 }
