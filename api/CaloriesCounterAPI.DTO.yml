@@ -1,0 +1,62 @@
+### YamlMime:ManagedReference
+items:
+- uid: CaloriesCounterAPI.DTO
+  commentId: N:CaloriesCounterAPI.DTO
+  id: CaloriesCounterAPI.DTO
+  children:
+  - CaloriesCounterAPI.DTO.CreateMealDTO
+  - CaloriesCounterAPI.DTO.CreateProductDTO
+  - CaloriesCounterAPI.DTO.EditMealDTO
+  langs:
+  - csharp
+  - vb
+  name: CaloriesCounterAPI.DTO
+  nameWithType: CaloriesCounterAPI.DTO
+  fullName: CaloriesCounterAPI.DTO
+  type: Namespace
+  assemblies:
+  - CaloriesCounterAPI
+references:
+- uid: CaloriesCounterAPI.DTO.CreateMealDTO
+  commentId: T:CaloriesCounterAPI.DTO.CreateMealDTO
+  parent: CaloriesCounterAPI.DTO
+  href: CaloriesCounterAPI.DTO.CreateMealDTO.html
+  name: CreateMealDTO
+  nameWithType: CreateMealDTO
+  fullName: CaloriesCounterAPI.DTO.CreateMealDTO
+- uid: CaloriesCounterAPI.DTO.CreateProductDTO
+  commentId: T:CaloriesCounterAPI.DTO.CreateProductDTO
+  parent: CaloriesCounterAPI.DTO
+  href: CaloriesCounterAPI.DTO.CreateProductDTO.html
+  name: CreateProductDTO
+  nameWithType: CreateProductDTO
+  fullName: CaloriesCounterAPI.DTO.CreateProductDTO
+- uid: CaloriesCounterAPI.DTO.EditMealDTO
+  commentId: T:CaloriesCounterAPI.DTO.EditMealDTO
+  parent: CaloriesCounterAPI.DTO
+  href: CaloriesCounterAPI.DTO.EditMealDTO.html
+  name: EditMealDTO
+  nameWithType: EditMealDTO
+  fullName: CaloriesCounterAPI.DTO.EditMealDTO
+- uid: CaloriesCounterAPI.DTO
+  commentId: N:CaloriesCounterAPI.DTO
+  href: CaloriesCounterAPI.html
+  name: CaloriesCounterAPI.DTO
+  nameWithType: CaloriesCounterAPI.DTO
+  fullName: CaloriesCounterAPI.DTO
+  spec.csharp:
+  - uid: CaloriesCounterAPI
+    name: CaloriesCounterAPI
+    href: CaloriesCounterAPI.html
+  - name: .
+  - uid: CaloriesCounterAPI.DTO
+    name: DTO
+    href: CaloriesCounterAPI.DTO.html
+  spec.vb:
+  - uid: CaloriesCounterAPI
+    name: CaloriesCounterAPI
+    href: CaloriesCounterAPI.html
+  - name: .
+  - uid: CaloriesCounterAPI.DTO
+    name: DTO
+    href: CaloriesCounterAPI.DTO.html

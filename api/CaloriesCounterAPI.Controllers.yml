@@ -1,0 +1,37 @@
+### YamlMime:ManagedReference
+items:
+- uid: CaloriesCounterAPI.Controllers
+  commentId: N:CaloriesCounterAPI.Controllers
+  id: CaloriesCounterAPI.Controllers
+  children:
+  - CaloriesCounterAPI.Controllers.MealsController
+  - CaloriesCounterAPI.Controllers.ProductControler
+  - CaloriesCounterAPI.Controllers.WeatherForecastController
+  langs:
+  - csharp
+  - vb
+  name: CaloriesCounterAPI.Controllers
+  nameWithType: CaloriesCounterAPI.Controllers
+  fullName: CaloriesCounterAPI.Controllers
+  type: Namespace
+  assemblies:
+  - CaloriesCounterAPI
+references:
+- uid: CaloriesCounterAPI.Controllers.MealsController
+  commentId: T:CaloriesCounterAPI.Controllers.MealsController
+  href: CaloriesCounterAPI.Controllers.MealsController.html
+  name: MealsController
+  nameWithType: MealsController
+  fullName: CaloriesCounterAPI.Controllers.MealsController
+- uid: CaloriesCounterAPI.Controllers.ProductControler
+  commentId: T:CaloriesCounterAPI.Controllers.ProductControler
+  href: CaloriesCounterAPI.Controllers.ProductControler.html
+  name: ProductControler
+  nameWithType: ProductControler
+  fullName: CaloriesCounterAPI.Controllers.ProductControler
+- uid: CaloriesCounterAPI.Controllers.WeatherForecastController
+  commentId: T:CaloriesCounterAPI.Controllers.WeatherForecastController
+  href: CaloriesCounterAPI.Controllers.WeatherForecastController.html
+  name: WeatherForecastController
+  nameWithType: WeatherForecastController
+  fullName: CaloriesCounterAPI.Controllers.WeatherForecastController
