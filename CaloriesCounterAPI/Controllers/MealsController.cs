@@ -70,7 +70,7 @@ namespace CaloriesCounterAPI.Controllers
                 meal.Products.Add(product);
             }
 
-            if (!meal.calculateKcalForMeal())
+            if (!meal.CalculateKcalForMeal())
             {
                 return NoContent();
             };
@@ -126,7 +126,7 @@ namespace CaloriesCounterAPI.Controllers
                 }
             }
 
-            if (!meal.calculateKcalForMeal())
+            if (!meal.CalculateKcalForMeal())
             {
                 return NoContent();
             };
