@@ -74,5 +74,20 @@ namespace CaloriesCounterAPI.Controllers
 
             return products;
         }
+        // Deleting a product by ID
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> DeleteProductById(int id)
+        {
+            var product = await _context.Product.FindAsync(id);
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            _context.Product.Remove(product);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
     }
 }
