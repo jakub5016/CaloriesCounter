@@ -136,7 +136,7 @@ namespace CaloriesCounterAPI.Controllers
 
             return Ok(await _context.Meal.Include(m => m.Products).ToListAsync());
         }
-
+        
         // DELETE: api/Meals/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteMeal(int id)
@@ -152,7 +152,29 @@ namespace CaloriesCounterAPI.Controllers
 
             return NoContent();
         }
-
+        [HttpDelete("{mealId}/Products/{productId}")]
+        public async Task<IActionResult> DeleteProductFromMeal(int mealId, int productId)
+        {
+            var meal = await _context.Meal.Include(m => m.Products).FirstOrDefaultAsync(m => m.Id == mealId);
+            if (meal == null)
+            {
+                return NotFound("Meal not found");
+            }
+            
+            var product = meal.Products.FirstOrDefault(p => p.ID == productId);
+            var productList = meal.Products.ToList();
+            var index = productList.FindIndex(p => p.ID == productId);
+            if (product == null)
+            {
+                return NotFound("Product not found in the meal");
+            }
+            
+            meal.AmmoutOfProduct.RemoveAt(index);
+            meal.Products.Remove(product);
+            meal.CalculateKcalForMeal();
+            await _context.SaveChangesAsync();
+            return NoContent();
+        }
         private bool MealExists(int id)
         {
             return _context.Meal.Any(e => e.Id == id);
