@@ -28,6 +28,10 @@ namespace CaloriesCounterAPI.Models
         public bool CalculateKcalForMeal() // Tring to calculate kcal for meal, when there is no corresponding ammout return false
         {
             this.KcalForMeal = 0;
+            this.FatForMeal = 0;
+            this.CarbsForMeal = 0;
+            this.ProteinForMeal = 0;
+            
             if (Products != null && AmmoutOfProduct != null && Products.Count == AmmoutOfProduct.Count)
             {
                 foreach (var product in this.Products.Select((value, index) => new {index, value }))
