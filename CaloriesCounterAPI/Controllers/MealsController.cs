@@ -175,6 +175,31 @@ namespace CaloriesCounterAPI.Controllers
             await _context.SaveChangesAsync();
             return NoContent();
         }
+        [HttpPatch("{id}/AppendProduct/{productId}/{quantity}")]
+        public async Task<IActionResult> AppendProductToMeal(int id, int productId,int quantity)
+        {
+            var meal = await _context.Meal.Include(m => m.Products).FirstOrDefaultAsync(m => m.Id == id);
+            if (meal == null)
+            {
+                return NotFound("Meal not found");
+            }
+    
+            var product = await _context.Product.FindAsync(productId);
+            if (product == null)
+            {
+                return NotFound("Product not found");
+            }
+
+            meal.Products.Add(product);
+            meal.AmmoutOfProduct.Add(quantity);
+            if (!meal.CalculateKcalForMeal())
+            {
+                return NoContent();
+            }
+
+            await _context.SaveChangesAsync();
+            return Ok("Product successfully appended to the meal");
+        }
         private bool MealExists(int id)
         {
             return _context.Meal.Any(e => e.Id == id);
