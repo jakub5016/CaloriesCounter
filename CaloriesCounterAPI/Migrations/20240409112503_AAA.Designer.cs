@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using CaloriesCounterAPI.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -12,9 +13,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace CaloriesCounterAPI.Migrations
 {
     [DbContext(typeof(CaloriesCounterAPIContext))]
-    partial class CaloriesCounterAPIContextModelSnapshot : ModelSnapshot
+    [Migration("20240409112503_AAA")]
+    partial class AAA
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -34,19 +37,10 @@ namespace CaloriesCounterAPI.Migrations
                     b.Property<List<int>>("AmmoutOfProduct")
                         .HasColumnType("integer[]");
 
-                    b.Property<int>("CarbsForMeal")
-                        .HasColumnType("integer");
-
                     b.Property<DateOnly>("Date")
                         .HasColumnType("date");
 
-                    b.Property<int>("FatForMeal")
-                        .HasColumnType("integer");
-
                     b.Property<int>("KcalForMeal")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("ProteinForMeal")
                         .HasColumnType("integer");
 
                     b.Property<int>("Type")

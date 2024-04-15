@@ -365,4 +365,5 @@ FodyWeavers.xsd
 /CaloriesCounterAPI/appsettings.json
 
 # Docfx
+CaloriesCounterAPI/appsettings.json
 _site

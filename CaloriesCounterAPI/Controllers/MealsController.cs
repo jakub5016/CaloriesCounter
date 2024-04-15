@@ -70,7 +70,7 @@ namespace CaloriesCounterAPI.Controllers
                 meal.Products.Add(product);
             }
 
-            if (!meal.calculateKcalForMeal())
+            if (!meal.CalculateKcalForMeal())
             {
                 return NoContent();
             };
@@ -126,7 +126,7 @@ namespace CaloriesCounterAPI.Controllers
                 }
             }
 
-            if (!meal.calculateKcalForMeal())
+            if (!meal.CalculateKcalForMeal())
             {
                 return NoContent();
             };
@@ -136,7 +136,7 @@ namespace CaloriesCounterAPI.Controllers
 
             return Ok(await _context.Meal.Include(m => m.Products).ToListAsync());
         }
-
+        
         // DELETE: api/Meals/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteMeal(int id)
@@ -152,7 +152,54 @@ namespace CaloriesCounterAPI.Controllers
 
             return NoContent();
         }
+        [HttpDelete("{mealId}/Products/{productId}")]
+        public async Task<IActionResult> DeleteProductFromMeal(int mealId, int productId)
+        {
+            var meal = await _context.Meal.Include(m => m.Products).FirstOrDefaultAsync(m => m.Id == mealId);
+            if (meal == null)
+            {
+                return NotFound("Meal not found");
+            }
+            
+            var product = meal.Products.FirstOrDefault(p => p.ID == productId);
+            var productList = meal.Products.ToList();
+            var index = productList.FindIndex(p => p.ID == productId);
+            if (product == null)
+            {
+                return NotFound("Product not found in the meal");
+            }
+            
+            meal.AmmoutOfProduct.RemoveAt(index);
+            meal.Products.Remove(product);
+            meal.CalculateKcalForMeal();
+            await _context.SaveChangesAsync();
+            return NoContent();
+        }
+        [HttpPatch("{id}/AppendProduct/{productId}/{quantity}")]
+        public async Task<IActionResult> AppendProductToMeal(int id, int productId,int quantity)
+        {
+            var meal = await _context.Meal.Include(m => m.Products).FirstOrDefaultAsync(m => m.Id == id);
+            if (meal == null)
+            {
+                return NotFound("Meal not found");
+            }
+    
+            var product = await _context.Product.FindAsync(productId);
+            if (product == null)
+            {
+                return NotFound("Product not found");
+            }
 
+            meal.Products.Add(product);
+            meal.AmmoutOfProduct.Add(quantity);
+            if (!meal.CalculateKcalForMeal())
+            {
+                return NoContent();
+            }
+
+            await _context.SaveChangesAsync();
+            return Ok("Product successfully appended to the meal");
+        }
         private bool MealExists(int id)
         {
             return _context.Meal.Any(e => e.Id == id);
