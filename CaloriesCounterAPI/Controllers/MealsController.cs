@@ -189,9 +189,22 @@ namespace CaloriesCounterAPI.Controllers
             {
                 return NotFound("Product not found");
             }
-
-            meal.Products.Add(product);
-            meal.AmmoutOfProduct.Add(quantity);
+            if (meal.Products.FirstOrDefault(e => e.ID == productId) != null)
+            {
+                var i = 0;
+                foreach(var p in meal.Products)
+                {
+                    if (p.ID == productId){
+                        meal.AmmoutOfProduct[i] = quantity;
+                    }
+                    i++;
+                }
+            }
+            else
+            {
+                meal.Products.Add(product);
+                meal.AmmoutOfProduct.Add(quantity);
+            }
             if (!meal.CalculateKcalForMeal())
             {
                 return NoContent();
