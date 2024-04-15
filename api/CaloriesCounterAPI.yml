@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: CaloriesCounterAPI
+  commentId: N:CaloriesCounterAPI
+  id: CaloriesCounterAPI
+  children:
+  - CaloriesCounterAPI.WeatherForecast
+  langs:
+  - csharp
+  - vb
+  name: CaloriesCounterAPI
+  nameWithType: CaloriesCounterAPI
+  fullName: CaloriesCounterAPI
+  type: Namespace
+  assemblies:
+  - CaloriesCounterAPI
+references:
+- uid: CaloriesCounterAPI.WeatherForecast
+  commentId: T:CaloriesCounterAPI.WeatherForecast
+  href: CaloriesCounterAPI.WeatherForecast.html
+  name: WeatherForecast
+  nameWithType: WeatherForecast
+  fullName: CaloriesCounterAPI.WeatherForecast
