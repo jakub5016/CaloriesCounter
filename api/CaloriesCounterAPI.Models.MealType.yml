@@ -1,0 +1,139 @@
+### YamlMime:ManagedReference
+items:
+- uid: CaloriesCounterAPI.Models.MealType
+  commentId: T:CaloriesCounterAPI.Models.MealType
+  id: MealType
+  parent: CaloriesCounterAPI.Models
+  children:
+  - CaloriesCounterAPI.Models.MealType.Breakfast
+  - CaloriesCounterAPI.Models.MealType.Dinner
+  - CaloriesCounterAPI.Models.MealType.Supper
+  langs:
+  - csharp
+  - vb
+  name: MealType
+  nameWithType: MealType
+  fullName: CaloriesCounterAPI.Models.MealType
+  type: Enum
+  source:
+    remote:
+      path: CaloriesCounterAPI/Models/Meal.cs
+      branch: Documentation
+      repo: https://github.com/jakub5016/CaloriesCounterBackend.git
+    id: MealType
+    path: CaloriesCounterAPI/Models/Meal.cs
+    startLine: 4
+  assemblies:
+  - CaloriesCounterAPI
+  namespace: CaloriesCounterAPI.Models
+  syntax:
+    content: public enum MealType
+    content.vb: Public Enum MealType
+- uid: CaloriesCounterAPI.Models.MealType.Breakfast
+  commentId: F:CaloriesCounterAPI.Models.MealType.Breakfast
+  id: Breakfast
+  parent: CaloriesCounterAPI.Models.MealType
+  langs:
+  - csharp
+  - vb
+  name: Breakfast
+  nameWithType: MealType.Breakfast
+  fullName: CaloriesCounterAPI.Models.MealType.Breakfast
+  type: Field
+  source:
+    remote:
+      path: CaloriesCounterAPI/Models/Meal.cs
+      branch: Documentation
+      repo: https://github.com/jakub5016/CaloriesCounterBackend.git
+    id: Breakfast
+    path: CaloriesCounterAPI/Models/Meal.cs
+    startLine: 6
+  assemblies:
+  - CaloriesCounterAPI
+  namespace: CaloriesCounterAPI.Models
+  syntax:
+    content: Breakfast = 0
+    return:
+      type: CaloriesCounterAPI.Models.MealType
+- uid: CaloriesCounterAPI.Models.MealType.Dinner
+  commentId: F:CaloriesCounterAPI.Models.MealType.Dinner
+  id: Dinner
+  parent: CaloriesCounterAPI.Models.MealType
+  langs:
+  - csharp
+  - vb
+  name: Dinner
+  nameWithType: MealType.Dinner
+  fullName: CaloriesCounterAPI.Models.MealType.Dinner
+  type: Field
+  source:
+    remote:
+      path: CaloriesCounterAPI/Models/Meal.cs
+      branch: Documentation
+      repo: https://github.com/jakub5016/CaloriesCounterBackend.git
+    id: Dinner
+    path: CaloriesCounterAPI/Models/Meal.cs
+    startLine: 7
+  assemblies:
+  - CaloriesCounterAPI
+  namespace: CaloriesCounterAPI.Models
+  syntax:
+    content: Dinner = 1
+    return:
+      type: CaloriesCounterAPI.Models.MealType
+- uid: CaloriesCounterAPI.Models.MealType.Supper
+  commentId: F:CaloriesCounterAPI.Models.MealType.Supper
+  id: Supper
+  parent: CaloriesCounterAPI.Models.MealType
+  langs:
+  - csharp
+  - vb
+  name: Supper
+  nameWithType: MealType.Supper
+  fullName: CaloriesCounterAPI.Models.MealType.Supper
+  type: Field
+  source:
+    remote:
+      path: CaloriesCounterAPI/Models/Meal.cs
+      branch: Documentation
+      repo: https://github.com/jakub5016/CaloriesCounterBackend.git
+    id: Supper
+    path: CaloriesCounterAPI/Models/Meal.cs
+    startLine: 8
+  assemblies:
+  - CaloriesCounterAPI
+  namespace: CaloriesCounterAPI.Models
+  syntax:
+    content: Supper = 2
+    return:
+      type: CaloriesCounterAPI.Models.MealType
+references:
+- uid: CaloriesCounterAPI.Models
+  commentId: N:CaloriesCounterAPI.Models
+  href: CaloriesCounterAPI.html
+  name: CaloriesCounterAPI.Models
+  nameWithType: CaloriesCounterAPI.Models
+  fullName: CaloriesCounterAPI.Models
+  spec.csharp:
+  - uid: CaloriesCounterAPI
+    name: CaloriesCounterAPI
+    href: CaloriesCounterAPI.html
+  - name: .
+  - uid: CaloriesCounterAPI.Models
+    name: Models
+    href: CaloriesCounterAPI.Models.html
+  spec.vb:
+  - uid: CaloriesCounterAPI
+    name: CaloriesCounterAPI
+    href: CaloriesCounterAPI.html
+  - name: .
+  - uid: CaloriesCounterAPI.Models
+    name: Models
+    href: CaloriesCounterAPI.Models.html
+- uid: CaloriesCounterAPI.Models.MealType
+  commentId: T:CaloriesCounterAPI.Models.MealType
+  parent: CaloriesCounterAPI.Models
+  href: CaloriesCounterAPI.Models.MealType.html
+  name: MealType
+  nameWithType: MealType
+  fullName: CaloriesCounterAPI.Models.MealType

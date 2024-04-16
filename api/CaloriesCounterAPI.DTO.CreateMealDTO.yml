@@ -1,0 +1,579 @@
+### YamlMime:ManagedReference
+items:
+- uid: CaloriesCounterAPI.DTO.CreateMealDTO
+  commentId: T:CaloriesCounterAPI.DTO.CreateMealDTO
+  id: CreateMealDTO
+  parent: CaloriesCounterAPI.DTO
+  children:
+  - CaloriesCounterAPI.DTO.CreateMealDTO.AmmoutOfProduct
+  - CaloriesCounterAPI.DTO.CreateMealDTO.Date
+  - CaloriesCounterAPI.DTO.CreateMealDTO.ProductIds
+  - CaloriesCounterAPI.DTO.CreateMealDTO.Type
+  langs:
+  - csharp
+  - vb
+  name: CreateMealDTO
+  nameWithType: CreateMealDTO
+  fullName: CaloriesCounterAPI.DTO.CreateMealDTO
+  type: Class
+  source:
+    remote:
+      path: CaloriesCounterAPI/DTO/CreateMealDTO.cs
+      branch: Documentation
+      repo: https://github.com/jakub5016/CaloriesCounterBackend.git
+    id: CreateMealDTO
+    path: CaloriesCounterAPI/DTO/CreateMealDTO.cs
+    startLine: 4
+  assemblies:
+  - CaloriesCounterAPI
+  namespace: CaloriesCounterAPI.DTO
+  syntax:
+    content: public class CreateMealDTO
+    content.vb: Public Class CreateMealDTO
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: CaloriesCounterAPI.DTO.CreateMealDTO.Type
+  commentId: P:CaloriesCounterAPI.DTO.CreateMealDTO.Type
+  id: Type
+  parent: CaloriesCounterAPI.DTO.CreateMealDTO
+  langs:
+  - csharp
+  - vb
+  name: Type
+  nameWithType: CreateMealDTO.Type
+  fullName: CaloriesCounterAPI.DTO.CreateMealDTO.Type
+  type: Property
+  source:
+    remote:
+      path: CaloriesCounterAPI/DTO/CreateMealDTO.cs
+      branch: Documentation
+      repo: https://github.com/jakub5016/CaloriesCounterBackend.git
+    id: Type
+    path: CaloriesCounterAPI/DTO/CreateMealDTO.cs
+    startLine: 6
+  assemblies:
+  - CaloriesCounterAPI
+  namespace: CaloriesCounterAPI.DTO
+  syntax:
+    content: public MealType Type { get; set; }
+    parameters: []
+    return:
+      type: CaloriesCounterAPI.Models.MealType
+    content.vb: Public Property Type As MealType
+  overload: CaloriesCounterAPI.DTO.CreateMealDTO.Type*
+- uid: CaloriesCounterAPI.DTO.CreateMealDTO.Date
+  commentId: P:CaloriesCounterAPI.DTO.CreateMealDTO.Date
+  id: Date
+  parent: CaloriesCounterAPI.DTO.CreateMealDTO
+  langs:
+  - csharp
+  - vb
+  name: Date
+  nameWithType: CreateMealDTO.Date
+  fullName: CaloriesCounterAPI.DTO.CreateMealDTO.Date
+  type: Property
+  source:
+    remote:
+      path: CaloriesCounterAPI/DTO/CreateMealDTO.cs
+      branch: Documentation
+      repo: https://github.com/jakub5016/CaloriesCounterBackend.git
+    id: Date
+    path: CaloriesCounterAPI/DTO/CreateMealDTO.cs
+    startLine: 8
+  assemblies:
+  - CaloriesCounterAPI
+  namespace: CaloriesCounterAPI.DTO
+  syntax:
+    content: public DateOnly Date { get; set; }
+    parameters: []
+    return:
+      type: System.DateOnly
+    content.vb: Public Property [Date] As DateOnly
+  overload: CaloriesCounterAPI.DTO.CreateMealDTO.Date*
+- uid: CaloriesCounterAPI.DTO.CreateMealDTO.ProductIds
+  commentId: P:CaloriesCounterAPI.DTO.CreateMealDTO.ProductIds
+  id: ProductIds
+  parent: CaloriesCounterAPI.DTO.CreateMealDTO
+  langs:
+  - csharp
+  - vb
+  name: ProductIds
+  nameWithType: CreateMealDTO.ProductIds
+  fullName: CaloriesCounterAPI.DTO.CreateMealDTO.ProductIds
+  type: Property
+  source:
+    remote:
+      path: CaloriesCounterAPI/DTO/CreateMealDTO.cs
+      branch: Documentation
+      repo: https://github.com/jakub5016/CaloriesCounterBackend.git
+    id: ProductIds
+    path: CaloriesCounterAPI/DTO/CreateMealDTO.cs
+    startLine: 10
+  assemblies:
+  - CaloriesCounterAPI
+  namespace: CaloriesCounterAPI.DTO
+  syntax:
+    content: public List<int>? ProductIds { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{System.Int32}
+    content.vb: Public Property ProductIds As List(Of Integer)
+  overload: CaloriesCounterAPI.DTO.CreateMealDTO.ProductIds*
+- uid: CaloriesCounterAPI.DTO.CreateMealDTO.AmmoutOfProduct
+  commentId: P:CaloriesCounterAPI.DTO.CreateMealDTO.AmmoutOfProduct
+  id: AmmoutOfProduct
+  parent: CaloriesCounterAPI.DTO.CreateMealDTO
+  langs:
+  - csharp
+  - vb
+  name: AmmoutOfProduct
+  nameWithType: CreateMealDTO.AmmoutOfProduct
+  fullName: CaloriesCounterAPI.DTO.CreateMealDTO.AmmoutOfProduct
+  type: Property
+  source:
+    remote:
+      path: CaloriesCounterAPI/DTO/CreateMealDTO.cs
+      branch: Documentation
+      repo: https://github.com/jakub5016/CaloriesCounterBackend.git
+    id: AmmoutOfProduct
+    path: CaloriesCounterAPI/DTO/CreateMealDTO.cs
+    startLine: 12
+  assemblies:
+  - CaloriesCounterAPI
+  namespace: CaloriesCounterAPI.DTO
+  syntax:
+    content: public List<int>? AmmoutOfProduct { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{System.Int32}
+    content.vb: Public Property AmmoutOfProduct As List(Of Integer)
+  overload: CaloriesCounterAPI.DTO.CreateMealDTO.AmmoutOfProduct*
+references:
+- uid: CaloriesCounterAPI.DTO
+  commentId: N:CaloriesCounterAPI.DTO
+  href: CaloriesCounterAPI.html
+  name: CaloriesCounterAPI.DTO
+  nameWithType: CaloriesCounterAPI.DTO
+  fullName: CaloriesCounterAPI.DTO
+  spec.csharp:
+  - uid: CaloriesCounterAPI
+    name: CaloriesCounterAPI
+    href: CaloriesCounterAPI.html
+  - name: .
+  - uid: CaloriesCounterAPI.DTO
+    name: DTO
+    href: CaloriesCounterAPI.DTO.html
+  spec.vb:
+  - uid: CaloriesCounterAPI
+    name: CaloriesCounterAPI
+    href: CaloriesCounterAPI.html
+  - name: .
+  - uid: CaloriesCounterAPI.DTO
+    name: DTO
+    href: CaloriesCounterAPI.DTO.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CaloriesCounterAPI.DTO.CreateMealDTO.Type*
+  commentId: Overload:CaloriesCounterAPI.DTO.CreateMealDTO.Type
+  href: CaloriesCounterAPI.DTO.CreateMealDTO.html#CaloriesCounterAPI_DTO_CreateMealDTO_Type
+  name: Type
+  nameWithType: CreateMealDTO.Type
+  fullName: CaloriesCounterAPI.DTO.CreateMealDTO.Type
+- uid: CaloriesCounterAPI.Models.MealType
+  commentId: T:CaloriesCounterAPI.Models.MealType
+  parent: CaloriesCounterAPI.Models
+  href: CaloriesCounterAPI.Models.MealType.html
+  name: MealType
+  nameWithType: MealType
+  fullName: CaloriesCounterAPI.Models.MealType
+- uid: CaloriesCounterAPI.Models
+  commentId: N:CaloriesCounterAPI.Models
+  href: CaloriesCounterAPI.html
+  name: CaloriesCounterAPI.Models
+  nameWithType: CaloriesCounterAPI.Models
+  fullName: CaloriesCounterAPI.Models
+  spec.csharp:
+  - uid: CaloriesCounterAPI
+    name: CaloriesCounterAPI
+    href: CaloriesCounterAPI.html
+  - name: .
+  - uid: CaloriesCounterAPI.Models
+    name: Models
+    href: CaloriesCounterAPI.Models.html
+  spec.vb:
+  - uid: CaloriesCounterAPI
+    name: CaloriesCounterAPI
+    href: CaloriesCounterAPI.html
+  - name: .
+  - uid: CaloriesCounterAPI.Models
+    name: Models
+    href: CaloriesCounterAPI.Models.html
+- uid: CaloriesCounterAPI.DTO.CreateMealDTO.Date*
+  commentId: Overload:CaloriesCounterAPI.DTO.CreateMealDTO.Date
+  href: CaloriesCounterAPI.DTO.CreateMealDTO.html#CaloriesCounterAPI_DTO_CreateMealDTO_Date
+  name: Date
+  nameWithType: CreateMealDTO.Date
+  fullName: CaloriesCounterAPI.DTO.CreateMealDTO.Date
+- uid: System.DateOnly
+  commentId: T:System.DateOnly
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.dateonly
+  name: DateOnly
+  nameWithType: DateOnly
+  fullName: System.DateOnly
+- uid: CaloriesCounterAPI.DTO.CreateMealDTO.ProductIds*
+  commentId: Overload:CaloriesCounterAPI.DTO.CreateMealDTO.ProductIds
+  href: CaloriesCounterAPI.DTO.CreateMealDTO.html#CaloriesCounterAPI_DTO_CreateMealDTO_ProductIds
+  name: ProductIds
+  nameWithType: CreateMealDTO.ProductIds
+  fullName: CaloriesCounterAPI.DTO.CreateMealDTO.ProductIds
+- uid: System.Collections.Generic.List{System.Int32}
+  commentId: T:System.Collections.Generic.List{System.Int32}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<int>
+  nameWithType: List<int>
+  fullName: System.Collections.Generic.List<int>
+  nameWithType.vb: List(Of Integer)
+  fullName.vb: System.Collections.Generic.List(Of Integer)
+  name.vb: List(Of Integer)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: CaloriesCounterAPI.DTO.CreateMealDTO.AmmoutOfProduct*
+  commentId: Overload:CaloriesCounterAPI.DTO.CreateMealDTO.AmmoutOfProduct
+  href: CaloriesCounterAPI.DTO.CreateMealDTO.html#CaloriesCounterAPI_DTO_CreateMealDTO_AmmoutOfProduct
+  name: AmmoutOfProduct
+  nameWithType: CreateMealDTO.AmmoutOfProduct
+  fullName: CaloriesCounterAPI.DTO.CreateMealDTO.AmmoutOfProduct
