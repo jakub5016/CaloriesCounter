@@ -7,19 +7,27 @@ using System.Threading.Tasks;
 
 namespace CaloriesCounterAPI.Controllers
 {
+    /// <summary>
+    /// Controller for fetching nutrition information from an external API.
+    /// </summary>
     [EnableCors("FrontendPolicy")]
     [Route("api/[controller]")]
     [ApiController]
-    public class NutritionAPI : ControllerBase
+    public class NutritionAPIController : ControllerBase
     {
         private readonly CaloriesCounterAPIContext _context;
         private string APIKEY = Environment.GetEnvironmentVariable("APIKEY");
-        public NutritionAPI(CaloriesCounterAPIContext context)
+
+        public NutritionAPIController(CaloriesCounterAPIContext context)
         {
             _context = context;
         }
 
-        [HttpGet("nutrition")] // Specify HTTP method
+        // GET: api/NutritionAPI/nutrition
+        /// <summary>
+        /// Retrieves nutrition information for a given query.
+        /// </summary>
+        [HttpGet("nutrition")]
         public async Task<IActionResult> GetNutrition(string query)
         {
             try
@@ -55,6 +63,11 @@ namespace CaloriesCounterAPI.Controllers
                 return BadRequest("Request exception: " + e.Message);
             }
         }
+
+        // GET: api/NutritionAPI
+        /// <summary>
+        /// Default action for the NutritionAPI controller.
+        /// </summary>
         [HttpGet]
         public IActionResult Index()
         {

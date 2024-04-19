@@ -8,26 +8,35 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CaloriesCounterAPI.Controllers
 {
+    /// <summary>
+    /// Controller for managing product-related operations.
+    /// </summary>
     [EnableCors("FrontendPolicy")]
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductControler : ControllerBase
+    public class ProductController : ControllerBase
     {
-
         private readonly CaloriesCounterAPIContext _context;
 
-        public ProductControler(CaloriesCounterAPIContext context)
+        public ProductController(CaloriesCounterAPIContext context)
         {
             _context = context;
         }
 
+        // GET: api/Product
+        /// <summary>
+        /// Retrieves all products.
+        /// </summary>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Product>>> GetAllProducts()
         {
-
             return await _context.Product.ToListAsync();
         }
 
+        // GET: api/Product/{id}
+        /// <summary>
+        /// Retrieves a product by ID.
+        /// </summary>
         [HttpGet("{id}")]
         public async Task<ActionResult<Product>> GetProductById(int id)
         {
@@ -42,8 +51,11 @@ namespace CaloriesCounterAPI.Controllers
             }
         }
 
+        // POST: api/Product
+        /// <summary>
+        /// Adds a new product.
+        /// </summary>
         [HttpPost]
-
         public async Task<ActionResult<Product>> PostNewProduct(CreateProductDTO productDTO)
         {
             var newProduct = new Product
@@ -59,7 +71,11 @@ namespace CaloriesCounterAPI.Controllers
             await _context.SaveChangesAsync();
             return Ok();
         }
-        //wyszukiwanie po nazwie
+
+        // POST: api/Product/search
+        /// <summary>
+        /// Searches for products by name.
+        /// </summary>
         [HttpPost("search")]
         public async Task<ActionResult<IEnumerable<Product>>> SearchProductByName(String search)
         {
@@ -74,7 +90,11 @@ namespace CaloriesCounterAPI.Controllers
 
             return products;
         }
-        // Deleting a product by ID
+
+        // DELETE: api/Product/{id}
+        /// <summary>
+        /// Deletes a product by ID.
+        /// </summary>
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteProductById(int id)
         {

@@ -7,16 +7,25 @@ using CaloriesCounterAPI.Models;
 
 namespace CaloriesCounterAPI.Data
 {
+    /// <summary>
+    /// Represents the database context for the CaloriesCounterAPI.
+    /// </summary>
     public class CaloriesCounterAPIContext : DbContext
     {
-        public CaloriesCounterAPIContext (DbContextOptions<CaloriesCounterAPIContext> options)
+        public CaloriesCounterAPIContext(DbContextOptions<CaloriesCounterAPIContext> options)
             : base(options)
         {
         }
 
-        public DbSet<CaloriesCounterAPI.Models.Product> Product { get; set; } = default!;
-        public DbSet<CaloriesCounterAPI.Models.Meal> Meal { get; set; } = default!;
         public DbSet<CaloriesCounterAPI.Models.User> User { get; set; } = default!;
+        /// <summary>
+        /// Gets or sets the DbSet for products.
+        /// </summary>
+        public DbSet<Product> Product { get; set; } = default!;
 
+        /// <summary>
+        /// Gets or sets the DbSet for meals.
+        /// </summary>
+        public DbSet<Meal> Meal { get; set; } = default!;
     }
 }
