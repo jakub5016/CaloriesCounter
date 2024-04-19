@@ -13,8 +13,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace CaloriesCounterAPI.Migrations
 {
     [DbContext(typeof(CaloriesCounterAPIContext))]
-    [Migration("20240403171925_INIT")]
-    partial class INIT
+    [Migration("20240415152747_Init")]
+    partial class Init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -37,10 +37,19 @@ namespace CaloriesCounterAPI.Migrations
                     b.Property<List<int>>("AmmoutOfProduct")
                         .HasColumnType("integer[]");
 
+                    b.Property<int>("CarbsForMeal")
+                        .HasColumnType("integer");
+
                     b.Property<DateOnly>("Date")
                         .HasColumnType("date");
 
+                    b.Property<int>("FatForMeal")
+                        .HasColumnType("integer");
+
                     b.Property<int>("KcalForMeal")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("ProteinForMeal")
                         .HasColumnType("integer");
 
                     b.Property<int>("Type")

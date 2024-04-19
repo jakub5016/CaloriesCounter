@@ -363,3 +363,7 @@ MigrationBackup/
 FodyWeavers.xsd
 /CaloriesCounterAPI/appsettings.json
 /CaloriesCounterAPI/appsettings.json
+
+# Docfx
+CaloriesCounterAPI/appsettings.json
+_site

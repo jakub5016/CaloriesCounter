@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: CaloriesCounterAPI.Migrations
+  commentId: N:CaloriesCounterAPI.Migrations
+  id: CaloriesCounterAPI.Migrations
+  children:
+  - CaloriesCounterAPI.Migrations.INIT
+  langs:
+  - csharp
+  - vb
+  name: CaloriesCounterAPI.Migrations
+  nameWithType: CaloriesCounterAPI.Migrations
+  fullName: CaloriesCounterAPI.Migrations
+  type: Namespace
+  assemblies:
+  - CaloriesCounterAPI
+references:
+- uid: CaloriesCounterAPI.Migrations.INIT
+  commentId: T:CaloriesCounterAPI.Migrations.INIT
+  href: CaloriesCounterAPI.Migrations.INIT.html
+  name: INIT
+  nameWithType: INIT
+  fullName: CaloriesCounterAPI.Migrations.INIT

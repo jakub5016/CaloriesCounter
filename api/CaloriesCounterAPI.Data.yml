@@ -1,0 +1,46 @@
+### YamlMime:ManagedReference
+items:
+- uid: CaloriesCounterAPI.Data
+  commentId: N:CaloriesCounterAPI.Data
+  id: CaloriesCounterAPI.Data
+  children:
+  - CaloriesCounterAPI.Data.CaloriesCounterAPIContext
+  langs:
+  - csharp
+  - vb
+  name: CaloriesCounterAPI.Data
+  nameWithType: CaloriesCounterAPI.Data
+  fullName: CaloriesCounterAPI.Data
+  type: Namespace
+  assemblies:
+  - CaloriesCounterAPI
+references:
+- uid: CaloriesCounterAPI.Data.CaloriesCounterAPIContext
+  commentId: T:CaloriesCounterAPI.Data.CaloriesCounterAPIContext
+  parent: CaloriesCounterAPI.Data
+  href: CaloriesCounterAPI.Data.CaloriesCounterAPIContext.html
+  name: CaloriesCounterAPIContext
+  nameWithType: CaloriesCounterAPIContext
+  fullName: CaloriesCounterAPI.Data.CaloriesCounterAPIContext
+- uid: CaloriesCounterAPI.Data
+  commentId: N:CaloriesCounterAPI.Data
+  href: CaloriesCounterAPI.html
+  name: CaloriesCounterAPI.Data
+  nameWithType: CaloriesCounterAPI.Data
+  fullName: CaloriesCounterAPI.Data
+  spec.csharp:
+  - uid: CaloriesCounterAPI
+    name: CaloriesCounterAPI
+    href: CaloriesCounterAPI.html
+  - name: .
+  - uid: CaloriesCounterAPI.Data
+    name: Data
+    href: CaloriesCounterAPI.Data.html
+  spec.vb:
+  - uid: CaloriesCounterAPI
+    name: CaloriesCounterAPI
+    href: CaloriesCounterAPI.html
+  - name: .
+  - uid: CaloriesCounterAPI.Data
+    name: Data
+    href: CaloriesCounterAPI.Data.html

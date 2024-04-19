@@ -1,0 +1,60 @@
+### YamlMime:ManagedReference
+items:
+- uid: CaloriesCounterAPI.Models
+  commentId: N:CaloriesCounterAPI.Models
+  id: CaloriesCounterAPI.Models
+  children:
+  - CaloriesCounterAPI.Models.Meal
+  - CaloriesCounterAPI.Models.MealType
+  - CaloriesCounterAPI.Models.Product
+  langs:
+  - csharp
+  - vb
+  name: CaloriesCounterAPI.Models
+  nameWithType: CaloriesCounterAPI.Models
+  fullName: CaloriesCounterAPI.Models
+  type: Namespace
+  assemblies:
+  - CaloriesCounterAPI
+references:
+- uid: CaloriesCounterAPI.Models.MealType
+  commentId: T:CaloriesCounterAPI.Models.MealType
+  parent: CaloriesCounterAPI.Models
+  href: CaloriesCounterAPI.Models.MealType.html
+  name: MealType
+  nameWithType: MealType
+  fullName: CaloriesCounterAPI.Models.MealType
+- uid: CaloriesCounterAPI.Models.Meal
+  commentId: T:CaloriesCounterAPI.Models.Meal
+  href: CaloriesCounterAPI.Models.Meal.html
+  name: Meal
+  nameWithType: Meal
+  fullName: CaloriesCounterAPI.Models.Meal
+- uid: CaloriesCounterAPI.Models.Product
+  commentId: T:CaloriesCounterAPI.Models.Product
+  href: CaloriesCounterAPI.Models.Product.html
+  name: Product
+  nameWithType: Product
+  fullName: CaloriesCounterAPI.Models.Product
+- uid: CaloriesCounterAPI.Models
+  commentId: N:CaloriesCounterAPI.Models
+  href: CaloriesCounterAPI.html
+  name: CaloriesCounterAPI.Models
+  nameWithType: CaloriesCounterAPI.Models
+  fullName: CaloriesCounterAPI.Models
+  spec.csharp:
+  - uid: CaloriesCounterAPI
+    name: CaloriesCounterAPI
+    href: CaloriesCounterAPI.html
+  - name: .
+  - uid: CaloriesCounterAPI.Models
+    name: Models
+    href: CaloriesCounterAPI.Models.html
+  spec.vb:
+  - uid: CaloriesCounterAPI
+    name: CaloriesCounterAPI
+    href: CaloriesCounterAPI.html
+  - name: .
+  - uid: CaloriesCounterAPI.Models
+    name: Models
+    href: CaloriesCounterAPI.Models.html
