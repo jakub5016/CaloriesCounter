@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34701.34
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaloriesCounterAPI", "CaloriesCounterAPI\CaloriesCounterAPI.csproj", "{504D73AB-1085-40D2-8645-64455DCEF646}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaloriesCounterAPI.Test", "CaloriesCounterAPI.Test\CaloriesCounterAPI.Test.csproj", "{EAD4FD9A-D7F8-49FC-B7DA-9417F759A6AF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{504D73AB-1085-40D2-8645-64455DCEF646}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{504D73AB-1085-40D2-8645-64455DCEF646}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{504D73AB-1085-40D2-8645-64455DCEF646}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAD4FD9A-D7F8-49FC-B7DA-9417F759A6AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAD4FD9A-D7F8-49FC-B7DA-9417F759A6AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAD4FD9A-D7F8-49FC-B7DA-9417F759A6AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAD4FD9A-D7F8-49FC-B7DA-9417F759A6AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

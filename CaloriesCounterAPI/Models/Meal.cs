@@ -17,7 +17,7 @@ namespace CaloriesCounterAPI.Models
         public DateOnly Date { get; set; }
         public virtual ICollection<Product>? Products { get; set; }
 
-        public List<int>? AmmoutOfProduct { get; set; } 
+        public List<int>? AmmoutOfProduct { get; set; }
 
         public int KcalForMeal { get; set; }
         public int FatForMeal { get; set; }
