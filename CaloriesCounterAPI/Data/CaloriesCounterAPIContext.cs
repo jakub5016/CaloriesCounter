@@ -17,6 +17,7 @@ namespace CaloriesCounterAPI.Data
         {
         }
 
+        public DbSet<CaloriesCounterAPI.Models.User> User { get; set; } = default!;
         /// <summary>
         /// Gets or sets the DbSet for products.
         /// </summary>
