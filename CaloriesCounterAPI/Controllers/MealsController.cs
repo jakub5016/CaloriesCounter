@@ -12,6 +12,9 @@ using Microsoft.AspNetCore.Cors;
 
 namespace CaloriesCounterAPI.Controllers
 {
+    /// <summary>
+    /// Controller for managing meal-related operations.
+    /// </summary>
     [EnableCors("FrontendPolicy")]
     [Route("api/[controller]")]
     [ApiController]
@@ -25,6 +28,9 @@ namespace CaloriesCounterAPI.Controllers
         }
 
         // GET: api/Meals
+        /// <summary>
+        /// Retrieves all meals.
+        /// </summary>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Meal>>> GetMeal()
         {
@@ -32,11 +38,14 @@ namespace CaloriesCounterAPI.Controllers
         }
 
         // GET: api/Meals/5
+        /// <summary>
+        /// Retrieves meals by date.
+        /// </summary>
         [HttpGet("{Date}")]
         public async Task<ActionResult<List<Meal>>> GetMealsByDate(DateOnly Date)
         {
             var mealList = await _context.Meal.Where(m => m.Date.CompareTo(Date) == 0)
-                .Include(m=> m.Products).OrderBy(m=> m.Type).ToListAsync();
+                .Include(m => m.Products).OrderBy(m => m.Type).ToListAsync();
 
             if (mealList == null)
             {
@@ -47,23 +56,24 @@ namespace CaloriesCounterAPI.Controllers
         }
 
         // PUT: api/Meals/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        /// <summary>
+        /// Modifies a meal.
+        /// </summary>
         [HttpPut("{id}")]
         public async Task<IActionResult> PutMeal(int id, EditMealDTO mealDTO)
         {
             var meal = await _context.Meal.Include(m => m.Products).FirstOrDefaultAsync(m => m.Id == id);
             meal.Type = mealDTO.Type;
-            meal.AmmoutOfProduct = mealDTO.AmmoutOfProduct;
+            meal.AmountOfProduct = mealDTO.AmountOfProduct;
             meal.Date = mealDTO.Date;
             meal.Products.Clear();
-
 
             foreach (var index in mealDTO.ProductIds)
             {
                 var product = await _context.Product.FindAsync(index);
 
-                if (product == null) 
-                { 
+                if (product == null)
+                {
                     return NoContent();
                 }
 
@@ -93,18 +103,20 @@ namespace CaloriesCounterAPI.Controllers
                 }
             }
 
-            return Ok("Meal succesfully modified");
+            return Ok("Meal successfully modified");
         }
 
         // POST: api/Meals
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        /// <summary>
+        /// Creates a new meal.
+        /// </summary>
         [HttpPost]
         public async Task<ActionResult<Meal>> PostMeal(CreateMealDTO mealDTO)
         {
             var meal = new Meal
             {
                 Type = mealDTO.Type,
-                AmmoutOfProduct = mealDTO.AmmoutOfProduct,
+                AmountOfProduct = mealDTO.AmountOfProduct,
                 Date = mealDTO.Date
             };
 
@@ -117,11 +129,10 @@ namespace CaloriesCounterAPI.Controllers
                     if (newProduct != null)
                     {
                         meal.Products.Add(newProduct);
-
                     }
                     else
                     {
-                        return NoContent() ;
+                        return NoContent();
                     }
                 }
             }
@@ -136,8 +147,11 @@ namespace CaloriesCounterAPI.Controllers
 
             return Ok(await _context.Meal.Include(m => m.Products).ToListAsync());
         }
-        
+
         // DELETE: api/Meals/5
+        /// <summary>
+        /// Deletes a meal.
+        /// </summary>
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteMeal(int id)
         {
@@ -152,6 +166,11 @@ namespace CaloriesCounterAPI.Controllers
 
             return NoContent();
         }
+
+        // DELETE: api/Meals/{mealId}/Products/{productId}
+        /// <summary>
+        /// Deletes a product from a meal.
+        /// </summary>
         [HttpDelete("{mealId}/Products/{productId}")]
         public async Task<IActionResult> DeleteProductFromMeal(int mealId, int productId)
         {
@@ -160,7 +179,7 @@ namespace CaloriesCounterAPI.Controllers
             {
                 return NotFound("Meal not found");
             }
-            
+
             var product = meal.Products.FirstOrDefault(p => p.ID == productId);
             var productList = meal.Products.ToList();
             var index = productList.FindIndex(p => p.ID == productId);
@@ -168,22 +187,27 @@ namespace CaloriesCounterAPI.Controllers
             {
                 return NotFound("Product not found in the meal");
             }
-            
-            meal.AmmoutOfProduct.RemoveAt(index);
+
+            meal.AmountOfProduct.RemoveAt(index);
             meal.Products.Remove(product);
             meal.CalculateKcalForMeal();
             await _context.SaveChangesAsync();
             return NoContent();
         }
+
+        // PATCH: api/Meals/{id}/AppendProduct/{productId}/{quantity}
+        /// <summary>
+        /// Appends a product to a meal.
+        /// </summary>
         [HttpPatch("{id}/AppendProduct/{productId}/{quantity}")]
-        public async Task<IActionResult> AppendProductToMeal(int id, int productId,int quantity)
+        public async Task<IActionResult> AppendProductToMeal(int id, int productId, int quantity)
         {
             var meal = await _context.Meal.Include(m => m.Products).FirstOrDefaultAsync(m => m.Id == id);
             if (meal == null)
             {
                 return NotFound("Meal not found");
             }
-    
+
             var product = await _context.Product.FindAsync(productId);
             if (product == null)
             {
@@ -192,10 +216,11 @@ namespace CaloriesCounterAPI.Controllers
             if (meal.Products.FirstOrDefault(e => e.ID == productId) != null)
             {
                 var i = 0;
-                foreach(var p in meal.Products)
+                foreach (var p in meal.Products)
                 {
-                    if (p.ID == productId){
-                        meal.AmmoutOfProduct[i] = quantity;
+                    if (p.ID == productId)
+                    {
+                        meal.AmountOfProduct[i] = quantity;
                     }
                     i++;
                 }
@@ -203,7 +228,7 @@ namespace CaloriesCounterAPI.Controllers
             else
             {
                 meal.Products.Add(product);
-                meal.AmmoutOfProduct.Add(quantity);
+                meal.AmountOfProduct.Add(quantity);
             }
             if (!meal.CalculateKcalForMeal())
             {
@@ -213,6 +238,7 @@ namespace CaloriesCounterAPI.Controllers
             await _context.SaveChangesAsync();
             return Ok("Product successfully appended to the meal");
         }
+
         private bool MealExists(int id)
         {
             return _context.Meal.Any(e => e.Id == id);
