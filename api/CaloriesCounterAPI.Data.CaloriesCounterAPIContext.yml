@@ -8,6 +8,7 @@ items:
   - CaloriesCounterAPI.Data.CaloriesCounterAPIContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{CaloriesCounterAPI.Data.CaloriesCounterAPIContext})
   - CaloriesCounterAPI.Data.CaloriesCounterAPIContext.Meal
   - CaloriesCounterAPI.Data.CaloriesCounterAPIContext.Product
+  - CaloriesCounterAPI.Data.CaloriesCounterAPIContext.User
   langs:
   - csharp
   - vb
@@ -18,14 +19,16 @@ items:
   source:
     remote:
       path: CaloriesCounterAPI/Data/CaloriesCounterAPIContext.cs
-      branch: Documentation
+      branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: CaloriesCounterAPIContext
     path: CaloriesCounterAPI/Data/CaloriesCounterAPIContext.cs
-    startLine: 9
+    startLine: 12
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Data
+  summary: Represents the database context for the CaloriesCounterAPI.
+  example: []
   syntax:
     content: 'public class CaloriesCounterAPIContext : DbContext, IInfrastructure<IServiceProvider>, IDbContextDependencies, IDbSetCache, IDbContextPoolable, IResettableService, IDisposable, IAsyncDisposable'
     content.vb: Public Class CaloriesCounterAPIContext Inherits DbContext Implements IInfrastructure(Of IServiceProvider), IDbContextDependencies, IDbSetCache, IDbContextPoolable, IResettableService, IDisposable, IAsyncDisposable
@@ -109,11 +112,11 @@ items:
   source:
     remote:
       path: CaloriesCounterAPI/Data/CaloriesCounterAPIContext.cs
-      branch: Documentation
+      branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: .ctor
     path: CaloriesCounterAPI/Data/CaloriesCounterAPIContext.cs
-    startLine: 11
+    startLine: 14
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Data
@@ -127,6 +130,35 @@ items:
   nameWithType.vb: CaloriesCounterAPIContext.New(DbContextOptions(Of CaloriesCounterAPIContext))
   fullName.vb: CaloriesCounterAPI.Data.CaloriesCounterAPIContext.New(Microsoft.EntityFrameworkCore.DbContextOptions(Of CaloriesCounterAPI.Data.CaloriesCounterAPIContext))
   name.vb: New(DbContextOptions(Of CaloriesCounterAPIContext))
+- uid: CaloriesCounterAPI.Data.CaloriesCounterAPIContext.User
+  commentId: P:CaloriesCounterAPI.Data.CaloriesCounterAPIContext.User
+  id: User
+  parent: CaloriesCounterAPI.Data.CaloriesCounterAPIContext
+  langs:
+  - csharp
+  - vb
+  name: User
+  nameWithType: CaloriesCounterAPIContext.User
+  fullName: CaloriesCounterAPI.Data.CaloriesCounterAPIContext.User
+  type: Property
+  source:
+    remote:
+      path: CaloriesCounterAPI/Data/CaloriesCounterAPIContext.cs
+      branch: master
+      repo: https://github.com/jakub5016/CaloriesCounterBackend.git
+    id: User
+    path: CaloriesCounterAPI/Data/CaloriesCounterAPIContext.cs
+    startLine: 19
+  assemblies:
+  - CaloriesCounterAPI
+  namespace: CaloriesCounterAPI.Data
+  syntax:
+    content: public DbSet<User> User { get; set; }
+    parameters: []
+    return:
+      type: Microsoft.EntityFrameworkCore.DbSet{CaloriesCounterAPI.Models.User}
+    content.vb: Public Property User As DbSet(Of User)
+  overload: CaloriesCounterAPI.Data.CaloriesCounterAPIContext.User*
 - uid: CaloriesCounterAPI.Data.CaloriesCounterAPIContext.Product
   commentId: P:CaloriesCounterAPI.Data.CaloriesCounterAPIContext.Product
   id: Product
@@ -141,14 +173,16 @@ items:
   source:
     remote:
       path: CaloriesCounterAPI/Data/CaloriesCounterAPIContext.cs
-      branch: Documentation
+      branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: Product
     path: CaloriesCounterAPI/Data/CaloriesCounterAPIContext.cs
-    startLine: 16
+    startLine: 23
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Data
+  summary: Gets or sets the DbSet for products.
+  example: []
   syntax:
     content: public DbSet<Product> Product { get; set; }
     parameters: []
@@ -170,14 +204,16 @@ items:
   source:
     remote:
       path: CaloriesCounterAPI/Data/CaloriesCounterAPIContext.cs
-      branch: Documentation
+      branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: Meal
     path: CaloriesCounterAPI/Data/CaloriesCounterAPIContext.cs
-    startLine: 17
+    startLine: 28
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Data
+  summary: Gets or sets the DbSet for meals.
+  example: []
   syntax:
     content: public DbSet<Meal> Meal { get; set; }
     parameters: []
@@ -2704,6 +2740,73 @@ references:
   - name: " "
   - name: TContext
   - name: )
+- uid: CaloriesCounterAPI.Data.CaloriesCounterAPIContext.User*
+  commentId: Overload:CaloriesCounterAPI.Data.CaloriesCounterAPIContext.User
+  href: CaloriesCounterAPI.Data.CaloriesCounterAPIContext.html#CaloriesCounterAPI_Data_CaloriesCounterAPIContext_User
+  name: User
+  nameWithType: CaloriesCounterAPIContext.User
+  fullName: CaloriesCounterAPI.Data.CaloriesCounterAPIContext.User
+- uid: Microsoft.EntityFrameworkCore.DbSet{CaloriesCounterAPI.Models.User}
+  commentId: T:Microsoft.EntityFrameworkCore.DbSet{CaloriesCounterAPI.Models.User}
+  parent: Microsoft.EntityFrameworkCore
+  definition: Microsoft.EntityFrameworkCore.DbSet`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  name: DbSet<User>
+  nameWithType: DbSet<User>
+  fullName: Microsoft.EntityFrameworkCore.DbSet<CaloriesCounterAPI.Models.User>
+  nameWithType.vb: DbSet(Of User)
+  fullName.vb: Microsoft.EntityFrameworkCore.DbSet(Of CaloriesCounterAPI.Models.User)
+  name.vb: DbSet(Of User)
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: <
+  - uid: CaloriesCounterAPI.Models.User
+    name: User
+    href: CaloriesCounterAPI.Models.User.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CaloriesCounterAPI.Models.User
+    name: User
+    href: CaloriesCounterAPI.Models.User.html
+  - name: )
+- uid: Microsoft.EntityFrameworkCore.DbSet`1
+  commentId: T:Microsoft.EntityFrameworkCore.DbSet`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  name: DbSet<TEntity>
+  nameWithType: DbSet<TEntity>
+  fullName: Microsoft.EntityFrameworkCore.DbSet<TEntity>
+  nameWithType.vb: DbSet(Of TEntity)
+  fullName.vb: Microsoft.EntityFrameworkCore.DbSet(Of TEntity)
+  name.vb: DbSet(Of TEntity)
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: <
+  - name: TEntity
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TEntity
+  - name: )
 - uid: CaloriesCounterAPI.Data.CaloriesCounterAPIContext.Product*
   commentId: Overload:CaloriesCounterAPI.Data.CaloriesCounterAPIContext.Product
   href: CaloriesCounterAPI.Data.CaloriesCounterAPIContext.html#CaloriesCounterAPI_Data_CaloriesCounterAPIContext_Product
@@ -2742,34 +2845,6 @@ references:
   - uid: CaloriesCounterAPI.Models.Product
     name: Product
     href: CaloriesCounterAPI.Models.Product.html
-  - name: )
-- uid: Microsoft.EntityFrameworkCore.DbSet`1
-  commentId: T:Microsoft.EntityFrameworkCore.DbSet`1
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
-  name: DbSet<TEntity>
-  nameWithType: DbSet<TEntity>
-  fullName: Microsoft.EntityFrameworkCore.DbSet<TEntity>
-  nameWithType.vb: DbSet(Of TEntity)
-  fullName.vb: Microsoft.EntityFrameworkCore.DbSet(Of TEntity)
-  name.vb: DbSet(Of TEntity)
-  spec.csharp:
-  - uid: Microsoft.EntityFrameworkCore.DbSet`1
-    name: DbSet
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
-  - name: <
-  - name: TEntity
-  - name: '>'
-  spec.vb:
-  - uid: Microsoft.EntityFrameworkCore.DbSet`1
-    name: DbSet
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: TEntity
   - name: )
 - uid: CaloriesCounterAPI.Data.CaloriesCounterAPIContext.Meal*
   commentId: Overload:CaloriesCounterAPI.Data.CaloriesCounterAPIContext.Meal

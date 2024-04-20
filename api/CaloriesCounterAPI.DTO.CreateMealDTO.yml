@@ -5,7 +5,7 @@ items:
   id: CreateMealDTO
   parent: CaloriesCounterAPI.DTO
   children:
-  - CaloriesCounterAPI.DTO.CreateMealDTO.AmmoutOfProduct
+  - CaloriesCounterAPI.DTO.CreateMealDTO.AmountOfProduct
   - CaloriesCounterAPI.DTO.CreateMealDTO.Date
   - CaloriesCounterAPI.DTO.CreateMealDTO.ProductIds
   - CaloriesCounterAPI.DTO.CreateMealDTO.Type
@@ -19,14 +19,16 @@ items:
   source:
     remote:
       path: CaloriesCounterAPI/DTO/CreateMealDTO.cs
-      branch: Documentation
+      branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: CreateMealDTO
     path: CaloriesCounterAPI/DTO/CreateMealDTO.cs
-    startLine: 4
+    startLine: 9
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.DTO
+  summary: Data transfer object for creating a new meal.
+  example: []
   syntax:
     content: public class CreateMealDTO
     content.vb: Public Class CreateMealDTO
@@ -54,14 +56,16 @@ items:
   source:
     remote:
       path: CaloriesCounterAPI/DTO/CreateMealDTO.cs
-      branch: Documentation
+      branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: Type
     path: CaloriesCounterAPI/DTO/CreateMealDTO.cs
-    startLine: 6
+    startLine: 14
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.DTO
+  summary: Gets or sets the type of the meal.
+  example: []
   syntax:
     content: public MealType Type { get; set; }
     parameters: []
@@ -83,14 +87,16 @@ items:
   source:
     remote:
       path: CaloriesCounterAPI/DTO/CreateMealDTO.cs
-      branch: Documentation
+      branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: Date
     path: CaloriesCounterAPI/DTO/CreateMealDTO.cs
-    startLine: 8
+    startLine: 19
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.DTO
+  summary: Gets or sets the date of the meal.
+  example: []
   syntax:
     content: public DateOnly Date { get; set; }
     parameters: []
@@ -112,14 +118,16 @@ items:
   source:
     remote:
       path: CaloriesCounterAPI/DTO/CreateMealDTO.cs
-      branch: Documentation
+      branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: ProductIds
     path: CaloriesCounterAPI/DTO/CreateMealDTO.cs
-    startLine: 10
+    startLine: 24
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.DTO
+  summary: Gets or sets the IDs of the products to be included in the meal.
+  example: []
   syntax:
     content: public List<int>? ProductIds { get; set; }
     parameters: []
@@ -127,35 +135,37 @@ items:
       type: System.Collections.Generic.List{System.Int32}
     content.vb: Public Property ProductIds As List(Of Integer)
   overload: CaloriesCounterAPI.DTO.CreateMealDTO.ProductIds*
-- uid: CaloriesCounterAPI.DTO.CreateMealDTO.AmmoutOfProduct
-  commentId: P:CaloriesCounterAPI.DTO.CreateMealDTO.AmmoutOfProduct
-  id: AmmoutOfProduct
+- uid: CaloriesCounterAPI.DTO.CreateMealDTO.AmountOfProduct
+  commentId: P:CaloriesCounterAPI.DTO.CreateMealDTO.AmountOfProduct
+  id: AmountOfProduct
   parent: CaloriesCounterAPI.DTO.CreateMealDTO
   langs:
   - csharp
   - vb
-  name: AmmoutOfProduct
-  nameWithType: CreateMealDTO.AmmoutOfProduct
-  fullName: CaloriesCounterAPI.DTO.CreateMealDTO.AmmoutOfProduct
+  name: AmountOfProduct
+  nameWithType: CreateMealDTO.AmountOfProduct
+  fullName: CaloriesCounterAPI.DTO.CreateMealDTO.AmountOfProduct
   type: Property
   source:
     remote:
       path: CaloriesCounterAPI/DTO/CreateMealDTO.cs
-      branch: Documentation
+      branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
-    id: AmmoutOfProduct
+    id: AmountOfProduct
     path: CaloriesCounterAPI/DTO/CreateMealDTO.cs
-    startLine: 12
+    startLine: 29
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.DTO
+  summary: Gets or sets the amounts of each product to be included in the meal.
+  example: []
   syntax:
-    content: public List<int>? AmmoutOfProduct { get; set; }
+    content: public List<int>? AmountOfProduct { get; set; }
     parameters: []
     return:
       type: System.Collections.Generic.List{System.Int32}
-    content.vb: Public Property AmmoutOfProduct As List(Of Integer)
-  overload: CaloriesCounterAPI.DTO.CreateMealDTO.AmmoutOfProduct*
+    content.vb: Public Property AmountOfProduct As List(Of Integer)
+  overload: CaloriesCounterAPI.DTO.CreateMealDTO.AmountOfProduct*
 references:
 - uid: CaloriesCounterAPI.DTO
   commentId: N:CaloriesCounterAPI.DTO
@@ -571,9 +581,9 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-- uid: CaloriesCounterAPI.DTO.CreateMealDTO.AmmoutOfProduct*
-  commentId: Overload:CaloriesCounterAPI.DTO.CreateMealDTO.AmmoutOfProduct
-  href: CaloriesCounterAPI.DTO.CreateMealDTO.html#CaloriesCounterAPI_DTO_CreateMealDTO_AmmoutOfProduct
-  name: AmmoutOfProduct
-  nameWithType: CreateMealDTO.AmmoutOfProduct
-  fullName: CaloriesCounterAPI.DTO.CreateMealDTO.AmmoutOfProduct
+- uid: CaloriesCounterAPI.DTO.CreateMealDTO.AmountOfProduct*
+  commentId: Overload:CaloriesCounterAPI.DTO.CreateMealDTO.AmountOfProduct
+  href: CaloriesCounterAPI.DTO.CreateMealDTO.html#CaloriesCounterAPI_DTO_CreateMealDTO_AmountOfProduct
+  name: AmountOfProduct
+  nameWithType: CreateMealDTO.AmountOfProduct
+  fullName: CaloriesCounterAPI.DTO.CreateMealDTO.AmountOfProduct

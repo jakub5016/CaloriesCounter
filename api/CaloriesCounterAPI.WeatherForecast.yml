@@ -19,7 +19,7 @@ items:
   source:
     remote:
       path: CaloriesCounterAPI/WeatherForecast.cs
-      branch: Documentation
+      branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: WeatherForecast
     path: CaloriesCounterAPI/WeatherForecast.cs
@@ -54,7 +54,7 @@ items:
   source:
     remote:
       path: CaloriesCounterAPI/WeatherForecast.cs
-      branch: Documentation
+      branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: Date
     path: CaloriesCounterAPI/WeatherForecast.cs
@@ -83,7 +83,7 @@ items:
   source:
     remote:
       path: CaloriesCounterAPI/WeatherForecast.cs
-      branch: Documentation
+      branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: TemperatureC
     path: CaloriesCounterAPI/WeatherForecast.cs
@@ -112,7 +112,7 @@ items:
   source:
     remote:
       path: CaloriesCounterAPI/WeatherForecast.cs
-      branch: Documentation
+      branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: TemperatureF
     path: CaloriesCounterAPI/WeatherForecast.cs
@@ -141,7 +141,7 @@ items:
   source:
     remote:
       path: CaloriesCounterAPI/WeatherForecast.cs
-      branch: Documentation
+      branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: Summary
     path: CaloriesCounterAPI/WeatherForecast.cs

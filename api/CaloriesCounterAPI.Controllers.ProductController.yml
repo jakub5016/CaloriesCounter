@@ -1,43 +1,53 @@
 ### YamlMime:ManagedReference
 items:
-- uid: CaloriesCounterAPI.Controllers.WeatherForecastController
-  commentId: T:CaloriesCounterAPI.Controllers.WeatherForecastController
-  id: WeatherForecastController
+- uid: CaloriesCounterAPI.Controllers.ProductController
+  commentId: T:CaloriesCounterAPI.Controllers.ProductController
+  id: ProductController
   parent: CaloriesCounterAPI.Controllers
   children:
-  - CaloriesCounterAPI.Controllers.WeatherForecastController.#ctor(Microsoft.Extensions.Logging.ILogger{CaloriesCounterAPI.Controllers.WeatherForecastController})
-  - CaloriesCounterAPI.Controllers.WeatherForecastController.Get
+  - CaloriesCounterAPI.Controllers.ProductController.#ctor(CaloriesCounterAPI.Data.CaloriesCounterAPIContext)
+  - CaloriesCounterAPI.Controllers.ProductController.DeleteProductById(System.Int32)
+  - CaloriesCounterAPI.Controllers.ProductController.GetAllProducts
+  - CaloriesCounterAPI.Controllers.ProductController.GetProductById(System.Int32)
+  - CaloriesCounterAPI.Controllers.ProductController.PostNewProduct(CaloriesCounterAPI.DTO.CreateProductDTO)
+  - CaloriesCounterAPI.Controllers.ProductController.SearchProductByName(System.String)
   langs:
   - csharp
   - vb
-  name: WeatherForecastController
-  nameWithType: WeatherForecastController
-  fullName: CaloriesCounterAPI.Controllers.WeatherForecastController
+  name: ProductController
+  nameWithType: ProductController
+  fullName: CaloriesCounterAPI.Controllers.ProductController
   type: Class
   source:
     remote:
-      path: CaloriesCounterAPI/Controllers/WeatherForecastController.cs
+      path: CaloriesCounterAPI/Controllers/ProductController.cs
       branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
-    id: WeatherForecastController
-    path: CaloriesCounterAPI/Controllers/WeatherForecastController.cs
-    startLine: 4
+    id: ProductController
+    path: CaloriesCounterAPI/Controllers/ProductController.cs
+    startLine: 13
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Controllers
+  summary: Controller for managing product-related operations.
+  example: []
   syntax:
     content: >-
+      [EnableCors("FrontendPolicy")]
+
+      [Route("api/[controller]")]
+
       [ApiController]
 
-      [Route("[controller]")]
-
-      public class WeatherForecastController : ControllerBase
+      public class ProductController : ControllerBase
     content.vb: >-
+      <EnableCors("FrontendPolicy")>
+
+      <Route("api/[controller]")>
+
       <ApiController>
 
-      <Route("[controller]")>
-
-      Public Class WeatherForecastController Inherits ControllerBase
+      Public Class ProductController Inherits ControllerBase
   inheritance:
   - System.Object
   - Microsoft.AspNetCore.Mvc.ControllerBase
@@ -223,84 +233,278 @@ items:
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
   attributes:
-  - type: Microsoft.AspNetCore.Mvc.ApiControllerAttribute
-    ctor: Microsoft.AspNetCore.Mvc.ApiControllerAttribute.#ctor
-    arguments: []
+  - type: Microsoft.AspNetCore.Cors.EnableCorsAttribute
+    ctor: Microsoft.AspNetCore.Cors.EnableCorsAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: FrontendPolicy
   - type: Microsoft.AspNetCore.Mvc.RouteAttribute
     ctor: Microsoft.AspNetCore.Mvc.RouteAttribute.#ctor(System.String)
     arguments:
     - type: System.String
-      value: '[controller]'
-- uid: CaloriesCounterAPI.Controllers.WeatherForecastController.#ctor(Microsoft.Extensions.Logging.ILogger{CaloriesCounterAPI.Controllers.WeatherForecastController})
-  commentId: M:CaloriesCounterAPI.Controllers.WeatherForecastController.#ctor(Microsoft.Extensions.Logging.ILogger{CaloriesCounterAPI.Controllers.WeatherForecastController})
-  id: '#ctor(Microsoft.Extensions.Logging.ILogger{CaloriesCounterAPI.Controllers.WeatherForecastController})'
-  parent: CaloriesCounterAPI.Controllers.WeatherForecastController
+      value: api/[controller]
+  - type: Microsoft.AspNetCore.Mvc.ApiControllerAttribute
+    ctor: Microsoft.AspNetCore.Mvc.ApiControllerAttribute.#ctor
+    arguments: []
+- uid: CaloriesCounterAPI.Controllers.ProductController.#ctor(CaloriesCounterAPI.Data.CaloriesCounterAPIContext)
+  commentId: M:CaloriesCounterAPI.Controllers.ProductController.#ctor(CaloriesCounterAPI.Data.CaloriesCounterAPIContext)
+  id: '#ctor(CaloriesCounterAPI.Data.CaloriesCounterAPIContext)'
+  parent: CaloriesCounterAPI.Controllers.ProductController
   langs:
   - csharp
   - vb
-  name: WeatherForecastController(ILogger<WeatherForecastController>)
-  nameWithType: WeatherForecastController.WeatherForecastController(ILogger<WeatherForecastController>)
-  fullName: CaloriesCounterAPI.Controllers.WeatherForecastController.WeatherForecastController(Microsoft.Extensions.Logging.ILogger<CaloriesCounterAPI.Controllers.WeatherForecastController>)
+  name: ProductController(CaloriesCounterAPIContext)
+  nameWithType: ProductController.ProductController(CaloriesCounterAPIContext)
+  fullName: CaloriesCounterAPI.Controllers.ProductController.ProductController(CaloriesCounterAPI.Data.CaloriesCounterAPIContext)
   type: Constructor
   source:
     remote:
-      path: CaloriesCounterAPI/Controllers/WeatherForecastController.cs
+      path: CaloriesCounterAPI/Controllers/ProductController.cs
       branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: .ctor
-    path: CaloriesCounterAPI/Controllers/WeatherForecastController.cs
-    startLine: 15
-  assemblies:
-  - CaloriesCounterAPI
-  namespace: CaloriesCounterAPI.Controllers
-  syntax:
-    content: public WeatherForecastController(ILogger<WeatherForecastController> logger)
-    parameters:
-    - id: logger
-      type: Microsoft.Extensions.Logging.ILogger{CaloriesCounterAPI.Controllers.WeatherForecastController}
-    content.vb: Public Sub New(logger As ILogger(Of WeatherForecastController))
-  overload: CaloriesCounterAPI.Controllers.WeatherForecastController.#ctor*
-  nameWithType.vb: WeatherForecastController.New(ILogger(Of WeatherForecastController))
-  fullName.vb: CaloriesCounterAPI.Controllers.WeatherForecastController.New(Microsoft.Extensions.Logging.ILogger(Of CaloriesCounterAPI.Controllers.WeatherForecastController))
-  name.vb: New(ILogger(Of WeatherForecastController))
-- uid: CaloriesCounterAPI.Controllers.WeatherForecastController.Get
-  commentId: M:CaloriesCounterAPI.Controllers.WeatherForecastController.Get
-  id: Get
-  parent: CaloriesCounterAPI.Controllers.WeatherForecastController
-  langs:
-  - csharp
-  - vb
-  name: Get()
-  nameWithType: WeatherForecastController.Get()
-  fullName: CaloriesCounterAPI.Controllers.WeatherForecastController.Get()
-  type: Method
-  source:
-    remote:
-      path: CaloriesCounterAPI/Controllers/WeatherForecastController.cs
-      branch: master
-      repo: https://github.com/jakub5016/CaloriesCounterBackend.git
-    id: Get
-    path: CaloriesCounterAPI/Controllers/WeatherForecastController.cs
+    path: CaloriesCounterAPI/Controllers/ProductController.cs
     startLine: 20
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Controllers
   syntax:
+    content: public ProductController(CaloriesCounterAPIContext context)
+    parameters:
+    - id: context
+      type: CaloriesCounterAPI.Data.CaloriesCounterAPIContext
+    content.vb: Public Sub New(context As CaloriesCounterAPIContext)
+  overload: CaloriesCounterAPI.Controllers.ProductController.#ctor*
+  nameWithType.vb: ProductController.New(CaloriesCounterAPIContext)
+  fullName.vb: CaloriesCounterAPI.Controllers.ProductController.New(CaloriesCounterAPI.Data.CaloriesCounterAPIContext)
+  name.vb: New(CaloriesCounterAPIContext)
+- uid: CaloriesCounterAPI.Controllers.ProductController.GetAllProducts
+  commentId: M:CaloriesCounterAPI.Controllers.ProductController.GetAllProducts
+  id: GetAllProducts
+  parent: CaloriesCounterAPI.Controllers.ProductController
+  langs:
+  - csharp
+  - vb
+  name: GetAllProducts()
+  nameWithType: ProductController.GetAllProducts()
+  fullName: CaloriesCounterAPI.Controllers.ProductController.GetAllProducts()
+  type: Method
+  source:
+    remote:
+      path: CaloriesCounterAPI/Controllers/ProductController.cs
+      branch: master
+      repo: https://github.com/jakub5016/CaloriesCounterBackend.git
+    id: GetAllProducts
+    path: CaloriesCounterAPI/Controllers/ProductController.cs
+    startLine: 29
+  assemblies:
+  - CaloriesCounterAPI
+  namespace: CaloriesCounterAPI.Controllers
+  summary: Retrieves all products.
+  example: []
+  syntax:
     content: >-
       [HttpGet]
 
-      public IEnumerable<WeatherForecast> Get()
+      public Task<ActionResult<IEnumerable<Product>>> GetAllProducts()
     return:
-      type: System.Collections.Generic.IEnumerable{CaloriesCounterAPI.WeatherForecast}
+      type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult{System.Collections.Generic.IEnumerable{CaloriesCounterAPI.Models.Product}}}
     content.vb: >-
       <HttpGet>
 
-      Public Function [Get]() As IEnumerable(Of WeatherForecast)
-  overload: CaloriesCounterAPI.Controllers.WeatherForecastController.Get*
+      Public Function GetAllProducts() As Task(Of ActionResult(Of IEnumerable(Of Product)))
+  overload: CaloriesCounterAPI.Controllers.ProductController.GetAllProducts*
   attributes:
   - type: Microsoft.AspNetCore.Mvc.HttpGetAttribute
     ctor: Microsoft.AspNetCore.Mvc.HttpGetAttribute.#ctor
     arguments: []
+- uid: CaloriesCounterAPI.Controllers.ProductController.GetProductById(System.Int32)
+  commentId: M:CaloriesCounterAPI.Controllers.ProductController.GetProductById(System.Int32)
+  id: GetProductById(System.Int32)
+  parent: CaloriesCounterAPI.Controllers.ProductController
+  langs:
+  - csharp
+  - vb
+  name: GetProductById(int)
+  nameWithType: ProductController.GetProductById(int)
+  fullName: CaloriesCounterAPI.Controllers.ProductController.GetProductById(int)
+  type: Method
+  source:
+    remote:
+      path: CaloriesCounterAPI/Controllers/ProductController.cs
+      branch: master
+      repo: https://github.com/jakub5016/CaloriesCounterBackend.git
+    id: GetProductById
+    path: CaloriesCounterAPI/Controllers/ProductController.cs
+    startLine: 39
+  assemblies:
+  - CaloriesCounterAPI
+  namespace: CaloriesCounterAPI.Controllers
+  summary: Retrieves a product by ID.
+  example: []
+  syntax:
+    content: >-
+      [HttpGet("{id}")]
+
+      public Task<ActionResult<Product>> GetProductById(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+    return:
+      type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult{CaloriesCounterAPI.Models.Product}}
+    content.vb: >-
+      <HttpGet("{id}")>
+
+      Public Function GetProductById(id As Integer) As Task(Of ActionResult(Of Product))
+  overload: CaloriesCounterAPI.Controllers.ProductController.GetProductById*
+  attributes:
+  - type: Microsoft.AspNetCore.Mvc.HttpGetAttribute
+    ctor: Microsoft.AspNetCore.Mvc.HttpGetAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: '{id}'
+  nameWithType.vb: ProductController.GetProductById(Integer)
+  fullName.vb: CaloriesCounterAPI.Controllers.ProductController.GetProductById(Integer)
+  name.vb: GetProductById(Integer)
+- uid: CaloriesCounterAPI.Controllers.ProductController.PostNewProduct(CaloriesCounterAPI.DTO.CreateProductDTO)
+  commentId: M:CaloriesCounterAPI.Controllers.ProductController.PostNewProduct(CaloriesCounterAPI.DTO.CreateProductDTO)
+  id: PostNewProduct(CaloriesCounterAPI.DTO.CreateProductDTO)
+  parent: CaloriesCounterAPI.Controllers.ProductController
+  langs:
+  - csharp
+  - vb
+  name: PostNewProduct(CreateProductDTO)
+  nameWithType: ProductController.PostNewProduct(CreateProductDTO)
+  fullName: CaloriesCounterAPI.Controllers.ProductController.PostNewProduct(CaloriesCounterAPI.DTO.CreateProductDTO)
+  type: Method
+  source:
+    remote:
+      path: CaloriesCounterAPI/Controllers/ProductController.cs
+      branch: master
+      repo: https://github.com/jakub5016/CaloriesCounterBackend.git
+    id: PostNewProduct
+    path: CaloriesCounterAPI/Controllers/ProductController.cs
+    startLine: 57
+  assemblies:
+  - CaloriesCounterAPI
+  namespace: CaloriesCounterAPI.Controllers
+  summary: Adds a new product.
+  example: []
+  syntax:
+    content: >-
+      [HttpPost]
+
+      public Task<ActionResult<Product>> PostNewProduct(CreateProductDTO productDTO)
+    parameters:
+    - id: productDTO
+      type: CaloriesCounterAPI.DTO.CreateProductDTO
+    return:
+      type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult{CaloriesCounterAPI.Models.Product}}
+    content.vb: >-
+      <HttpPost>
+
+      Public Function PostNewProduct(productDTO As CreateProductDTO) As Task(Of ActionResult(Of Product))
+  overload: CaloriesCounterAPI.Controllers.ProductController.PostNewProduct*
+  attributes:
+  - type: Microsoft.AspNetCore.Mvc.HttpPostAttribute
+    ctor: Microsoft.AspNetCore.Mvc.HttpPostAttribute.#ctor
+    arguments: []
+- uid: CaloriesCounterAPI.Controllers.ProductController.SearchProductByName(System.String)
+  commentId: M:CaloriesCounterAPI.Controllers.ProductController.SearchProductByName(System.String)
+  id: SearchProductByName(System.String)
+  parent: CaloriesCounterAPI.Controllers.ProductController
+  langs:
+  - csharp
+  - vb
+  name: SearchProductByName(string)
+  nameWithType: ProductController.SearchProductByName(string)
+  fullName: CaloriesCounterAPI.Controllers.ProductController.SearchProductByName(string)
+  type: Method
+  source:
+    remote:
+      path: CaloriesCounterAPI/Controllers/ProductController.cs
+      branch: master
+      repo: https://github.com/jakub5016/CaloriesCounterBackend.git
+    id: SearchProductByName
+    path: CaloriesCounterAPI/Controllers/ProductController.cs
+    startLine: 78
+  assemblies:
+  - CaloriesCounterAPI
+  namespace: CaloriesCounterAPI.Controllers
+  summary: Searches for products by name.
+  example: []
+  syntax:
+    content: >-
+      [HttpPost("search")]
+
+      public Task<ActionResult<IEnumerable<Product>>> SearchProductByName(string search)
+    parameters:
+    - id: search
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult{System.Collections.Generic.IEnumerable{CaloriesCounterAPI.Models.Product}}}
+    content.vb: >-
+      <HttpPost("search")>
+
+      Public Function SearchProductByName(search As String) As Task(Of ActionResult(Of IEnumerable(Of Product)))
+  overload: CaloriesCounterAPI.Controllers.ProductController.SearchProductByName*
+  attributes:
+  - type: Microsoft.AspNetCore.Mvc.HttpPostAttribute
+    ctor: Microsoft.AspNetCore.Mvc.HttpPostAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: search
+  nameWithType.vb: ProductController.SearchProductByName(String)
+  fullName.vb: CaloriesCounterAPI.Controllers.ProductController.SearchProductByName(String)
+  name.vb: SearchProductByName(String)
+- uid: CaloriesCounterAPI.Controllers.ProductController.DeleteProductById(System.Int32)
+  commentId: M:CaloriesCounterAPI.Controllers.ProductController.DeleteProductById(System.Int32)
+  id: DeleteProductById(System.Int32)
+  parent: CaloriesCounterAPI.Controllers.ProductController
+  langs:
+  - csharp
+  - vb
+  name: DeleteProductById(int)
+  nameWithType: ProductController.DeleteProductById(int)
+  fullName: CaloriesCounterAPI.Controllers.ProductController.DeleteProductById(int)
+  type: Method
+  source:
+    remote:
+      path: CaloriesCounterAPI/Controllers/ProductController.cs
+      branch: master
+      repo: https://github.com/jakub5016/CaloriesCounterBackend.git
+    id: DeleteProductById
+    path: CaloriesCounterAPI/Controllers/ProductController.cs
+    startLine: 97
+  assemblies:
+  - CaloriesCounterAPI
+  namespace: CaloriesCounterAPI.Controllers
+  summary: Deletes a product by ID.
+  example: []
+  syntax:
+    content: >-
+      [HttpDelete("{id}")]
+
+      public Task<ActionResult> DeleteProductById(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+    return:
+      type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult}
+    content.vb: >-
+      <HttpDelete("{id}")>
+
+      Public Function DeleteProductById(id As Integer) As Task(Of ActionResult)
+  overload: CaloriesCounterAPI.Controllers.ProductController.DeleteProductById*
+  attributes:
+  - type: Microsoft.AspNetCore.Mvc.HttpDeleteAttribute
+    ctor: Microsoft.AspNetCore.Mvc.HttpDeleteAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: '{id}'
+  nameWithType.vb: ProductController.DeleteProductById(Integer)
+  fullName.vb: CaloriesCounterAPI.Controllers.ProductController.DeleteProductById(Integer)
+  name.vb: DeleteProductById(Integer)
 references:
 - uid: CaloriesCounterAPI.Controllers
   commentId: N:CaloriesCounterAPI.Controllers
@@ -9289,214 +9493,330 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   - name: )
-- uid: CaloriesCounterAPI.Controllers.WeatherForecastController.#ctor*
-  commentId: Overload:CaloriesCounterAPI.Controllers.WeatherForecastController.#ctor
-  href: CaloriesCounterAPI.Controllers.WeatherForecastController.html#CaloriesCounterAPI_Controllers_WeatherForecastController__ctor_Microsoft_Extensions_Logging_ILogger_CaloriesCounterAPI_Controllers_WeatherForecastController__
-  name: WeatherForecastController
-  nameWithType: WeatherForecastController.WeatherForecastController
-  fullName: CaloriesCounterAPI.Controllers.WeatherForecastController.WeatherForecastController
-  nameWithType.vb: WeatherForecastController.New
-  fullName.vb: CaloriesCounterAPI.Controllers.WeatherForecastController.New
+- uid: CaloriesCounterAPI.Controllers.ProductController.#ctor*
+  commentId: Overload:CaloriesCounterAPI.Controllers.ProductController.#ctor
+  href: CaloriesCounterAPI.Controllers.ProductController.html#CaloriesCounterAPI_Controllers_ProductController__ctor_CaloriesCounterAPI_Data_CaloriesCounterAPIContext_
+  name: ProductController
+  nameWithType: ProductController.ProductController
+  fullName: CaloriesCounterAPI.Controllers.ProductController.ProductController
+  nameWithType.vb: ProductController.New
+  fullName.vb: CaloriesCounterAPI.Controllers.ProductController.New
   name.vb: New
-- uid: Microsoft.Extensions.Logging.ILogger{CaloriesCounterAPI.Controllers.WeatherForecastController}
-  commentId: T:Microsoft.Extensions.Logging.ILogger{CaloriesCounterAPI.Controllers.WeatherForecastController}
-  parent: Microsoft.Extensions.Logging
-  definition: Microsoft.Extensions.Logging.ILogger`1
-  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
-  name: ILogger<WeatherForecastController>
-  nameWithType: ILogger<WeatherForecastController>
-  fullName: Microsoft.Extensions.Logging.ILogger<CaloriesCounterAPI.Controllers.WeatherForecastController>
-  nameWithType.vb: ILogger(Of WeatherForecastController)
-  fullName.vb: Microsoft.Extensions.Logging.ILogger(Of CaloriesCounterAPI.Controllers.WeatherForecastController)
-  name.vb: ILogger(Of WeatherForecastController)
+- uid: CaloriesCounterAPI.Data.CaloriesCounterAPIContext
+  commentId: T:CaloriesCounterAPI.Data.CaloriesCounterAPIContext
+  parent: CaloriesCounterAPI.Data
+  href: CaloriesCounterAPI.Data.CaloriesCounterAPIContext.html
+  name: CaloriesCounterAPIContext
+  nameWithType: CaloriesCounterAPIContext
+  fullName: CaloriesCounterAPI.Data.CaloriesCounterAPIContext
+- uid: CaloriesCounterAPI.Data
+  commentId: N:CaloriesCounterAPI.Data
+  href: CaloriesCounterAPI.html
+  name: CaloriesCounterAPI.Data
+  nameWithType: CaloriesCounterAPI.Data
+  fullName: CaloriesCounterAPI.Data
   spec.csharp:
-  - uid: Microsoft.Extensions.Logging.ILogger`1
-    name: ILogger
+  - uid: CaloriesCounterAPI
+    name: CaloriesCounterAPI
+    href: CaloriesCounterAPI.html
+  - name: .
+  - uid: CaloriesCounterAPI.Data
+    name: Data
+    href: CaloriesCounterAPI.Data.html
+  spec.vb:
+  - uid: CaloriesCounterAPI
+    name: CaloriesCounterAPI
+    href: CaloriesCounterAPI.html
+  - name: .
+  - uid: CaloriesCounterAPI.Data
+    name: Data
+    href: CaloriesCounterAPI.Data.html
+- uid: CaloriesCounterAPI.Controllers.ProductController.GetAllProducts*
+  commentId: Overload:CaloriesCounterAPI.Controllers.ProductController.GetAllProducts
+  href: CaloriesCounterAPI.Controllers.ProductController.html#CaloriesCounterAPI_Controllers_ProductController_GetAllProducts
+  name: GetAllProducts
+  nameWithType: ProductController.GetAllProducts
+  fullName: CaloriesCounterAPI.Controllers.ProductController.GetAllProducts
+- uid: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult{System.Collections.Generic.IEnumerable{CaloriesCounterAPI.Models.Product}}}
+  commentId: T:System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult{System.Collections.Generic.IEnumerable{CaloriesCounterAPI.Models.Product}}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<ActionResult<IEnumerable<Product>>>
+  nameWithType: Task<ActionResult<IEnumerable<Product>>>
+  fullName: System.Threading.Tasks.Task<Microsoft.AspNetCore.Mvc.ActionResult<System.Collections.Generic.IEnumerable<CaloriesCounterAPI.Models.Product>>>
+  nameWithType.vb: Task(Of ActionResult(Of IEnumerable(Of Product)))
+  fullName.vb: System.Threading.Tasks.Task(Of Microsoft.AspNetCore.Mvc.ActionResult(Of System.Collections.Generic.IEnumerable(Of CaloriesCounterAPI.Models.Product)))
+  name.vb: Task(Of ActionResult(Of IEnumerable(Of Product)))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   - name: <
-  - uid: CaloriesCounterAPI.Controllers.WeatherForecastController
-    name: WeatherForecastController
-    href: CaloriesCounterAPI.Controllers.WeatherForecastController.html
+  - uid: Microsoft.AspNetCore.Mvc.ActionResult`1
+    name: ActionResult
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.actionresult-1
+  - name: <
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: CaloriesCounterAPI.Models.Product
+    name: Product
+    href: CaloriesCounterAPI.Models.Product.html
+  - name: '>'
+  - name: '>'
   - name: '>'
   spec.vb:
-  - uid: Microsoft.Extensions.Logging.ILogger`1
-    name: ILogger
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   - name: (
   - name: Of
   - name: " "
-  - uid: CaloriesCounterAPI.Controllers.WeatherForecastController
-    name: WeatherForecastController
-    href: CaloriesCounterAPI.Controllers.WeatherForecastController.html
+  - uid: Microsoft.AspNetCore.Mvc.ActionResult`1
+    name: ActionResult
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.actionresult-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CaloriesCounterAPI.Models.Product
+    name: Product
+    href: CaloriesCounterAPI.Models.Product.html
   - name: )
-- uid: Microsoft.Extensions.Logging.ILogger`1
-  commentId: T:Microsoft.Extensions.Logging.ILogger`1
+  - name: )
+  - name: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
-  name: ILogger<TCategoryName>
-  nameWithType: ILogger<TCategoryName>
-  fullName: Microsoft.Extensions.Logging.ILogger<TCategoryName>
-  nameWithType.vb: ILogger(Of TCategoryName)
-  fullName.vb: Microsoft.Extensions.Logging.ILogger(Of TCategoryName)
-  name.vb: ILogger(Of TCategoryName)
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
   spec.csharp:
-  - uid: Microsoft.Extensions.Logging.ILogger`1
-    name: ILogger
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   - name: <
-  - name: TCategoryName
+  - name: TResult
   - name: '>'
   spec.vb:
-  - uid: Microsoft.Extensions.Logging.ILogger`1
-    name: ILogger
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   - name: (
   - name: Of
   - name: " "
-  - name: TCategoryName
+  - name: TResult
   - name: )
-- uid: Microsoft.Extensions.Logging
-  commentId: N:Microsoft.Extensions.Logging
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/microsoft
-  name: Microsoft.Extensions.Logging
-  nameWithType: Microsoft.Extensions.Logging
-  fullName: Microsoft.Extensions.Logging
-  spec.csharp:
-  - uid: Microsoft
-    name: Microsoft
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft
-  - name: .
-  - uid: Microsoft.Extensions
-    name: Extensions
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
-  - name: .
-  - uid: Microsoft.Extensions.Logging
-    name: Logging
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging
-  spec.vb:
-  - uid: Microsoft
-    name: Microsoft
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft
-  - name: .
-  - uid: Microsoft.Extensions
-    name: Extensions
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
-  - name: .
-  - uid: Microsoft.Extensions.Logging
-    name: Logging
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging
-- uid: CaloriesCounterAPI.Controllers.WeatherForecastController.Get*
-  commentId: Overload:CaloriesCounterAPI.Controllers.WeatherForecastController.Get
-  href: CaloriesCounterAPI.Controllers.WeatherForecastController.html#CaloriesCounterAPI_Controllers_WeatherForecastController_Get
-  name: Get
-  nameWithType: WeatherForecastController.Get
-  fullName: CaloriesCounterAPI.Controllers.WeatherForecastController.Get
-- uid: System.Collections.Generic.IEnumerable{CaloriesCounterAPI.WeatherForecast}
-  commentId: T:System.Collections.Generic.IEnumerable{CaloriesCounterAPI.WeatherForecast}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.IEnumerable`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  name: IEnumerable<WeatherForecast>
-  nameWithType: IEnumerable<WeatherForecast>
-  fullName: System.Collections.Generic.IEnumerable<CaloriesCounterAPI.WeatherForecast>
-  nameWithType.vb: IEnumerable(Of WeatherForecast)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of CaloriesCounterAPI.WeatherForecast)
-  name.vb: IEnumerable(Of WeatherForecast)
-  spec.csharp:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  - name: <
-  - uid: CaloriesCounterAPI.WeatherForecast
-    name: WeatherForecast
-    href: CaloriesCounterAPI.WeatherForecast.html
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: CaloriesCounterAPI.WeatherForecast
-    name: WeatherForecast
-    href: CaloriesCounterAPI.WeatherForecast.html
-  - name: )
-- uid: System.Collections.Generic.IEnumerable`1
-  commentId: T:System.Collections.Generic.IEnumerable`1
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  name: IEnumerable<T>
-  nameWithType: IEnumerable<T>
-  fullName: System.Collections.Generic.IEnumerable<T>
-  nameWithType.vb: IEnumerable(Of T)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
-  name.vb: IEnumerable(Of T)
-  spec.csharp:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-- uid: System.Collections.Generic
-  commentId: N:System.Collections.Generic
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
   isExternal: true
   href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Collections.Generic
-  nameWithType: System.Collections.Generic
-  fullName: System.Collections.Generic
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
   spec.csharp:
   - uid: System
     name: System
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system
   - name: .
-  - uid: System.Collections
-    name: Collections
+  - uid: System.Threading
+    name: Threading
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
+    href: https://learn.microsoft.com/dotnet/api/system.threading
   - name: .
-  - uid: System.Collections.Generic
-    name: Generic
+  - uid: System.Threading.Tasks
+    name: Tasks
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
   spec.vb:
   - uid: System
     name: System
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system
   - name: .
-  - uid: System.Collections
-    name: Collections
+  - uid: System.Threading
+    name: Threading
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
+    href: https://learn.microsoft.com/dotnet/api/system.threading
   - name: .
-  - uid: System.Collections.Generic
-    name: Generic
+  - uid: System.Threading.Tasks
+    name: Tasks
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: CaloriesCounterAPI.Controllers.ProductController.GetProductById*
+  commentId: Overload:CaloriesCounterAPI.Controllers.ProductController.GetProductById
+  href: CaloriesCounterAPI.Controllers.ProductController.html#CaloriesCounterAPI_Controllers_ProductController_GetProductById_System_Int32_
+  name: GetProductById
+  nameWithType: ProductController.GetProductById
+  fullName: CaloriesCounterAPI.Controllers.ProductController.GetProductById
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult{CaloriesCounterAPI.Models.Product}}
+  commentId: T:System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult{CaloriesCounterAPI.Models.Product}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<ActionResult<Product>>
+  nameWithType: Task<ActionResult<Product>>
+  fullName: System.Threading.Tasks.Task<Microsoft.AspNetCore.Mvc.ActionResult<CaloriesCounterAPI.Models.Product>>
+  nameWithType.vb: Task(Of ActionResult(Of Product))
+  fullName.vb: System.Threading.Tasks.Task(Of Microsoft.AspNetCore.Mvc.ActionResult(Of CaloriesCounterAPI.Models.Product))
+  name.vb: Task(Of ActionResult(Of Product))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: Microsoft.AspNetCore.Mvc.ActionResult`1
+    name: ActionResult
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.actionresult-1
+  - name: <
+  - uid: CaloriesCounterAPI.Models.Product
+    name: Product
+    href: CaloriesCounterAPI.Models.Product.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Microsoft.AspNetCore.Mvc.ActionResult`1
+    name: ActionResult
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.actionresult-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CaloriesCounterAPI.Models.Product
+    name: Product
+    href: CaloriesCounterAPI.Models.Product.html
+  - name: )
+  - name: )
+- uid: CaloriesCounterAPI.Controllers.ProductController.PostNewProduct*
+  commentId: Overload:CaloriesCounterAPI.Controllers.ProductController.PostNewProduct
+  href: CaloriesCounterAPI.Controllers.ProductController.html#CaloriesCounterAPI_Controllers_ProductController_PostNewProduct_CaloriesCounterAPI_DTO_CreateProductDTO_
+  name: PostNewProduct
+  nameWithType: ProductController.PostNewProduct
+  fullName: CaloriesCounterAPI.Controllers.ProductController.PostNewProduct
+- uid: CaloriesCounterAPI.DTO.CreateProductDTO
+  commentId: T:CaloriesCounterAPI.DTO.CreateProductDTO
+  parent: CaloriesCounterAPI.DTO
+  href: CaloriesCounterAPI.DTO.CreateProductDTO.html
+  name: CreateProductDTO
+  nameWithType: CreateProductDTO
+  fullName: CaloriesCounterAPI.DTO.CreateProductDTO
+- uid: CaloriesCounterAPI.DTO
+  commentId: N:CaloriesCounterAPI.DTO
+  href: CaloriesCounterAPI.html
+  name: CaloriesCounterAPI.DTO
+  nameWithType: CaloriesCounterAPI.DTO
+  fullName: CaloriesCounterAPI.DTO
+  spec.csharp:
+  - uid: CaloriesCounterAPI
+    name: CaloriesCounterAPI
+    href: CaloriesCounterAPI.html
+  - name: .
+  - uid: CaloriesCounterAPI.DTO
+    name: DTO
+    href: CaloriesCounterAPI.DTO.html
+  spec.vb:
+  - uid: CaloriesCounterAPI
+    name: CaloriesCounterAPI
+    href: CaloriesCounterAPI.html
+  - name: .
+  - uid: CaloriesCounterAPI.DTO
+    name: DTO
+    href: CaloriesCounterAPI.DTO.html
+- uid: CaloriesCounterAPI.Controllers.ProductController.SearchProductByName*
+  commentId: Overload:CaloriesCounterAPI.Controllers.ProductController.SearchProductByName
+  href: CaloriesCounterAPI.Controllers.ProductController.html#CaloriesCounterAPI_Controllers_ProductController_SearchProductByName_System_String_
+  name: SearchProductByName
+  nameWithType: ProductController.SearchProductByName
+  fullName: CaloriesCounterAPI.Controllers.ProductController.SearchProductByName
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: CaloriesCounterAPI.Controllers.ProductController.DeleteProductById*
+  commentId: Overload:CaloriesCounterAPI.Controllers.ProductController.DeleteProductById
+  href: CaloriesCounterAPI.Controllers.ProductController.html#CaloriesCounterAPI_Controllers_ProductController_DeleteProductById_System_Int32_
+  name: DeleteProductById
+  nameWithType: ProductController.DeleteProductById
+  fullName: CaloriesCounterAPI.Controllers.ProductController.DeleteProductById
+- uid: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult}
+  commentId: T:System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<ActionResult>
+  nameWithType: Task<ActionResult>
+  fullName: System.Threading.Tasks.Task<Microsoft.AspNetCore.Mvc.ActionResult>
+  nameWithType.vb: Task(Of ActionResult)
+  fullName.vb: System.Threading.Tasks.Task(Of Microsoft.AspNetCore.Mvc.ActionResult)
+  name.vb: Task(Of ActionResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: Microsoft.AspNetCore.Mvc.ActionResult
+    name: ActionResult
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.actionresult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Microsoft.AspNetCore.Mvc.ActionResult
+    name: ActionResult
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.actionresult
+  - name: )

@@ -5,13 +5,16 @@ items:
   id: Meal
   parent: CaloriesCounterAPI.Models
   children:
-  - CaloriesCounterAPI.Models.Meal.AmmoutOfProduct
+  - CaloriesCounterAPI.Models.Meal.AmountOfProduct
+  - CaloriesCounterAPI.Models.Meal.CalculateKcalForMeal
+  - CaloriesCounterAPI.Models.Meal.CarbsForMeal
   - CaloriesCounterAPI.Models.Meal.Date
+  - CaloriesCounterAPI.Models.Meal.FatForMeal
   - CaloriesCounterAPI.Models.Meal.Id
   - CaloriesCounterAPI.Models.Meal.KcalForMeal
   - CaloriesCounterAPI.Models.Meal.Products
+  - CaloriesCounterAPI.Models.Meal.ProteinForMeal
   - CaloriesCounterAPI.Models.Meal.Type
-  - CaloriesCounterAPI.Models.Meal.calculateKcalForMeal
   langs:
   - csharp
   - vb
@@ -22,14 +25,16 @@ items:
   source:
     remote:
       path: CaloriesCounterAPI/Models/Meal.cs
-      branch: Documentation
+      branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: Meal
     path: CaloriesCounterAPI/Models/Meal.cs
-    startLine: 10
+    startLine: 17
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Models
+  summary: Represents a meal in the calorie counter system.
+  example: []
   syntax:
     content: public class Meal
     content.vb: Public Class Meal
@@ -57,14 +62,16 @@ items:
   source:
     remote:
       path: CaloriesCounterAPI/Models/Meal.cs
-      branch: Documentation
+      branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: Id
     path: CaloriesCounterAPI/Models/Meal.cs
-    startLine: 12
+    startLine: 22
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Models
+  summary: Gets or sets the unique identifier of the meal.
+  example: []
   syntax:
     content: public int Id { get; set; }
     parameters: []
@@ -86,14 +93,16 @@ items:
   source:
     remote:
       path: CaloriesCounterAPI/Models/Meal.cs
-      branch: Documentation
+      branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: Type
     path: CaloriesCounterAPI/Models/Meal.cs
-    startLine: 14
+    startLine: 27
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Models
+  summary: Gets or sets the type of the meal (e.g., Breakfast, Dinner, Supper).
+  example: []
   syntax:
     content: public MealType Type { get; set; }
     parameters: []
@@ -115,14 +124,16 @@ items:
   source:
     remote:
       path: CaloriesCounterAPI/Models/Meal.cs
-      branch: Documentation
+      branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: Date
     path: CaloriesCounterAPI/Models/Meal.cs
-    startLine: 16
+    startLine: 32
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Models
+  summary: Gets or sets the date of the meal.
+  example: []
   syntax:
     content: public DateOnly Date { get; set; }
     parameters: []
@@ -144,14 +155,16 @@ items:
   source:
     remote:
       path: CaloriesCounterAPI/Models/Meal.cs
-      branch: Documentation
+      branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: Products
     path: CaloriesCounterAPI/Models/Meal.cs
-    startLine: 17
+    startLine: 37
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Models
+  summary: Gets or sets the list of products included in the meal.
+  example: []
   syntax:
     content: public virtual ICollection<Product>? Products { get; set; }
     parameters: []
@@ -159,35 +172,37 @@ items:
       type: System.Collections.Generic.ICollection{CaloriesCounterAPI.Models.Product}
     content.vb: Public Overridable Property Products As ICollection(Of Product)
   overload: CaloriesCounterAPI.Models.Meal.Products*
-- uid: CaloriesCounterAPI.Models.Meal.AmmoutOfProduct
-  commentId: P:CaloriesCounterAPI.Models.Meal.AmmoutOfProduct
-  id: AmmoutOfProduct
+- uid: CaloriesCounterAPI.Models.Meal.AmountOfProduct
+  commentId: P:CaloriesCounterAPI.Models.Meal.AmountOfProduct
+  id: AmountOfProduct
   parent: CaloriesCounterAPI.Models.Meal
   langs:
   - csharp
   - vb
-  name: AmmoutOfProduct
-  nameWithType: Meal.AmmoutOfProduct
-  fullName: CaloriesCounterAPI.Models.Meal.AmmoutOfProduct
+  name: AmountOfProduct
+  nameWithType: Meal.AmountOfProduct
+  fullName: CaloriesCounterAPI.Models.Meal.AmountOfProduct
   type: Property
   source:
     remote:
       path: CaloriesCounterAPI/Models/Meal.cs
-      branch: Documentation
+      branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
-    id: AmmoutOfProduct
+    id: AmountOfProduct
     path: CaloriesCounterAPI/Models/Meal.cs
-    startLine: 19
+    startLine: 42
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Models
+  summary: Gets or sets the amount of each product in the meal.
+  example: []
   syntax:
-    content: public List<int>? AmmoutOfProduct { get; set; }
+    content: public List<int>? AmountOfProduct { get; set; }
     parameters: []
     return:
       type: System.Collections.Generic.List{System.Int32}
-    content.vb: Public Property AmmoutOfProduct As List(Of Integer)
-  overload: CaloriesCounterAPI.Models.Meal.AmmoutOfProduct*
+    content.vb: Public Property AmountOfProduct As List(Of Integer)
+  overload: CaloriesCounterAPI.Models.Meal.AmountOfProduct*
 - uid: CaloriesCounterAPI.Models.Meal.KcalForMeal
   commentId: P:CaloriesCounterAPI.Models.Meal.KcalForMeal
   id: KcalForMeal
@@ -202,14 +217,16 @@ items:
   source:
     remote:
       path: CaloriesCounterAPI/Models/Meal.cs
-      branch: Documentation
+      branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: KcalForMeal
     path: CaloriesCounterAPI/Models/Meal.cs
-    startLine: 21
+    startLine: 47
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Models
+  summary: Gets or sets the total calories for the meal.
+  example: []
   syntax:
     content: public int KcalForMeal { get; set; }
     parameters: []
@@ -217,34 +234,130 @@ items:
       type: System.Int32
     content.vb: Public Property KcalForMeal As Integer
   overload: CaloriesCounterAPI.Models.Meal.KcalForMeal*
-- uid: CaloriesCounterAPI.Models.Meal.calculateKcalForMeal
-  commentId: M:CaloriesCounterAPI.Models.Meal.calculateKcalForMeal
-  id: calculateKcalForMeal
+- uid: CaloriesCounterAPI.Models.Meal.FatForMeal
+  commentId: P:CaloriesCounterAPI.Models.Meal.FatForMeal
+  id: FatForMeal
   parent: CaloriesCounterAPI.Models.Meal
   langs:
   - csharp
   - vb
-  name: calculateKcalForMeal()
-  nameWithType: Meal.calculateKcalForMeal()
-  fullName: CaloriesCounterAPI.Models.Meal.calculateKcalForMeal()
+  name: FatForMeal
+  nameWithType: Meal.FatForMeal
+  fullName: CaloriesCounterAPI.Models.Meal.FatForMeal
+  type: Property
+  source:
+    remote:
+      path: CaloriesCounterAPI/Models/Meal.cs
+      branch: master
+      repo: https://github.com/jakub5016/CaloriesCounterBackend.git
+    id: FatForMeal
+    path: CaloriesCounterAPI/Models/Meal.cs
+    startLine: 52
+  assemblies:
+  - CaloriesCounterAPI
+  namespace: CaloriesCounterAPI.Models
+  summary: Gets or sets the total fat content for the meal.
+  example: []
+  syntax:
+    content: public int FatForMeal { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property FatForMeal As Integer
+  overload: CaloriesCounterAPI.Models.Meal.FatForMeal*
+- uid: CaloriesCounterAPI.Models.Meal.CarbsForMeal
+  commentId: P:CaloriesCounterAPI.Models.Meal.CarbsForMeal
+  id: CarbsForMeal
+  parent: CaloriesCounterAPI.Models.Meal
+  langs:
+  - csharp
+  - vb
+  name: CarbsForMeal
+  nameWithType: Meal.CarbsForMeal
+  fullName: CaloriesCounterAPI.Models.Meal.CarbsForMeal
+  type: Property
+  source:
+    remote:
+      path: CaloriesCounterAPI/Models/Meal.cs
+      branch: master
+      repo: https://github.com/jakub5016/CaloriesCounterBackend.git
+    id: CarbsForMeal
+    path: CaloriesCounterAPI/Models/Meal.cs
+    startLine: 57
+  assemblies:
+  - CaloriesCounterAPI
+  namespace: CaloriesCounterAPI.Models
+  summary: Gets or sets the total carbohydrates content for the meal.
+  example: []
+  syntax:
+    content: public int CarbsForMeal { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property CarbsForMeal As Integer
+  overload: CaloriesCounterAPI.Models.Meal.CarbsForMeal*
+- uid: CaloriesCounterAPI.Models.Meal.ProteinForMeal
+  commentId: P:CaloriesCounterAPI.Models.Meal.ProteinForMeal
+  id: ProteinForMeal
+  parent: CaloriesCounterAPI.Models.Meal
+  langs:
+  - csharp
+  - vb
+  name: ProteinForMeal
+  nameWithType: Meal.ProteinForMeal
+  fullName: CaloriesCounterAPI.Models.Meal.ProteinForMeal
+  type: Property
+  source:
+    remote:
+      path: CaloriesCounterAPI/Models/Meal.cs
+      branch: master
+      repo: https://github.com/jakub5016/CaloriesCounterBackend.git
+    id: ProteinForMeal
+    path: CaloriesCounterAPI/Models/Meal.cs
+    startLine: 62
+  assemblies:
+  - CaloriesCounterAPI
+  namespace: CaloriesCounterAPI.Models
+  summary: Gets or sets the total protein content for the meal.
+  example: []
+  syntax:
+    content: public int ProteinForMeal { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property ProteinForMeal As Integer
+  overload: CaloriesCounterAPI.Models.Meal.ProteinForMeal*
+- uid: CaloriesCounterAPI.Models.Meal.CalculateKcalForMeal
+  commentId: M:CaloriesCounterAPI.Models.Meal.CalculateKcalForMeal
+  id: CalculateKcalForMeal
+  parent: CaloriesCounterAPI.Models.Meal
+  langs:
+  - csharp
+  - vb
+  name: CalculateKcalForMeal()
+  nameWithType: Meal.CalculateKcalForMeal()
+  fullName: CaloriesCounterAPI.Models.Meal.CalculateKcalForMeal()
   type: Method
   source:
     remote:
       path: CaloriesCounterAPI/Models/Meal.cs
-      branch: Documentation
+      branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
-    id: calculateKcalForMeal
+    id: CalculateKcalForMeal
     path: CaloriesCounterAPI/Models/Meal.cs
-    startLine: 23
+    startLine: 68
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Models
+  summary: Calculates the total nutritional values for the meal.
+  example: []
   syntax:
-    content: public bool calculateKcalForMeal()
+    content: public bool CalculateKcalForMeal()
     return:
       type: System.Boolean
-    content.vb: Public Function calculateKcalForMeal() As Boolean
-  overload: CaloriesCounterAPI.Models.Meal.calculateKcalForMeal*
+      description: True if calculation was successful, otherwise false.
+    content.vb: Public Function CalculateKcalForMeal() As Boolean
+  overload: CaloriesCounterAPI.Models.Meal.CalculateKcalForMeal*
 references:
 - uid: CaloriesCounterAPI.Models
   commentId: N:CaloriesCounterAPI.Models
@@ -653,12 +766,12 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-- uid: CaloriesCounterAPI.Models.Meal.AmmoutOfProduct*
-  commentId: Overload:CaloriesCounterAPI.Models.Meal.AmmoutOfProduct
-  href: CaloriesCounterAPI.Models.Meal.html#CaloriesCounterAPI_Models_Meal_AmmoutOfProduct
-  name: AmmoutOfProduct
-  nameWithType: Meal.AmmoutOfProduct
-  fullName: CaloriesCounterAPI.Models.Meal.AmmoutOfProduct
+- uid: CaloriesCounterAPI.Models.Meal.AmountOfProduct*
+  commentId: Overload:CaloriesCounterAPI.Models.Meal.AmountOfProduct
+  href: CaloriesCounterAPI.Models.Meal.html#CaloriesCounterAPI_Models_Meal_AmountOfProduct
+  name: AmountOfProduct
+  nameWithType: Meal.AmountOfProduct
+  fullName: CaloriesCounterAPI.Models.Meal.AmountOfProduct
 - uid: System.Collections.Generic.List{System.Int32}
   commentId: T:System.Collections.Generic.List{System.Int32}
   parent: System.Collections.Generic
@@ -728,12 +841,30 @@ references:
   name: KcalForMeal
   nameWithType: Meal.KcalForMeal
   fullName: CaloriesCounterAPI.Models.Meal.KcalForMeal
-- uid: CaloriesCounterAPI.Models.Meal.calculateKcalForMeal*
-  commentId: Overload:CaloriesCounterAPI.Models.Meal.calculateKcalForMeal
-  href: CaloriesCounterAPI.Models.Meal.html#CaloriesCounterAPI_Models_Meal_calculateKcalForMeal
-  name: calculateKcalForMeal
-  nameWithType: Meal.calculateKcalForMeal
-  fullName: CaloriesCounterAPI.Models.Meal.calculateKcalForMeal
+- uid: CaloriesCounterAPI.Models.Meal.FatForMeal*
+  commentId: Overload:CaloriesCounterAPI.Models.Meal.FatForMeal
+  href: CaloriesCounterAPI.Models.Meal.html#CaloriesCounterAPI_Models_Meal_FatForMeal
+  name: FatForMeal
+  nameWithType: Meal.FatForMeal
+  fullName: CaloriesCounterAPI.Models.Meal.FatForMeal
+- uid: CaloriesCounterAPI.Models.Meal.CarbsForMeal*
+  commentId: Overload:CaloriesCounterAPI.Models.Meal.CarbsForMeal
+  href: CaloriesCounterAPI.Models.Meal.html#CaloriesCounterAPI_Models_Meal_CarbsForMeal
+  name: CarbsForMeal
+  nameWithType: Meal.CarbsForMeal
+  fullName: CaloriesCounterAPI.Models.Meal.CarbsForMeal
+- uid: CaloriesCounterAPI.Models.Meal.ProteinForMeal*
+  commentId: Overload:CaloriesCounterAPI.Models.Meal.ProteinForMeal
+  href: CaloriesCounterAPI.Models.Meal.html#CaloriesCounterAPI_Models_Meal_ProteinForMeal
+  name: ProteinForMeal
+  nameWithType: Meal.ProteinForMeal
+  fullName: CaloriesCounterAPI.Models.Meal.ProteinForMeal
+- uid: CaloriesCounterAPI.Models.Meal.CalculateKcalForMeal*
+  commentId: Overload:CaloriesCounterAPI.Models.Meal.CalculateKcalForMeal
+  href: CaloriesCounterAPI.Models.Meal.html#CaloriesCounterAPI_Models_Meal_CalculateKcalForMeal
+  name: CalculateKcalForMeal
+  nameWithType: Meal.CalculateKcalForMeal
+  fullName: CaloriesCounterAPI.Models.Meal.CalculateKcalForMeal
 - uid: System.Boolean
   commentId: T:System.Boolean
   parent: System

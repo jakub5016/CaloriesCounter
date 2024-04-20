@@ -7,6 +7,7 @@ items:
   - CaloriesCounterAPI.DTO.CreateMealDTO
   - CaloriesCounterAPI.DTO.CreateProductDTO
   - CaloriesCounterAPI.DTO.EditMealDTO
+  - CaloriesCounterAPI.DTO.UserDTO
   langs:
   - csharp
   - vb
@@ -38,6 +39,13 @@ references:
   name: EditMealDTO
   nameWithType: EditMealDTO
   fullName: CaloriesCounterAPI.DTO.EditMealDTO
+- uid: CaloriesCounterAPI.DTO.UserDTO
+  commentId: T:CaloriesCounterAPI.DTO.UserDTO
+  parent: CaloriesCounterAPI.DTO
+  href: CaloriesCounterAPI.DTO.UserDTO.html
+  name: UserDTO
+  nameWithType: UserDTO
+  fullName: CaloriesCounterAPI.DTO.UserDTO
 - uid: CaloriesCounterAPI.DTO
   commentId: N:CaloriesCounterAPI.DTO
   href: CaloriesCounterAPI.html

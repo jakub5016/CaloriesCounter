@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: CaloriesCounterAPI.Test.Controllers
+  commentId: N:CaloriesCounterAPI.Test.Controllers
+  id: CaloriesCounterAPI.Test.Controllers
+  children:
+  - CaloriesCounterAPI.Test.Controllers.MealsControllerTest
+  langs:
+  - csharp
+  - vb
+  name: CaloriesCounterAPI.Test.Controllers
+  nameWithType: CaloriesCounterAPI.Test.Controllers
+  fullName: CaloriesCounterAPI.Test.Controllers
+  type: Namespace
+  assemblies:
+  - CaloriesCounterAPI.Test
+references:
+- uid: CaloriesCounterAPI.Test.Controllers.MealsControllerTest
+  commentId: T:CaloriesCounterAPI.Test.Controllers.MealsControllerTest
+  href: CaloriesCounterAPI.Test.Controllers.MealsControllerTest.html
+  name: MealsControllerTest
+  nameWithType: MealsControllerTest
+  fullName: CaloriesCounterAPI.Test.Controllers.MealsControllerTest

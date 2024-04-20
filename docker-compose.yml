@@ -1,0 +1,32 @@
+services:
+  db:
+    image: postgres
+    restart: always
+
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+    
+    healthcheck:
+      test: "pg_isready"
+      interval: 10s
+      timeout: 3s
+      retries: 3
+    
+    ports:
+        - 5432:5432
+
+
+  frontend:
+    build: ./Frontend
+    depends_on:
+      - backend
+    ports:
+        - 5173:5173
+
+  backend:
+    build: ./CaloriesCounterAPI
+    depends_on:
+      - db
+    ports:
+        - 5287:5287

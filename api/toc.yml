@@ -10,8 +10,12 @@ items:
   items:
   - uid: CaloriesCounterAPI.Controllers.MealsController
     name: MealsController
-  - uid: CaloriesCounterAPI.Controllers.ProductControler
-    name: ProductControler
+  - uid: CaloriesCounterAPI.Controllers.NutritionAPIController
+    name: NutritionAPIController
+  - uid: CaloriesCounterAPI.Controllers.ProductController
+    name: ProductController
+  - uid: CaloriesCounterAPI.Controllers.UserController
+    name: UserController
   - uid: CaloriesCounterAPI.Controllers.WeatherForecastController
     name: WeatherForecastController
 - uid: CaloriesCounterAPI.DTO
@@ -23,6 +27,8 @@ items:
     name: CreateProductDTO
   - uid: CaloriesCounterAPI.DTO.EditMealDTO
     name: EditMealDTO
+  - uid: CaloriesCounterAPI.DTO.UserDTO
+    name: UserDTO
 - uid: CaloriesCounterAPI.Data
   name: CaloriesCounterAPI.Data
   items:
@@ -31,8 +37,16 @@ items:
 - uid: CaloriesCounterAPI.Migrations
   name: CaloriesCounterAPI.Migrations
   items:
-  - uid: CaloriesCounterAPI.Migrations.INIT
-    name: INIT
+  - uid: CaloriesCounterAPI.Migrations.AAA
+    name: AAA
+  - uid: CaloriesCounterAPI.Migrations.Init
+    name: Init
+  - uid: CaloriesCounterAPI.Migrations.Initial
+    name: Initial
+  - uid: CaloriesCounterAPI.Migrations.User
+    name: User
+  - uid: CaloriesCounterAPI.Migrations.catbs
+    name: catbs
 - uid: CaloriesCounterAPI.Models
   name: CaloriesCounterAPI.Models
   items:
@@ -42,4 +56,11 @@ items:
     name: MealType
   - uid: CaloriesCounterAPI.Models.Product
     name: Product
+  - uid: CaloriesCounterAPI.Models.User
+    name: User
+- uid: CaloriesCounterAPI.Test.Controllers
+  name: CaloriesCounterAPI.Test.Controllers
+  items:
+  - uid: CaloriesCounterAPI.Test.Controllers.MealsControllerTest
+    name: MealsControllerTest
 memberLayout: SamePage

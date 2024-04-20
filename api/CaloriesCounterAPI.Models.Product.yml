@@ -22,14 +22,16 @@ items:
   source:
     remote:
       path: CaloriesCounterAPI/Models/Product.cs
-      branch: Documentation
+      branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: Product
     path: CaloriesCounterAPI/Models/Product.cs
-    startLine: 6
+    startLine: 10
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Models
+  summary: Represents a product in the calorie counter system.
+  example: []
   syntax:
     content: public class Product
     content.vb: Public Class Product
@@ -57,14 +59,16 @@ items:
   source:
     remote:
       path: CaloriesCounterAPI/Models/Product.cs
-      branch: Documentation
+      branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: ID
     path: CaloriesCounterAPI/Models/Product.cs
-    startLine: 8
+    startLine: 15
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Models
+  summary: Gets or sets the unique identifier of the product.
+  example: []
   syntax:
     content: public int ID { get; set; }
     parameters: []
@@ -86,14 +90,16 @@ items:
   source:
     remote:
       path: CaloriesCounterAPI/Models/Product.cs
-      branch: Documentation
+      branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: Name
     path: CaloriesCounterAPI/Models/Product.cs
-    startLine: 9
+    startLine: 20
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Models
+  summary: Gets or sets the name of the product.
+  example: []
   syntax:
     content: public string Name { get; set; }
     parameters: []
@@ -115,14 +121,16 @@ items:
   source:
     remote:
       path: CaloriesCounterAPI/Models/Product.cs
-      branch: Documentation
+      branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: Kcal
     path: CaloriesCounterAPI/Models/Product.cs
-    startLine: 10
+    startLine: 25
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Models
+  summary: Gets or sets the calorie content of the product.
+  example: []
   syntax:
     content: public int Kcal { get; set; }
     parameters: []
@@ -144,14 +152,16 @@ items:
   source:
     remote:
       path: CaloriesCounterAPI/Models/Product.cs
-      branch: Documentation
+      branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: Fat
     path: CaloriesCounterAPI/Models/Product.cs
-    startLine: 12
+    startLine: 30
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Models
+  summary: Gets or sets the fat content of the product.
+  example: []
   syntax:
     content: public int Fat { get; set; }
     parameters: []
@@ -173,14 +183,16 @@ items:
   source:
     remote:
       path: CaloriesCounterAPI/Models/Product.cs
-      branch: Documentation
+      branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: Carbs
     path: CaloriesCounterAPI/Models/Product.cs
-    startLine: 14
+    startLine: 35
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Models
+  summary: Gets or sets the carbohydrates content of the product.
+  example: []
   syntax:
     content: public int Carbs { get; set; }
     parameters: []
@@ -202,14 +214,16 @@ items:
   source:
     remote:
       path: CaloriesCounterAPI/Models/Product.cs
-      branch: Documentation
+      branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: Protein
     path: CaloriesCounterAPI/Models/Product.cs
-    startLine: 16
+    startLine: 40
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Models
+  summary: Gets or sets the protein content of the product.
+  example: []
   syntax:
     content: public int Protein { get; set; }
     parameters: []
@@ -231,14 +245,16 @@ items:
   source:
     remote:
       path: CaloriesCounterAPI/Models/Product.cs
-      branch: Documentation
+      branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: Meals
     path: CaloriesCounterAPI/Models/Product.cs
-    startLine: 17
+    startLine: 45
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Models
+  summary: Gets or sets the meals associated with the product.
+  example: []
   syntax:
     content: >-
       [JsonIgnore]

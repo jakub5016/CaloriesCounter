@@ -1,27 +1,27 @@
 ### YamlMime:ManagedReference
 items:
-- uid: CaloriesCounterAPI.Migrations.Init
-  commentId: T:CaloriesCounterAPI.Migrations.Init
-  id: Init
+- uid: CaloriesCounterAPI.Migrations.catbs
+  commentId: T:CaloriesCounterAPI.Migrations.catbs
+  id: catbs
   parent: CaloriesCounterAPI.Migrations
   children:
-  - CaloriesCounterAPI.Migrations.Init.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
-  - CaloriesCounterAPI.Migrations.Init.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
-  - CaloriesCounterAPI.Migrations.Init.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  - CaloriesCounterAPI.Migrations.catbs.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  - CaloriesCounterAPI.Migrations.catbs.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  - CaloriesCounterAPI.Migrations.catbs.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
   langs:
   - csharp
   - vb
-  name: Init
-  nameWithType: Init
-  fullName: CaloriesCounterAPI.Migrations.Init
+  name: catbs
+  nameWithType: catbs
+  fullName: CaloriesCounterAPI.Migrations.catbs
   type: Class
   source:
     remote:
-      path: CaloriesCounterAPI/Migrations/20240415152747_Init.Designer.cs
+      path: CaloriesCounterAPI/Migrations/20240411101818_catbs.Designer.cs
       branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
-    id: Init
-    path: CaloriesCounterAPI/Migrations/20240415152747_Init.Designer.cs
+    id: catbs
+    path: CaloriesCounterAPI/Migrations/20240411101818_catbs.Designer.cs
     startLine: 14
   assemblies:
   - CaloriesCounterAPI
@@ -33,15 +33,15 @@ items:
     content: >-
       [DbContext(typeof(CaloriesCounterAPIContext))]
 
-      [Migration("20240415152747_Init")]
+      [Migration("20240411101818_catbs")]
 
-      public class Init : Migration
+      public class catbs : Migration
     content.vb: >-
       <DbContext(GetType(CaloriesCounterAPIContext))>
 
-      <Migration("20240415152747_Init")>
+      <Migration("20240411101818_catbs")>
 
-      Public Class Init Inherits Migration
+      Public Class catbs Inherits Migration
   inheritance:
   - System.Object
   - Microsoft.EntityFrameworkCore.Migrations.Migration
@@ -68,25 +68,25 @@ items:
     ctor: Microsoft.EntityFrameworkCore.Migrations.MigrationAttribute.#ctor(System.String)
     arguments:
     - type: System.String
-      value: 20240415152747_Init
-- uid: CaloriesCounterAPI.Migrations.Init.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
-  commentId: M:CaloriesCounterAPI.Migrations.Init.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+      value: 20240411101818_catbs
+- uid: CaloriesCounterAPI.Migrations.catbs.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  commentId: M:CaloriesCounterAPI.Migrations.catbs.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
   id: Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
-  parent: CaloriesCounterAPI.Migrations.Init
+  parent: CaloriesCounterAPI.Migrations.catbs
   langs:
   - csharp
   - vb
   name: Up(MigrationBuilder)
-  nameWithType: Init.Up(MigrationBuilder)
-  fullName: CaloriesCounterAPI.Migrations.Init.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  nameWithType: catbs.Up(MigrationBuilder)
+  fullName: CaloriesCounterAPI.Migrations.catbs.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
   type: Method
   source:
     remote:
-      path: CaloriesCounterAPI/Migrations/20240415152747_Init.cs
+      path: CaloriesCounterAPI/Migrations/20240411101818_catbs.cs
       branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: Up
-    path: CaloriesCounterAPI/Migrations/20240415152747_Init.cs
+    path: CaloriesCounterAPI/Migrations/20240411101818_catbs.cs
     startLine: 10
   assemblies:
   - CaloriesCounterAPI
@@ -112,25 +112,25 @@ items:
       description: The <xref href="Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder" data-throw-if-not-resolved="false"></xref> that will build the operations.
     content.vb: Protected Overrides Sub Up(migrationBuilder As MigrationBuilder)
   overridden: Microsoft.EntityFrameworkCore.Migrations.Migration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
-  overload: CaloriesCounterAPI.Migrations.Init.Up*
-- uid: CaloriesCounterAPI.Migrations.Init.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
-  commentId: M:CaloriesCounterAPI.Migrations.Init.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  overload: CaloriesCounterAPI.Migrations.catbs.Up*
+- uid: CaloriesCounterAPI.Migrations.catbs.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  commentId: M:CaloriesCounterAPI.Migrations.catbs.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
   id: Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
-  parent: CaloriesCounterAPI.Migrations.Init
+  parent: CaloriesCounterAPI.Migrations.catbs
   langs:
   - csharp
   - vb
   name: Down(MigrationBuilder)
-  nameWithType: Init.Down(MigrationBuilder)
-  fullName: CaloriesCounterAPI.Migrations.Init.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  nameWithType: catbs.Down(MigrationBuilder)
+  fullName: CaloriesCounterAPI.Migrations.catbs.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
   type: Method
   source:
     remote:
-      path: CaloriesCounterAPI/Migrations/20240415152747_Init.cs
+      path: CaloriesCounterAPI/Migrations/20240411101818_catbs.cs
       branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: Down
-    path: CaloriesCounterAPI/Migrations/20240415152747_Init.cs
+    path: CaloriesCounterAPI/Migrations/20240411101818_catbs.cs
     startLine: 35
   assemblies:
   - CaloriesCounterAPI
@@ -158,25 +158,25 @@ items:
       description: The <xref href="Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder" data-throw-if-not-resolved="false"></xref> that will build the operations.
     content.vb: Protected Overrides Sub Down(migrationBuilder As MigrationBuilder)
   overridden: Microsoft.EntityFrameworkCore.Migrations.Migration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
-  overload: CaloriesCounterAPI.Migrations.Init.Down*
-- uid: CaloriesCounterAPI.Migrations.Init.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
-  commentId: M:CaloriesCounterAPI.Migrations.Init.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  overload: CaloriesCounterAPI.Migrations.catbs.Down*
+- uid: CaloriesCounterAPI.Migrations.catbs.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  commentId: M:CaloriesCounterAPI.Migrations.catbs.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
   id: BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
-  parent: CaloriesCounterAPI.Migrations.Init
+  parent: CaloriesCounterAPI.Migrations.catbs
   langs:
   - csharp
   - vb
   name: BuildTargetModel(ModelBuilder)
-  nameWithType: Init.BuildTargetModel(ModelBuilder)
-  fullName: CaloriesCounterAPI.Migrations.Init.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  nameWithType: catbs.BuildTargetModel(ModelBuilder)
+  fullName: CaloriesCounterAPI.Migrations.catbs.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
   type: Method
   source:
     remote:
-      path: CaloriesCounterAPI/Migrations/20240415152747_Init.Designer.cs
+      path: CaloriesCounterAPI/Migrations/20240411101818_catbs.Designer.cs
       branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: BuildTargetModel
-    path: CaloriesCounterAPI/Migrations/20240415152747_Init.Designer.cs
+    path: CaloriesCounterAPI/Migrations/20240411101818_catbs.Designer.cs
     startLine: 19
   assemblies:
   - CaloriesCounterAPI
@@ -192,7 +192,7 @@ items:
       description: The <xref href="Microsoft.EntityFrameworkCore.ModelBuilder" data-throw-if-not-resolved="false"></xref> to use to build the model.
     content.vb: Protected Overrides Sub BuildTargetModel(modelBuilder As ModelBuilder)
   overridden: Microsoft.EntityFrameworkCore.Migrations.Migration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
-  overload: CaloriesCounterAPI.Migrations.Init.BuildTargetModel*
+  overload: CaloriesCounterAPI.Migrations.catbs.BuildTargetModel*
 references:
 - uid: CaloriesCounterAPI.Migrations
   commentId: N:CaloriesCounterAPI.Migrations
@@ -576,12 +576,12 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.migrations.migrationbuilder
   - name: )
-- uid: CaloriesCounterAPI.Migrations.Init.Up*
-  commentId: Overload:CaloriesCounterAPI.Migrations.Init.Up
-  href: CaloriesCounterAPI.Migrations.Init.html#CaloriesCounterAPI_Migrations_Init_Up_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder_
+- uid: CaloriesCounterAPI.Migrations.catbs.Up*
+  commentId: Overload:CaloriesCounterAPI.Migrations.catbs.Up
+  href: CaloriesCounterAPI.Migrations.catbs.html#CaloriesCounterAPI_Migrations_catbs_Up_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder_
   name: Up
-  nameWithType: Init.Up
-  fullName: CaloriesCounterAPI.Migrations.Init.Up
+  nameWithType: catbs.Up
+  fullName: CaloriesCounterAPI.Migrations.catbs.Up
 - uid: Microsoft.EntityFrameworkCore.Migrations.Migration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
   commentId: M:Microsoft.EntityFrameworkCore.Migrations.Migration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
   parent: Microsoft.EntityFrameworkCore.Migrations.Migration
@@ -612,12 +612,12 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.migrations.migrationbuilder
   - name: )
-- uid: CaloriesCounterAPI.Migrations.Init.Down*
-  commentId: Overload:CaloriesCounterAPI.Migrations.Init.Down
-  href: CaloriesCounterAPI.Migrations.Init.html#CaloriesCounterAPI_Migrations_Init_Down_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder_
+- uid: CaloriesCounterAPI.Migrations.catbs.Down*
+  commentId: Overload:CaloriesCounterAPI.Migrations.catbs.Down
+  href: CaloriesCounterAPI.Migrations.catbs.html#CaloriesCounterAPI_Migrations_catbs_Down_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder_
   name: Down
-  nameWithType: Init.Down
-  fullName: CaloriesCounterAPI.Migrations.Init.Down
+  nameWithType: catbs.Down
+  fullName: CaloriesCounterAPI.Migrations.catbs.Down
 - uid: Microsoft.EntityFrameworkCore.ModelBuilder
   commentId: T:Microsoft.EntityFrameworkCore.ModelBuilder
   parent: Microsoft.EntityFrameworkCore
@@ -656,12 +656,12 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.modelbuilder
   - name: )
-- uid: CaloriesCounterAPI.Migrations.Init.BuildTargetModel*
-  commentId: Overload:CaloriesCounterAPI.Migrations.Init.BuildTargetModel
-  href: CaloriesCounterAPI.Migrations.Init.html#CaloriesCounterAPI_Migrations_Init_BuildTargetModel_Microsoft_EntityFrameworkCore_ModelBuilder_
+- uid: CaloriesCounterAPI.Migrations.catbs.BuildTargetModel*
+  commentId: Overload:CaloriesCounterAPI.Migrations.catbs.BuildTargetModel
+  href: CaloriesCounterAPI.Migrations.catbs.html#CaloriesCounterAPI_Migrations_catbs_BuildTargetModel_Microsoft_EntityFrameworkCore_ModelBuilder_
   name: BuildTargetModel
-  nameWithType: Init.BuildTargetModel
-  fullName: CaloriesCounterAPI.Migrations.Init.BuildTargetModel
+  nameWithType: catbs.BuildTargetModel
+  fullName: CaloriesCounterAPI.Migrations.catbs.BuildTargetModel
 - uid: Microsoft.EntityFrameworkCore
   commentId: N:Microsoft.EntityFrameworkCore
   isExternal: true
