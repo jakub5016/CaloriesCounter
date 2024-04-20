@@ -9,7 +9,7 @@
         "APIKEY": "L2WD+ooD3s7t5QPcO7NqDg==jfhdVSZtAuUcuCyT"
       },
       "dotnetRunMessages": true,
-      "applicationUrl": "http://localhost:5287"
+      "applicationUrl": "https://localhost:7261"
     },
     "https": {
       "commandName": "Project",
@@ -20,7 +20,7 @@
         "APIKEY": "L2WD+ooD3s7t5QPcO7NqDg==jfhdVSZtAuUcuCyT"
       },
       "dotnetRunMessages": true,
-      "applicationUrl": "https://localhost:7261;http://localhost:5287"
+      "applicationUrl": "https://localhost:7261;"
     },
     "IIS Express": {
       "commandName": "IISExpress",
