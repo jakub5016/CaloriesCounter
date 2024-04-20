@@ -45,6 +45,7 @@ public class MealsControllerTest
             .Options;
         using (var context = new CaloriesCounterAPIContext(options))
         {
+            context.Database.EnsureDeleted();
             context.Meal.AddRange(GetTestProducts());
             context.SaveChanges();
         }
@@ -70,7 +71,8 @@ public class MealsControllerTest
             .Options;
         using (var context = new CaloriesCounterAPIContext(options))
         {
-           context.Meal.AddRange(GetTestProducts());
+            context.Database.EnsureDeleted();
+            context.Meal.AddRange(GetTestProducts());
             context.SaveChanges();
         }
 
@@ -95,6 +97,7 @@ public class MealsControllerTest
             .Options;
         using (var context = new CaloriesCounterAPIContext(options))
         {
+            context.Database.EnsureDeleted();
             context.Meal.Add(new Meal { Id = 1 });
             context.SaveChanges();
         }
@@ -118,6 +121,7 @@ public class MealsControllerTest
             .Options;
         using (var context = new CaloriesCounterAPIContext(options))
         {
+            context.Database.EnsureDeleted();
             var meal = new Meal
             {
                 Id = 10,
