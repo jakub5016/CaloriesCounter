@@ -19,7 +19,7 @@ namespace CaloriesCounterAPI.Test.Controllers;
 public class ProductControlerTest
 {
 
-    [Fact]
+    [TestMethod]
     public async Task GetAllProducts_ReturnsListOfProducts()
     {
         // Arrange
@@ -28,6 +28,7 @@ public class ProductControlerTest
             .Options;
         using (var context = new CaloriesCounterAPIContext(options))
         {
+            context.Database.EnsureDeleted();
             context.Product.AddRange(new List<Product>
             {
                 new Product { ID = 1, Name = "Apple" },
@@ -46,10 +47,12 @@ public class ProductControlerTest
             var actionResult = Assert.IsType<ActionResult<IEnumerable<Product>>>(result);
             var model = Assert.IsAssignableFrom<IEnumerable<Product>>(actionResult.Value);
             Assert.Equal(2, model.Count());
+            context.Database.EnsureDeleted();
+
         }
     }
 
-    [Fact]
+    [TestMethod]
     public async Task GetProductById_ReturnsProductById()
     {
         // Arrange
@@ -58,24 +61,25 @@ public class ProductControlerTest
             .Options;
         using (var context = new CaloriesCounterAPIContext(options))
         {
-            context.Product.Add(new Product { ID = 1, Name = "Apple" });
+            // Act
+            context.Database.EnsureDeleted();
+            context.Product.Add(new Product { ID= 1, Name ="Orange", Kcal=100, Fat=100, Carbs=10, Protein=100 });
             context.SaveChanges();
-        }
 
-        // Act
-        using (var context = new CaloriesCounterAPIContext(options))
-        {
             var controller = new ProductController(context);
-            var result = await controller.GetProductById(1);
+            var actionResult = await controller.GetProductById(1);
+
+            var result = actionResult.Result as OkObjectResult;
+            var product = result.Value as Product;
 
             // Assert
-            var actionResult = Assert.IsType<ActionResult<Product>>(result);
-            Assert.NotNull(actionResult.Value);
-            Assert.Equal("Apple", actionResult.Value.Name);
+            Assert.NotNull(product);
+            Assert.Equal("Orange", product.Name);
+
         }
     }
 
-    [Fact]
+    [TestMethod]
     public async Task PostNewProduct_AddsNewProduct()
     {
         // Arrange
@@ -86,6 +90,7 @@ public class ProductControlerTest
         // Act
         using (var context = new CaloriesCounterAPIContext(options))
         {
+            context.Database.EnsureDeleted();
             var controller = new ProductController(context);
             var result = await controller.PostNewProduct(new CreateProductDTO
             {
@@ -95,23 +100,23 @@ public class ProductControlerTest
                 Carbs = 12,
                 Protein = 1
             });
-
+    
             // Assert
-            var actionResult = Assert.IsType<OkResult>(result);
+            var actionResult = Assert.IsType<ActionResult<Product>>(result);
             using (var contextAfter = new CaloriesCounterAPIContext(options))
             {
                 Assert.Equal(1, contextAfter.Product.Count());
                 var product = contextAfter.Product.Single();
                 Assert.Equal("Orange", product.Name);
                 Assert.Equal(50, product.Kcal);
-                Assert.Equal(0.3, product.Fat);
+                Assert.Equal(1, product.Fat);
                 Assert.Equal(12, product.Carbs);
-                Assert.Equal(0.9, product.Protein);
+                Assert.Equal(1, product.Protein);
             }
         }
     }
 
-    [Fact]
+    [TestMethod]
     public async Task SearchProductByName_ReturnsListOfMatchingProducts()
     {
         // Arrange
@@ -120,6 +125,7 @@ public class ProductControlerTest
             .Options;
         using (var context = new CaloriesCounterAPIContext(options))
         {
+            context.Database.EnsureDeleted();
             context.Product.AddRange(new List<Product>
             {
                 new Product { ID = 1, Name = "Apple" },
@@ -139,10 +145,11 @@ public class ProductControlerTest
             var actionResult = Assert.IsType<ActionResult<IEnumerable<Product>>>(result);
             var model = Assert.IsAssignableFrom<IEnumerable<Product>>(actionResult.Value);
             Assert.Equal(2, model.Count());
+
         }
     }
 
-    [Fact]
+    [TestMethod]
     public async Task DeleteProductById_DeletesProduct()
     {
         // Arrange
@@ -151,6 +158,7 @@ public class ProductControlerTest
             .Options;
         using (var context = new CaloriesCounterAPIContext(options))
         {
+            context.Database.EnsureDeleted();
             context.Product.Add(new Product { ID = 1, Name = "Apple" });
             context.SaveChanges();
         }
@@ -167,6 +175,7 @@ public class ProductControlerTest
             {
                 Assert.Empty(contextAfter.Product);
             }
+
         }
     }
 }

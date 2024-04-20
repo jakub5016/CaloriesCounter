@@ -8,7 +8,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace CaloriesCounterAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class Init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -21,8 +21,11 @@ namespace CaloriesCounterAPI.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Type = table.Column<int>(type: "integer", nullable: false),
                     Date = table.Column<DateOnly>(type: "date", nullable: false),
-                    AmmoutOfProduct = table.Column<List<int>>(type: "integer[]", nullable: true),
-                    KcalForMeal = table.Column<int>(type: "integer", nullable: false)
+                    AmountOfProduct = table.Column<List<int>>(type: "integer[]", nullable: true),
+                    KcalForMeal = table.Column<int>(type: "integer", nullable: false),
+                    FatForMeal = table.Column<int>(type: "integer", nullable: false),
+                    CarbsForMeal = table.Column<int>(type: "integer", nullable: false),
+                    ProteinForMeal = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -44,6 +47,24 @@ namespace CaloriesCounterAPI.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Product", x => x.ID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "User",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Weight = table.Column<int>(type: "integer", nullable: false),
+                    Gender = table.Column<bool>(type: "boolean", nullable: false),
+                    Height = table.Column<int>(type: "integer", nullable: false),
+                    Age = table.Column<int>(type: "integer", nullable: false),
+                    BMR = table.Column<int>(type: "integer", nullable: false),
+                    KcalMaintaince = table.Column<int>(type: "integer", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_User", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -81,6 +102,9 @@ namespace CaloriesCounterAPI.Migrations
         {
             migrationBuilder.DropTable(
                 name: "MealProduct");
+
+            migrationBuilder.DropTable(
+                name: "User");
 
             migrationBuilder.DropTable(
                 name: "Meal");

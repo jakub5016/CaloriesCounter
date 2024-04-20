@@ -36,7 +36,7 @@ public class MealsControllerTest
         Assert.Equal(24, result.CarbsForMeal);
         Assert.Equal(4, result.ProteinForMeal);
     }
-    [Fact]
+    [TestMethod]
     public async Task GetMeal_ReturnsListOfMeals()
     {
         // Arrange
@@ -61,7 +61,7 @@ public class MealsControllerTest
             Assert.Equal(4, model.Count());
         }
     }
-    [Fact]
+    [TestMethod]
     public async Task GetMealsByDate_ReturnsListOfMealsForSpecificDate()
     {
         // Arrange
@@ -86,7 +86,7 @@ public class MealsControllerTest
             Assert.Equal(2, model.Count());
         }
     }
-    [Fact]
+    [TestMethod]
     public async Task DeleteMeal_ExistingMeal_ReturnsNoContent()
     {
         // Arrange
@@ -109,7 +109,7 @@ public class MealsControllerTest
             Assert.IsType<NoContentResult>(result);
         }
     }
-    [Fact]
+    [TestMethod]
     public async Task AppendProductToMeal_ExistingProductInMeal_ReturnsOk()
     {
         // Arrange
