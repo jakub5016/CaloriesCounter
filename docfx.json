@@ -16,7 +16,7 @@
     "content": [
       {
         "files": [
-          "**/*.{md,yml}"
+          "**/*.{md,yml}", "**/*.swagger.json"
         ],
         "exclude": [
           "_site/**"

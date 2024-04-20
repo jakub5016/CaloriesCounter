@@ -27,6 +27,7 @@ namespace CaloriesCounterAPI.Controllers
         /// <summary>
         /// Retrieves nutrition information for a given query.
         /// </summary>
+        /// <param name="query">Query string for nutrition information.</param>
         [HttpGet("nutrition")]
         public async Task<IActionResult> GetNutrition(string query)
         {
