@@ -148,10 +148,12 @@ items:
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: User
     path: CaloriesCounterAPI/Data/CaloriesCounterAPIContext.cs
-    startLine: 19
+    startLine: 22
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Data
+  summary: Gets or sets the DbSet for user.
+  example: []
   syntax:
     content: public DbSet<User> User { get; set; }
     parameters: []
@@ -177,7 +179,7 @@ items:
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: Product
     path: CaloriesCounterAPI/Data/CaloriesCounterAPIContext.cs
-    startLine: 23
+    startLine: 26
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Data
@@ -208,7 +210,7 @@ items:
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: Meal
     path: CaloriesCounterAPI/Data/CaloriesCounterAPIContext.cs
-    startLine: 28
+    startLine: 31
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Data

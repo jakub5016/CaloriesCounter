@@ -336,7 +336,7 @@ items:
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: GetProductById
     path: CaloriesCounterAPI/Controllers/ProductController.cs
-    startLine: 39
+    startLine: 40
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Controllers
@@ -350,6 +350,7 @@ items:
     parameters:
     - id: id
       type: System.Int32
+      description: Identifier of the product.
     return:
       type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult{CaloriesCounterAPI.Models.Product}}
     content.vb: >-
@@ -384,7 +385,7 @@ items:
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: PostNewProduct
     path: CaloriesCounterAPI/Controllers/ProductController.cs
-    startLine: 57
+    startLine: 59
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Controllers
@@ -398,6 +399,7 @@ items:
     parameters:
     - id: productDTO
       type: CaloriesCounterAPI.DTO.CreateProductDTO
+      description: Data for creating the product.
     return:
       type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult{CaloriesCounterAPI.Models.Product}}
     content.vb: >-
@@ -427,7 +429,7 @@ items:
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: SearchProductByName
     path: CaloriesCounterAPI/Controllers/ProductController.cs
-    startLine: 78
+    startLine: 81
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Controllers
@@ -441,6 +443,7 @@ items:
     parameters:
     - id: search
       type: System.String
+      description: Search query string.
     return:
       type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult{System.Collections.Generic.IEnumerable{CaloriesCounterAPI.Models.Product}}}
     content.vb: >-
@@ -475,7 +478,7 @@ items:
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: DeleteProductById
     path: CaloriesCounterAPI/Controllers/ProductController.cs
-    startLine: 97
+    startLine: 101
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Controllers
@@ -489,6 +492,7 @@ items:
     parameters:
     - id: id
       type: System.Int32
+      description: Identifier of the product to delete.
     return:
       type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult}
     content.vb: >-

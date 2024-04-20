@@ -27,10 +27,12 @@ items:
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: User
     path: CaloriesCounterAPI/Models/User.cs
-    startLine: 2
+    startLine: 7
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Models
+  summary: Model class representing a user.
+  example: []
   syntax:
     content: public class User
     content.vb: Public Class User
@@ -62,10 +64,12 @@ items:
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: Id
     path: CaloriesCounterAPI/Models/User.cs
-    startLine: 4
+    startLine: 12
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Models
+  summary: Gets or sets the identifier of the user.
+  example: []
   syntax:
     content: public int Id { get; set; }
     parameters: []
@@ -91,10 +95,12 @@ items:
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: Weight
     path: CaloriesCounterAPI/Models/User.cs
-    startLine: 6
+    startLine: 17
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Models
+  summary: Gets or sets the weight of the user.
+  example: []
   syntax:
     content: public int Weight { get; set; }
     parameters: []
@@ -120,10 +126,12 @@ items:
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: Gender
     path: CaloriesCounterAPI/Models/User.cs
-    startLine: 8
+    startLine: 22
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Models
+  summary: Gets or sets the gender of the user. (1 - male)
+  example: []
   syntax:
     content: public bool Gender { get; set; }
     parameters: []
@@ -149,10 +157,12 @@ items:
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: Height
     path: CaloriesCounterAPI/Models/User.cs
-    startLine: 10
+    startLine: 27
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Models
+  summary: Gets or sets the height of the user.
+  example: []
   syntax:
     content: public int Height { get; set; }
     parameters: []
@@ -178,10 +188,12 @@ items:
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: Age
     path: CaloriesCounterAPI/Models/User.cs
-    startLine: 12
+    startLine: 32
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Models
+  summary: Gets or sets the age of the user.
+  example: []
   syntax:
     content: public int Age { get; set; }
     parameters: []
@@ -207,10 +219,12 @@ items:
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: BMR
     path: CaloriesCounterAPI/Models/User.cs
-    startLine: 14
+    startLine: 37
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Models
+  summary: Gets or sets the Basal Metabolic Rate (BMR) of the user.
+  example: []
   syntax:
     content: public int BMR { get; set; }
     parameters: []
@@ -236,10 +250,12 @@ items:
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: KcalMaintaince
     path: CaloriesCounterAPI/Models/User.cs
-    startLine: 16
+    startLine: 42
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Models
+  summary: Gets or sets the calorie maintenance level of the user.
+  example: []
   syntax:
     content: public int KcalMaintaince { get; set; }
     parameters: []
@@ -265,10 +281,12 @@ items:
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: calculateMaintainceAndBmi
     path: CaloriesCounterAPI/Models/User.cs
-    startLine: 18
+    startLine: 47
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Models
+  summary: Calculates the Basal Metabolic Rate (BMR) and calorie maintenance level of the user.
+  example: []
   syntax:
     content: public void calculateMaintainceAndBmi()
     content.vb: Public Sub calculateMaintainceAndBmi()

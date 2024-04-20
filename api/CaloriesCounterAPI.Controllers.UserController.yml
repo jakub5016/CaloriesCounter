@@ -23,10 +23,12 @@ items:
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: UserController
     path: CaloriesCounterAPI/Controllers/UserController.cs
-    startLine: 9
+    startLine: 12
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Controllers
+  summary: Controller for managing user-related operations.
+  example: []
   syntax:
     content: >-
       [Route("api/[controller]")]
@@ -251,7 +253,7 @@ items:
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: .ctor
     path: CaloriesCounterAPI/Controllers/UserController.cs
-    startLine: 15
+    startLine: 18
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Controllers
@@ -283,10 +285,12 @@ items:
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: GetUser
     path: CaloriesCounterAPI/Controllers/UserController.cs
-    startLine: 21
+    startLine: 27
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Controllers
+  summary: Retrieves the user.
+  example: []
   syntax:
     content: >-
       [HttpGet]
@@ -321,10 +325,12 @@ items:
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: CreateUser
     path: CaloriesCounterAPI/Controllers/UserController.cs
-    startLine: 27
+    startLine: 37
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Controllers
+  summary: Creates a new user.
+  example: []
   syntax:
     content: >-
       [HttpPost]
@@ -333,6 +339,7 @@ items:
     parameters:
     - id: userGot
       type: CaloriesCounterAPI.DTO.UserDTO
+      description: Data for creating the user.
     return:
       type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult{CaloriesCounterAPI.Models.User}}
     content.vb: >-
@@ -362,10 +369,12 @@ items:
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: DeleteUsertById
     path: CaloriesCounterAPI/Controllers/UserController.cs
-    startLine: 46
+    startLine: 60
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Controllers
+  summary: Deletes a user by ID.
+  example: []
   syntax:
     content: >-
       [HttpDelete("{id}")]
@@ -374,6 +383,7 @@ items:
     parameters:
     - id: id
       type: System.Int32
+      description: Identifier of the user to delete.
     return:
       type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult}
     content.vb: >-

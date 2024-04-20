@@ -8,7 +8,6 @@ items:
   - CaloriesCounterAPI.Controllers.NutritionAPIController
   - CaloriesCounterAPI.Controllers.ProductController
   - CaloriesCounterAPI.Controllers.UserController
-  - CaloriesCounterAPI.Controllers.WeatherForecastController
   langs:
   - csharp
   - vb
@@ -34,6 +33,7 @@ references:
   fullName: CaloriesCounterAPI.Controllers.NutritionAPIController
 - uid: CaloriesCounterAPI.Controllers.ProductController
   commentId: T:CaloriesCounterAPI.Controllers.ProductController
+  parent: CaloriesCounterAPI.Controllers
   href: CaloriesCounterAPI.Controllers.ProductController.html
   name: ProductController
   nameWithType: ProductController
@@ -44,12 +44,6 @@ references:
   name: UserController
   nameWithType: UserController
   fullName: CaloriesCounterAPI.Controllers.UserController
-- uid: CaloriesCounterAPI.Controllers.WeatherForecastController
-  commentId: T:CaloriesCounterAPI.Controllers.WeatherForecastController
-  href: CaloriesCounterAPI.Controllers.WeatherForecastController.html
-  name: WeatherForecastController
-  nameWithType: WeatherForecastController
-  fullName: CaloriesCounterAPI.Controllers.WeatherForecastController
 - uid: CaloriesCounterAPI.Controllers
   commentId: N:CaloriesCounterAPI.Controllers
   href: CaloriesCounterAPI.html

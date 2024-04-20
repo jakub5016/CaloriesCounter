@@ -16,8 +16,6 @@ items:
     name: ProductController
   - uid: CaloriesCounterAPI.Controllers.UserController
     name: UserController
-  - uid: CaloriesCounterAPI.Controllers.WeatherForecastController
-    name: WeatherForecastController
 - uid: CaloriesCounterAPI.DTO
   name: CaloriesCounterAPI.DTO
   items:
@@ -63,4 +61,6 @@ items:
   items:
   - uid: CaloriesCounterAPI.Test.Controllers.MealsControllerTest
     name: MealsControllerTest
+  - uid: CaloriesCounterAPI.Test.Controllers.ProductControlerTest
+    name: ProductControlerTest
 memberLayout: SamePage

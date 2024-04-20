@@ -5,6 +5,7 @@ items:
   id: CaloriesCounterAPI.Test.Controllers
   children:
   - CaloriesCounterAPI.Test.Controllers.MealsControllerTest
+  - CaloriesCounterAPI.Test.Controllers.ProductControlerTest
   langs:
   - csharp
   - vb
@@ -21,3 +22,9 @@ references:
   name: MealsControllerTest
   nameWithType: MealsControllerTest
   fullName: CaloriesCounterAPI.Test.Controllers.MealsControllerTest
+- uid: CaloriesCounterAPI.Test.Controllers.ProductControlerTest
+  commentId: T:CaloriesCounterAPI.Test.Controllers.ProductControlerTest
+  href: CaloriesCounterAPI.Test.Controllers.ProductControlerTest.html
+  name: ProductControlerTest
+  nameWithType: ProductControlerTest
+  fullName: CaloriesCounterAPI.Test.Controllers.ProductControlerTest

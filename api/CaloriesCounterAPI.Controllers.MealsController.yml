@@ -338,7 +338,7 @@ items:
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: GetMealsByDate
     path: CaloriesCounterAPI/Controllers/MealsController.cs
-    startLine: 43
+    startLine: 44
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Controllers
@@ -352,6 +352,7 @@ items:
     parameters:
     - id: Date
       type: System.DateOnly
+      description: Date to filter meals.
     return:
       type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult{System.Collections.Generic.List{CaloriesCounterAPI.Models.Meal}}}
     content.vb: >-
@@ -383,7 +384,7 @@ items:
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: PutMeal
     path: CaloriesCounterAPI/Controllers/MealsController.cs
-    startLine: 61
+    startLine: 64
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Controllers
@@ -397,8 +398,10 @@ items:
     parameters:
     - id: id
       type: System.Int32
+      description: Identifier of the meal to modify.
     - id: mealDTO
       type: CaloriesCounterAPI.DTO.EditMealDTO
+      description: Data for modifying the meal.
     return:
       type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.IActionResult}
     content.vb: >-
@@ -433,7 +436,7 @@ items:
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: PostMeal
     path: CaloriesCounterAPI/Controllers/MealsController.cs
-    startLine: 112
+    startLine: 116
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Controllers
@@ -447,6 +450,7 @@ items:
     parameters:
     - id: mealDTO
       type: CaloriesCounterAPI.DTO.CreateMealDTO
+      description: Data for creating the meal.
     return:
       type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult{CaloriesCounterAPI.Models.Meal}}
     content.vb: >-
@@ -476,7 +480,7 @@ items:
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: DeleteMeal
     path: CaloriesCounterAPI/Controllers/MealsController.cs
-    startLine: 154
+    startLine: 159
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Controllers
@@ -490,6 +494,7 @@ items:
     parameters:
     - id: id
       type: System.Int32
+      description: Identifier of the meal to delete.
     return:
       type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.IActionResult}
     content.vb: >-
@@ -524,7 +529,7 @@ items:
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: DeleteProductFromMeal
     path: CaloriesCounterAPI/Controllers/MealsController.cs
-    startLine: 173
+    startLine: 180
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Controllers
@@ -538,8 +543,10 @@ items:
     parameters:
     - id: mealId
       type: System.Int32
+      description: Identifier of the meal.
     - id: productId
       type: System.Int32
+      description: Identifier of the product to delete.
     return:
       type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.IActionResult}
     content.vb: >-
@@ -574,7 +581,7 @@ items:
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: AppendProductToMeal
     path: CaloriesCounterAPI/Controllers/MealsController.cs
-    startLine: 201
+    startLine: 211
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Controllers
@@ -588,10 +595,13 @@ items:
     parameters:
     - id: id
       type: System.Int32
+      description: Identifier of the meal.
     - id: productId
       type: System.Int32
+      description: Identifier of the product to append.
     - id: quantity
       type: System.Int32
+      description: Quantity of the product to append.
     return:
       type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.IActionResult}
     content.vb: >-

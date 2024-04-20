@@ -293,7 +293,7 @@ items:
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: GetNutrition
     path: CaloriesCounterAPI/Controllers/NutritionAPI.cs
-    startLine: 29
+    startLine: 30
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Controllers
@@ -307,6 +307,7 @@ items:
     parameters:
     - id: query
       type: System.String
+      description: Query string for nutrition information.
     return:
       type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.IActionResult}
     content.vb: >-
@@ -341,7 +342,7 @@ items:
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: Index
     path: CaloriesCounterAPI/Controllers/NutritionAPI.cs
-    startLine: 70
+    startLine: 71
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Controllers

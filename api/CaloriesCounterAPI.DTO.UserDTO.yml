@@ -23,10 +23,12 @@ items:
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: UserDTO
     path: CaloriesCounterAPI/DTO/UserDTO.cs
-    startLine: 2
+    startLine: 5
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.DTO
+  summary: Data Transfer Object for user information.
+  example: []
   syntax:
     content: public class UserDTO
     content.vb: Public Class UserDTO
@@ -58,10 +60,12 @@ items:
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: Weight
     path: CaloriesCounterAPI/DTO/UserDTO.cs
-    startLine: 4
+    startLine: 10
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.DTO
+  summary: Gets or sets the weight of the user.
+  example: []
   syntax:
     content: public int Weight { get; set; }
     parameters: []
@@ -87,10 +91,12 @@ items:
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: Gender
     path: CaloriesCounterAPI/DTO/UserDTO.cs
-    startLine: 6
+    startLine: 15
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.DTO
+  summary: Gets or sets the gender of the user. (1 - male)
+  example: []
   syntax:
     content: public bool Gender { get; set; }
     parameters: []
@@ -116,10 +122,12 @@ items:
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: Height
     path: CaloriesCounterAPI/DTO/UserDTO.cs
-    startLine: 8
+    startLine: 20
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.DTO
+  summary: Gets or sets the height of the user.
+  example: []
   syntax:
     content: public int Height { get; set; }
     parameters: []
@@ -145,10 +153,12 @@ items:
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: Age
     path: CaloriesCounterAPI/DTO/UserDTO.cs
-    startLine: 10
+    startLine: 25
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.DTO
+  summary: Gets or sets the age of the user.
+  example: []
   syntax:
     content: public int Age { get; set; }
     parameters: []
