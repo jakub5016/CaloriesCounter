@@ -129,7 +129,7 @@ public class MealsControllerTest
                     new Product { Name = "Quinoa Salad", Kcal = 180, Fat = 6, Carbs = 30, Protein = 5 },
                     new Product { Name = "Avocado", Kcal = 160, Fat = 15, Carbs = 9, Protein = 2 }
                 },
-                AmmoutOfProduct = new List<int> { 150, 100, 50 }
+                AmountOfProduct = new List<int> { 150, 100, 50 }
             };
         context.Meal.Add(meal);
             context.SaveChanges();
@@ -158,7 +158,7 @@ public class MealsControllerTest
                 new Product { Name = "Oatmeal", Kcal = 68, Fat = 2, Carbs = 12, Protein = 2 },
                 new Product { Name = "Banana", Kcal = 89, Fat = 1, Carbs = 23, Protein = 1 }
             },
-            AmmoutOfProduct = new List<int> { 200, 1 }
+            AmountOfProduct = new List<int> { 200, 1 }
         });
         testProducts.Add(new Meal()
         {
@@ -171,7 +171,7 @@ public class MealsControllerTest
                 new Product { Name = "Steamed Broccoli", Kcal = 55, Fat = 1, Carbs = 11, Protein = 4 },
                 new Product { Name = "Brown Rice", Kcal = 111, Fat = 1, Carbs = 24, Protein = 3 }
             },
-            AmmoutOfProduct = new List<int> { 150, 100, 150 }
+            AmountOfProduct = new List<int> { 150, 100, 150 }
         });
         testProducts.Add(new Meal
         {
@@ -184,7 +184,7 @@ public class MealsControllerTest
                 new Product { Name = "Quinoa", Kcal = 120, Fat = 2, Carbs = 21, Protein = 4 },
                 new Product { Name = "Steamed Asparagus", Kcal = 20, Fat = 1, Carbs = 4, Protein = 2 }
             },
-            AmmoutOfProduct = new List<int> { 150, 100, 100 }
+            AmountOfProduct = new List<int> { 150, 100, 100 }
         });
         testProducts.Add(new Meal
         {
@@ -197,7 +197,7 @@ public class MealsControllerTest
                 new Product { Name = "Whole Wheat Toast", Kcal = 70, Fat = 1, Carbs = 12, Protein = 3 },
                 new Product { Name = "Spinach", Kcal = 23, Fat = 1, Carbs = 4, Protein = 3 }
             },
-            AmmoutOfProduct = new List<int> { 200, 2, 50 }
+            AmountOfProduct = new List<int> { 200, 2, 50 }
         });
         
         return testProducts;

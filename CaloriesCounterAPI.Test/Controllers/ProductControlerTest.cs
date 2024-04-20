@@ -15,7 +15,7 @@ using Assert = Xunit.Assert;
 namespace CaloriesCounterAPI.Test.Controllers;
 
 [TestClass]
-[TestSubject(typeof(ProductControler))]
+[TestSubject(typeof(ProductController))]
 public class ProductControlerTest
 {
 
@@ -39,7 +39,7 @@ public class ProductControlerTest
         // Act
         using (var context = new CaloriesCounterAPIContext(options))
         {
-            var controller = new ProductControler(context);
+            var controller = new ProductController(context);
             var result = await controller.GetAllProducts();
 
             // Assert
@@ -65,7 +65,7 @@ public class ProductControlerTest
         // Act
         using (var context = new CaloriesCounterAPIContext(options))
         {
-            var controller = new ProductControler(context);
+            var controller = new ProductController(context);
             var result = await controller.GetProductById(1);
 
             // Assert
@@ -86,7 +86,7 @@ public class ProductControlerTest
         // Act
         using (var context = new CaloriesCounterAPIContext(options))
         {
-            var controller = new ProductControler(context);
+            var controller = new ProductController(context);
             var result = await controller.PostNewProduct(new CreateProductDTO
             {
                 Name = "Orange",
@@ -132,7 +132,7 @@ public class ProductControlerTest
         // Act
         using (var context = new CaloriesCounterAPIContext(options))
         {
-            var controller = new ProductControler(context);
+            var controller = new ProductController(context);
             var result = await controller.SearchProductByName("an");
 
             // Assert
@@ -158,7 +158,7 @@ public class ProductControlerTest
         // Act
         using (var context = new CaloriesCounterAPIContext(options))
         {
-            var controller = new ProductControler(context);
+            var controller = new ProductController(context);
             var result = await controller.DeleteProductById(1);
 
             // Assert
