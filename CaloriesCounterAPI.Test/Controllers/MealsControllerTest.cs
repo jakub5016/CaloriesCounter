@@ -41,7 +41,7 @@ public class MealsControllerTest
     {
         // Arrange
         var options = new DbContextOptionsBuilder<CaloriesCounterAPIContext>()
-            .UseInMemoryDatabase(databaseName: "Test_MealsDatabase")
+            .UseInMemoryDatabase(databaseName: "Test_MealsDatabase2")
             .Options;
         using (var context = new CaloriesCounterAPIContext(options))
         {
