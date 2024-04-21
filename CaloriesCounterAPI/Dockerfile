@@ -5,20 +5,11 @@ RUN mkdir backend
 COPY . backend
 WORKDIR backend
 
-RUN dotnet dev-certs https
-RUN dotnet dev-certs https --trust
-
-
-RUN dotnet build
-
 RUN dotnet tool install --global dotnet-ef
-ENV PATH="$PATH:/root/.dotnet/tools"
+RUN apt-get install openssl
+ENV PATH="$PATH:/root/.dotnet/tools" 
 
-#Menage database 
-RUN dotnet-ef migrations add INIT
-RUN dotnet-ef database update
-
-CMD [ "dotnet run --urls https://localhost:7261" ]
+CMD [ "bash" , "setup.sh" ]
 # FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 # WORKDIR /app
 # EXPOSE 8080

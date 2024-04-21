@@ -12,6 +12,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import fetchAllProducts from "./fetchAllProducts";
 import handleSearch from "./handleSearch";
 import ApiAdd from "./apiAdd/ApiAdd";
+import HumanAdd from "./humanAdd/HumanAdd";
 
 function appendMealList(id, data, amountArray, date=null, type=null){
   let ids = []
@@ -72,6 +73,7 @@ function AddToMeal() {
   const [data, setData] = useState(null);
   const [amountArray, setAmountArray] = useState([]);
   const [openApi, setOpenApi] = useState(false)
+  const [openHuman, setOpenHuman] = useState(false)
   const navigate = useNavigate()
   
   useEffect(() => {
@@ -96,6 +98,10 @@ function AddToMeal() {
 
   return (
     <div style={{display:"flex", flexDirection:"row"}}>
+
+    {openHuman && <HumanAdd setOpenHuman={setOpenHuman}/>}
+    {!openHuman && <Button sx={{fontSize:"40px", border:"1px solid"}} onClick={()=>setOpenHuman(!openApi)}>.<br/>.<br/>.<br/></Button>}
+
     <Paper style={{display:"flex", flexDirection:"column", alignItems:"center"}}>
       <h1>Add To Meal</h1>
       {/* <p>Meal ID: {id}</p> */}
