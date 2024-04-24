@@ -20,6 +20,12 @@ function ErrorDatabase() {
             setNoError(isDataAvailable);
         };
         fetchData();
+
+        // Set interval to fetch data every 5 seconds
+        const interval = setInterval(fetchData, 5000);
+
+        // Clean up function to clear the interval
+        return () => clearInterval(interval);
     }, []);
 
     const navigate = useNavigate();
