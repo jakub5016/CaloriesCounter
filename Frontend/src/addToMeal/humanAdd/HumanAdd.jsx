@@ -1,5 +1,5 @@
 import { Box, Button, IconButton, Paper } from "@mui/material"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 
 function addProduct(productObject){
@@ -32,7 +32,11 @@ function HumanAdd(props){
     const [protein, setProtein] = useState(0)
     const [fat, setFat] = useState(0)
     const [carbs, setCarbs] = useState(0)
+    const [bgColorArray, setBgColorArray] = useState([])
 
+    useEffect(()=>{
+        setBgColorArray(new Array(5).fill(""))
+    },[])
 
     return(
         <Paper sx={{marginLeft:"30px", padding:"7px", textAlign:"left"}}>
@@ -40,25 +44,61 @@ function HumanAdd(props){
             <Box sx={{textAlign:"center"}}>
                 <h3>Dodaj własny produkt</h3>
                 <form style={{display: 'flex', flexDirection:"column", textAlign:"left"}}>
-                    <label>
+                    <label style={{color: bgColorArray[0]}}>
                         Nazwa Produktu: 
                         <input type="text" style={{marginLeft:"5px"}} onChange={(e)=>{setName(e.target.value)}}></input>
                     </label>
-                    <label>
+                    <label style={{color: bgColorArray[1]}}>
                         Kilokalorie na 100 g: 
-                        <input type="text" style={{marginLeft:"5px"}} onChange={(e)=>{setKcal(e.target.value)}}></input>
+                        <input type="text" style={{marginLeft:"5px"}} onChange={(e)=>{
+                            setKcal(e.target.value)
+                            if (!Number.isInteger(parseInt(e.target.value))){
+                                setBgColorArray(bgColorArray.map((val, index)=>{ if (index == 1) {return "red"} else{return val}}))
+                                console.log(bgColorArray)
+                            }
+                            else{
+                                setBgColorArray(bgColorArray.map((val, index)=>{ if (index == 1) {return ""} else{return val}}))
+                            }                        
+                        }}></input>
                     </label>
-                    <label>
+                    <label style={{color: bgColorArray[2]}}> 
                         Białko na 100g: 
-                        <input type="text" style={{marginLeft:"5px"}} onChange={(e)=>{setProtein(e.target.value)}}></input>
+                        <input type="text" style={{marginLeft:"5px"}} onChange={(e)=>{
+                            setProtein(e.target.value)
+                            if (!Number.isInteger(parseInt(e.target.value))){
+                                setBgColorArray(bgColorArray.map((val, index)=>{ if (index == 2) {return "red"} else{return val}}))
+                                console.log(bgColorArray)
+                            }
+                            else{
+                                setBgColorArray(bgColorArray.map((val, index)=>{ if (index == 2) {return ""} else{return val}}))
+                            }                 
+                        }}></input>
                     </label>
-                    <label>
+                    <label style={{color: bgColorArray[3]}}>
                         Tłuszcze na 100g: 
-                        <input type="text" style={{marginLeft:"5px"}} onChange={(e)=>{setFat(e.target.value)}}></input>
+                        <input type="text" style={{marginLeft:"5px"}} onChange={(e)=>{
+                            setFat(e.target.value)
+                            if (!Number.isInteger(parseInt(e.target.value))){
+                                setBgColorArray(bgColorArray.map((val, index)=>{ if (index == 3) {return "red"} else{return val}}))
+                                console.log(bgColorArray)
+                            }
+                            else{
+                                setBgColorArray(bgColorArray.map((val, index)=>{ if (index == 3) {return ""} else{return val}}))
+                            }                 
+                        }}></input>
                     </label>
-                    <label>
+                    <label style={{color: bgColorArray[4]}}>
                         Węglowodany na 100g: 
-                        <input type="text" style={{marginLeft:"5px"}} onChange={(e)=>{setCarbs(e.target.value)}}></input>
+                        <input type="text" style={{marginLeft:"5px"}} onChange={(e)=>{
+                            setCarbs(e.target.value)
+                            if (!Number.isInteger(parseInt(e.target.value))){
+                                setBgColorArray(bgColorArray.map((val, index)=>{ if (index == 4) {return "red"} else{return val}}))
+                                console.log(bgColorArray)
+                            }
+                            else{
+                                setBgColorArray(bgColorArray.map((val, index)=>{ if (index == 4) {return ""} else{return val}}))
+                            }                 
+                        }}></input>
                     </label>
 
                     <Button variant="outlined" onClick={()=>
