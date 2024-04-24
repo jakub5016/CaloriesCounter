@@ -3,8 +3,9 @@ import './App.css';
 import ProductTable from '../ProductsTable';
 import DatesBar from '../datesBar/DatesBar';
 import ProgressBar from '../progressBar/ProgressBar';
-import { LinearProgress, Paper } from '@mui/material';
+import { CircularProgress, LinearProgress, Paper } from '@mui/material';
 import Register from '../register/Register.jsx'
+import { useNavigate } from 'react-router-dom';
 
 function fetchMealsByDate(date){
   return fetch("https://localhost:7261/api/meals/" + date, {
@@ -51,22 +52,29 @@ function App() {
 
   const [meals, setMeals] = useState(fetchMealsByDate(formatedDate));
   const [loading, setLoading] = useState(true);
+  const [loadingUser, setLoadingUser] = useState(true);
   const [width, setWidth] = useState(window.innerWidth);
   const [dayMacro, setDayMacro] = useState({})
   const [user, setUser] = useState(null)
   const [userData, setUserData] = useState(null)
-
+  const [errorLoading, setErrorLoading] = useState(false)
   useEffect(() =>{
     if (user == null){
       fetch("https://localhost:7261/api/User", {method:"GET", headers:{"accept": "text/plain"}})
       .then(resp =>{
         if (resp.status != 204){
           setUser(resp.json())
+          setErrorLoading(false)
+          setLoadingUser(false)
         }
         else{
           setUser(null)
         }
       })
+      .catch(()=>{
+        setErrorLoading(true)
+      }
+      )
     }
   }, [])
 
@@ -97,7 +105,11 @@ function App() {
     setDayMacro(correctDayMacro)
   }, [meals])
 
+  const navigate = useNavigate()
+
   return (
+    errorLoading ? navigate("/error") :
+    loadingUser ? <CircularProgress/> :
     user != null ? (<div style={{display: "flex", flexDirection:"column"}}>
       <DatesBar width={width + "px"} selectedDay={selectedDay} setSelectedDay={setSelectedDay}/>
       {loading ? (
