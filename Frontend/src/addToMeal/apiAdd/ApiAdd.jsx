@@ -27,10 +27,10 @@ function handleCheck(index, value, fetchedItemsChecked, setFetchedItemsChecked){
     setFetchedItemsChecked(arr)
 }
 
-function addApiProducts(fetchedItemsChecked, fetchedItemsAPI) {
+async function addApiProducts(fetchedItemsChecked, fetchedItemsAPI) {
     fetchedItemsChecked.forEach((check, index) => {
         if (check === true) {
-            fetch("https://localhost:7261/api/Product", {
+            return fetch("https://localhost:7261/api/Product", {
                 method: "POST",
                 headers: {
                     "accept": "text/plain",
@@ -59,11 +59,13 @@ function addApiProducts(fetchedItemsChecked, fetchedItemsAPI) {
             });
         }
     });
-
-    window.location.reload()
 }
 
-
+async function handleAdd(fetchedItemsChecked, featchedItemsAPI, setLoadingApi){
+  setLoadingApi(true)
+  await addApiProducts(fetchedItemsChecked, featchedItemsAPI);
+  window.location.reload()
+}
 
 function ApiAdd(props){
     const [queryForApi, setQueryForApi] = useState('');
@@ -99,6 +101,7 @@ function ApiAdd(props){
           setLoadingApi(false);
         }
       }, [dataFromApi])
+  
 
     return(<Paper sx={{marginLeft:"30px", padding:"7px", textAlign:"right"}}>
     <IconButton onClick={()=>{props.setOpenApi(false)}}>X</IconButton><br/>
@@ -146,7 +149,7 @@ function ApiAdd(props){
             )
           })}
           </Table>
-          <Button  variant="outlined" sx={{marginTop:"30px"}} onClick={()=>{addApiProducts(fetchedItemsChecked, featchedItemsAPI)}}>Dodaj zaznaczone produkty</Button>
+          <Button  variant="outlined" sx={{marginTop:"30px"}} onClick={()=>handleAdd(fetchedItemsChecked, featchedItemsAPI, setLoadingApi)}>Dodaj zaznaczone produkty</Button>
           </div>
           )
         }

@@ -1,3 +1,5 @@
+import fetchAllProducts from "./fetchAllProducts";
+
 function handleSearch(text, setData, setAmountArray){
     if ((text != null) && (text != "")){
       fetch('https://localhost:7261/api/Product/search?search='+text, {method:"POST"})

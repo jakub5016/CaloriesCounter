@@ -15,19 +15,18 @@ import ApiAdd from "./apiAdd/ApiAdd";
 import HumanAdd from "./humanAdd/HumanAdd";
 
 function appendMealList(id, data, amountArray, date=null, type=null){
-  let ids = []
-  amountArray.map((ammout, index)=>{
-    if (ammout != 0){
-      ids.push(data[index].id)
+  let promises = [];
+
+
+  let ids = [];
+  amountArray.forEach((amount, index) => {
+    if (amount !== 0) {
+      ids.push(data[index].id);
     }
-  })
+  });
   
-  let ammounts = []
-  amountArray.map((ammout)=>{
-    if (ammout != 0){
-      ammounts.push(ammout)
-    }
-  })
+  let ammounts = amountArray.filter(amount => amount !== 0);
+
 
   console.log(JSON.stringify({
     type: type,
@@ -43,7 +42,7 @@ function appendMealList(id, data, amountArray, date=null, type=null){
       productIds : ids,
       ammoutOfProduct :ammounts
     }))
-    return fetch('https://localhost:7261/api/Meals',{
+    promises.push(fetch('https://localhost:7261/api/Meals',{
       method: "POST",
       body: JSON.stringify({
         type: type,
@@ -54,17 +53,18 @@ function appendMealList(id, data, amountArray, date=null, type=null){
       headers: {
         'accept': 'text/plain', 'Content-Type': 'application/json'
       }
-    })
+    }))
   }
   else{
     amountArray.map((ammout, index)=>{
       if ((ammout != null) && (ammout != 0)){
-        return fetch('https://localhost:7261/api/Meals/' + id + '/AppendProduct/' + data[index].id + "/" + ammout, {method: "PATCH"})
+        promises.push(fetch('https://localhost:7261/api/Meals/' + id + '/AppendProduct/' + data[index].id + "/" + ammout, {method: "PATCH"}))
 
       }
     })
   }
 
+  return Promise.all(promises)
 }
 
 function AddToMeal() {
@@ -74,6 +74,7 @@ function AddToMeal() {
   const [amountArray, setAmountArray] = useState([]);
   const [openApi, setOpenApi] = useState(false)
   const [openHuman, setOpenHuman] = useState(false)
+  const [textFiledColor,setTextFiledColor] = useState([])
   const navigate = useNavigate()
   
   useEffect(() => {
@@ -81,6 +82,7 @@ function AddToMeal() {
       .then(data => {
         setData(data);
         setAmountArray(new Array(data.length).fill(0));
+        setTextFiledColor(new Array(data.length).fill(""));
       })
       .catch(error => {
         console.error('Error fetching product data:', error);
@@ -96,6 +98,15 @@ function AddToMeal() {
     });
   };
 
+  const handleSubmit = async () => {
+    try {
+      await (appendMealList(id, data, amountArray, state.date, state.type));
+      navigate("/");
+      window.location.reload();
+    } catch (error) {
+      console.error('Error appending meal list:', error);
+    }
+  };
   return (
     <div style={{display:"flex", flexDirection:"row"}}>
 
@@ -130,11 +141,17 @@ function AddToMeal() {
                 <TableCell align="left">{product.fat}</TableCell>
                 <TableCell align="left">{product.carbs}</TableCell>
                 <TableCell align="left" >{product.protein}</TableCell>
-                <TableCell>
+                <TableCell sx={{backgroundColor:textFiledColor[index]}}>
                   <input 
                     type="number" 
                     value={amountArray[index]} 
-                    onChange={e => handleFillAmountArray(index, parseInt(e.target.value))}
+                    onChange={e => {if (!isNaN(parseInt(e.target.value))) {
+                                      handleFillAmountArray(index, parseInt(e.target.value));
+                                      setTextFiledColor(textFiledColor.map((val, colorIndex) =>{if (index == colorIndex){return ""} else{return val}}));
+                                    } else {
+                                      handleFillAmountArray(index, parseInt(e.target.value));
+                                      setTextFiledColor(textFiledColor.map((val, colorIndex) =>{if (index == colorIndex){return "red"} else{return val}}));
+                                    }}}
                   />
                 </TableCell>
               </TableRow>
@@ -143,7 +160,7 @@ function AddToMeal() {
         </Table>
       </TableContainer>
 
-      <Button onClick={() => {appendMealList(id, data, amountArray, state.date, state.type);  navigate("/"); window.location.reload();}}>Submit</Button>
+      <Button onClick={handleSubmit}>Submit</Button>
     </Paper>
     
     {openApi && <ApiAdd setOpenApi={setOpenApi}/>}
