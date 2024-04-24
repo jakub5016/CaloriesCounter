@@ -65,14 +65,5 @@ namespace CaloriesCounterAPI.Controllers
             }
         }
 
-        // GET: api/NutritionAPI
-        /// <summary>
-        /// Default action for the NutritionAPI controller.
-        /// </summary>
-        [HttpGet]
-        public IActionResult Index()
-        {
-            return Ok();
-        }
     }
 }

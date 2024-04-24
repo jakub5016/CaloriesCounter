@@ -84,19 +84,19 @@ items:
   namespace: CaloriesCounterAPI.Test.Controllers
   syntax:
     content: >-
-      [Fact]
+      [TestMethod]
 
       public Task GetAllProducts_ReturnsListOfProducts()
     return:
       type: System.Threading.Tasks.Task
     content.vb: >-
-      <Fact>
+      <TestMethod>
 
       Public Function GetAllProducts_ReturnsListOfProducts() As Task
   overload: CaloriesCounterAPI.Test.Controllers.ProductControlerTest.GetAllProducts_ReturnsListOfProducts*
   attributes:
-  - type: Xunit.FactAttribute
-    ctor: Xunit.FactAttribute.#ctor
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
     arguments: []
 - uid: CaloriesCounterAPI.Test.Controllers.ProductControlerTest.GetProductById_ReturnsProductById
   commentId: M:CaloriesCounterAPI.Test.Controllers.ProductControlerTest.GetProductById_ReturnsProductById
@@ -116,25 +116,25 @@ items:
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: GetProductById_ReturnsProductById
     path: CaloriesCounterAPI.Test/Controllers/ProductControlerTest.cs
-    startLine: 51
+    startLine: 54
   assemblies:
   - CaloriesCounterAPI.Test
   namespace: CaloriesCounterAPI.Test.Controllers
   syntax:
     content: >-
-      [Fact]
+      [TestMethod]
 
       public Task GetProductById_ReturnsProductById()
     return:
       type: System.Threading.Tasks.Task
     content.vb: >-
-      <Fact>
+      <TestMethod>
 
       Public Function GetProductById_ReturnsProductById() As Task
   overload: CaloriesCounterAPI.Test.Controllers.ProductControlerTest.GetProductById_ReturnsProductById*
   attributes:
-  - type: Xunit.FactAttribute
-    ctor: Xunit.FactAttribute.#ctor
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
     arguments: []
 - uid: CaloriesCounterAPI.Test.Controllers.ProductControlerTest.PostNewProduct_AddsNewProduct
   commentId: M:CaloriesCounterAPI.Test.Controllers.ProductControlerTest.PostNewProduct_AddsNewProduct
@@ -154,25 +154,25 @@ items:
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: PostNewProduct_AddsNewProduct
     path: CaloriesCounterAPI.Test/Controllers/ProductControlerTest.cs
-    startLine: 77
+    startLine: 81
   assemblies:
   - CaloriesCounterAPI.Test
   namespace: CaloriesCounterAPI.Test.Controllers
   syntax:
     content: >-
-      [Fact]
+      [TestMethod]
 
       public Task PostNewProduct_AddsNewProduct()
     return:
       type: System.Threading.Tasks.Task
     content.vb: >-
-      <Fact>
+      <TestMethod>
 
       Public Function PostNewProduct_AddsNewProduct() As Task
   overload: CaloriesCounterAPI.Test.Controllers.ProductControlerTest.PostNewProduct_AddsNewProduct*
   attributes:
-  - type: Xunit.FactAttribute
-    ctor: Xunit.FactAttribute.#ctor
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
     arguments: []
 - uid: CaloriesCounterAPI.Test.Controllers.ProductControlerTest.SearchProductByName_ReturnsListOfMatchingProducts
   commentId: M:CaloriesCounterAPI.Test.Controllers.ProductControlerTest.SearchProductByName_ReturnsListOfMatchingProducts
@@ -192,25 +192,25 @@ items:
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: SearchProductByName_ReturnsListOfMatchingProducts
     path: CaloriesCounterAPI.Test/Controllers/ProductControlerTest.cs
-    startLine: 113
+    startLine: 118
   assemblies:
   - CaloriesCounterAPI.Test
   namespace: CaloriesCounterAPI.Test.Controllers
   syntax:
     content: >-
-      [Fact]
+      [TestMethod]
 
       public Task SearchProductByName_ReturnsListOfMatchingProducts()
     return:
       type: System.Threading.Tasks.Task
     content.vb: >-
-      <Fact>
+      <TestMethod>
 
       Public Function SearchProductByName_ReturnsListOfMatchingProducts() As Task
   overload: CaloriesCounterAPI.Test.Controllers.ProductControlerTest.SearchProductByName_ReturnsListOfMatchingProducts*
   attributes:
-  - type: Xunit.FactAttribute
-    ctor: Xunit.FactAttribute.#ctor
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
     arguments: []
 - uid: CaloriesCounterAPI.Test.Controllers.ProductControlerTest.DeleteProductById_DeletesProduct
   commentId: M:CaloriesCounterAPI.Test.Controllers.ProductControlerTest.DeleteProductById_DeletesProduct
@@ -230,25 +230,25 @@ items:
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: DeleteProductById_DeletesProduct
     path: CaloriesCounterAPI.Test/Controllers/ProductControlerTest.cs
-    startLine: 144
+    startLine: 151
   assemblies:
   - CaloriesCounterAPI.Test
   namespace: CaloriesCounterAPI.Test.Controllers
   syntax:
     content: >-
-      [Fact]
+      [TestMethod]
 
       public Task DeleteProductById_DeletesProduct()
     return:
       type: System.Threading.Tasks.Task
     content.vb: >-
-      <Fact>
+      <TestMethod>
 
       Public Function DeleteProductById_DeletesProduct() As Task
   overload: CaloriesCounterAPI.Test.Controllers.ProductControlerTest.DeleteProductById_DeletesProduct*
   attributes:
-  - type: Xunit.FactAttribute
-    ctor: Xunit.FactAttribute.#ctor
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
     arguments: []
 references:
 - uid: CaloriesCounterAPI.Test.Controllers

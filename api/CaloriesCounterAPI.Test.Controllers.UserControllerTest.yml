@@ -1,30 +1,29 @@
 ### YamlMime:ManagedReference
 items:
-- uid: CaloriesCounterAPI.Test.Controllers.MealsControllerTest
-  commentId: T:CaloriesCounterAPI.Test.Controllers.MealsControllerTest
-  id: MealsControllerTest
+- uid: CaloriesCounterAPI.Test.Controllers.UserControllerTest
+  commentId: T:CaloriesCounterAPI.Test.Controllers.UserControllerTest
+  id: UserControllerTest
   parent: CaloriesCounterAPI.Test.Controllers
   children:
-  - CaloriesCounterAPI.Test.Controllers.MealsControllerTest.AppendProductToMeal_ExistingProductInMeal_ReturnsOk
-  - CaloriesCounterAPI.Test.Controllers.MealsControllerTest.CalculateKcalForMeal
-  - CaloriesCounterAPI.Test.Controllers.MealsControllerTest.DeleteMeal_ExistingMeal_ReturnsNoContent
-  - CaloriesCounterAPI.Test.Controllers.MealsControllerTest.GetMeal_ReturnsListOfMeals
-  - CaloriesCounterAPI.Test.Controllers.MealsControllerTest.GetMealsByDate_ReturnsListOfMealsForSpecificDate
+  - CaloriesCounterAPI.Test.Controllers.UserControllerTest.CreateUser
+  - CaloriesCounterAPI.Test.Controllers.UserControllerTest.GetUser_WhenThereIsNone
+  - CaloriesCounterAPI.Test.Controllers.UserControllerTest.GetUser_WhenThereIsOne
+  - CaloriesCounterAPI.Test.Controllers.UserControllerTest.GetUser_WhenThereIsTwo
   langs:
   - csharp
   - vb
-  name: MealsControllerTest
-  nameWithType: MealsControllerTest
-  fullName: CaloriesCounterAPI.Test.Controllers.MealsControllerTest
+  name: UserControllerTest
+  nameWithType: UserControllerTest
+  fullName: CaloriesCounterAPI.Test.Controllers.UserControllerTest
   type: Class
   source:
     remote:
-      path: CaloriesCounterAPI.Test/Controllers/MealsControllerTest.cs
+      path: CaloriesCounterAPI.Test/Controllers/UserControllerTest.cs
       branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
-    id: MealsControllerTest
-    path: CaloriesCounterAPI.Test/Controllers/MealsControllerTest.cs
-    startLine: 18
+    id: UserControllerTest
+    path: CaloriesCounterAPI.Test/Controllers/UserControllerTest.cs
+    startLine: 16
   assemblies:
   - CaloriesCounterAPI.Test
   namespace: CaloriesCounterAPI.Test.Controllers
@@ -32,15 +31,15 @@ items:
     content: >-
       [TestClass]
 
-      [TestSubject(typeof(MealsController))]
+      [TestSubject(typeof(User))]
 
-      public class MealsControllerTest
+      public class UserControllerTest
     content.vb: >-
       <TestClass>
 
-      <TestSubject(GetType(MealsController))>
+      <TestSubject(GetType(User))>
 
-      Public Class MealsControllerTest
+      Public Class UserControllerTest
   inheritance:
   - System.Object
   inheritedMembers:
@@ -59,26 +58,26 @@ items:
     ctor: JetBrains.Annotations.TestSubjectAttribute.#ctor(System.Type)
     arguments:
     - type: System.Type
-      value: CaloriesCounterAPI.Controllers.MealsController
-- uid: CaloriesCounterAPI.Test.Controllers.MealsControllerTest.CalculateKcalForMeal
-  commentId: M:CaloriesCounterAPI.Test.Controllers.MealsControllerTest.CalculateKcalForMeal
-  id: CalculateKcalForMeal
-  parent: CaloriesCounterAPI.Test.Controllers.MealsControllerTest
+      value: CaloriesCounterAPI.Models.User
+- uid: CaloriesCounterAPI.Test.Controllers.UserControllerTest.GetUser_WhenThereIsTwo
+  commentId: M:CaloriesCounterAPI.Test.Controllers.UserControllerTest.GetUser_WhenThereIsTwo
+  id: GetUser_WhenThereIsTwo
+  parent: CaloriesCounterAPI.Test.Controllers.UserControllerTest
   langs:
   - csharp
   - vb
-  name: CalculateKcalForMeal()
-  nameWithType: MealsControllerTest.CalculateKcalForMeal()
-  fullName: CaloriesCounterAPI.Test.Controllers.MealsControllerTest.CalculateKcalForMeal()
+  name: GetUser_WhenThereIsTwo()
+  nameWithType: UserControllerTest.GetUser_WhenThereIsTwo()
+  fullName: CaloriesCounterAPI.Test.Controllers.UserControllerTest.GetUser_WhenThereIsTwo()
   type: Method
   source:
     remote:
-      path: CaloriesCounterAPI.Test/Controllers/MealsControllerTest.cs
+      path: CaloriesCounterAPI.Test/Controllers/UserControllerTest.cs
       branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
-    id: CalculateKcalForMeal
-    path: CaloriesCounterAPI.Test/Controllers/MealsControllerTest.cs
-    startLine: 22
+    id: GetUser_WhenThereIsTwo
+    path: CaloriesCounterAPI.Test/Controllers/UserControllerTest.cs
+    startLine: 20
   assemblies:
   - CaloriesCounterAPI.Test
   namespace: CaloriesCounterAPI.Test.Controllers
@@ -86,73 +85,37 @@ items:
     content: >-
       [TestMethod]
 
-      public void CalculateKcalForMeal()
-    content.vb: >-
-      <TestMethod>
-
-      Public Sub CalculateKcalForMeal()
-  overload: CaloriesCounterAPI.Test.Controllers.MealsControllerTest.CalculateKcalForMeal*
-  attributes:
-  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
-    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
-    arguments: []
-- uid: CaloriesCounterAPI.Test.Controllers.MealsControllerTest.GetMeal_ReturnsListOfMeals
-  commentId: M:CaloriesCounterAPI.Test.Controllers.MealsControllerTest.GetMeal_ReturnsListOfMeals
-  id: GetMeal_ReturnsListOfMeals
-  parent: CaloriesCounterAPI.Test.Controllers.MealsControllerTest
-  langs:
-  - csharp
-  - vb
-  name: GetMeal_ReturnsListOfMeals()
-  nameWithType: MealsControllerTest.GetMeal_ReturnsListOfMeals()
-  fullName: CaloriesCounterAPI.Test.Controllers.MealsControllerTest.GetMeal_ReturnsListOfMeals()
-  type: Method
-  source:
-    remote:
-      path: CaloriesCounterAPI.Test/Controllers/MealsControllerTest.cs
-      branch: master
-      repo: https://github.com/jakub5016/CaloriesCounterBackend.git
-    id: GetMeal_ReturnsListOfMeals
-    path: CaloriesCounterAPI.Test/Controllers/MealsControllerTest.cs
-    startLine: 38
-  assemblies:
-  - CaloriesCounterAPI.Test
-  namespace: CaloriesCounterAPI.Test.Controllers
-  syntax:
-    content: >-
-      [TestMethod]
-
-      public Task GetMeal_ReturnsListOfMeals()
+      public Task GetUser_WhenThereIsTwo()
     return:
       type: System.Threading.Tasks.Task
     content.vb: >-
       <TestMethod>
 
-      Public Function GetMeal_ReturnsListOfMeals() As Task
-  overload: CaloriesCounterAPI.Test.Controllers.MealsControllerTest.GetMeal_ReturnsListOfMeals*
+      Public Function GetUser_WhenThereIsTwo() As Task
+  overload: CaloriesCounterAPI.Test.Controllers.UserControllerTest.GetUser_WhenThereIsTwo*
   attributes:
   - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
     ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
     arguments: []
-- uid: CaloriesCounterAPI.Test.Controllers.MealsControllerTest.GetMealsByDate_ReturnsListOfMealsForSpecificDate
-  commentId: M:CaloriesCounterAPI.Test.Controllers.MealsControllerTest.GetMealsByDate_ReturnsListOfMealsForSpecificDate
-  id: GetMealsByDate_ReturnsListOfMealsForSpecificDate
-  parent: CaloriesCounterAPI.Test.Controllers.MealsControllerTest
+- uid: CaloriesCounterAPI.Test.Controllers.UserControllerTest.GetUser_WhenThereIsOne
+  commentId: M:CaloriesCounterAPI.Test.Controllers.UserControllerTest.GetUser_WhenThereIsOne
+  id: GetUser_WhenThereIsOne
+  parent: CaloriesCounterAPI.Test.Controllers.UserControllerTest
   langs:
   - csharp
   - vb
-  name: GetMealsByDate_ReturnsListOfMealsForSpecificDate()
-  nameWithType: MealsControllerTest.GetMealsByDate_ReturnsListOfMealsForSpecificDate()
-  fullName: CaloriesCounterAPI.Test.Controllers.MealsControllerTest.GetMealsByDate_ReturnsListOfMealsForSpecificDate()
+  name: GetUser_WhenThereIsOne()
+  nameWithType: UserControllerTest.GetUser_WhenThereIsOne()
+  fullName: CaloriesCounterAPI.Test.Controllers.UserControllerTest.GetUser_WhenThereIsOne()
   type: Method
   source:
     remote:
-      path: CaloriesCounterAPI.Test/Controllers/MealsControllerTest.cs
+      path: CaloriesCounterAPI.Test/Controllers/UserControllerTest.cs
       branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
-    id: GetMealsByDate_ReturnsListOfMealsForSpecificDate
-    path: CaloriesCounterAPI.Test/Controllers/MealsControllerTest.cs
-    startLine: 64
+    id: GetUser_WhenThereIsOne
+    path: CaloriesCounterAPI.Test/Controllers/UserControllerTest.cs
+    startLine: 48
   assemblies:
   - CaloriesCounterAPI.Test
   namespace: CaloriesCounterAPI.Test.Controllers
@@ -160,37 +123,37 @@ items:
     content: >-
       [TestMethod]
 
-      public Task GetMealsByDate_ReturnsListOfMealsForSpecificDate()
+      public Task GetUser_WhenThereIsOne()
     return:
       type: System.Threading.Tasks.Task
     content.vb: >-
       <TestMethod>
 
-      Public Function GetMealsByDate_ReturnsListOfMealsForSpecificDate() As Task
-  overload: CaloriesCounterAPI.Test.Controllers.MealsControllerTest.GetMealsByDate_ReturnsListOfMealsForSpecificDate*
+      Public Function GetUser_WhenThereIsOne() As Task
+  overload: CaloriesCounterAPI.Test.Controllers.UserControllerTest.GetUser_WhenThereIsOne*
   attributes:
   - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
     ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
     arguments: []
-- uid: CaloriesCounterAPI.Test.Controllers.MealsControllerTest.DeleteMeal_ExistingMeal_ReturnsNoContent
-  commentId: M:CaloriesCounterAPI.Test.Controllers.MealsControllerTest.DeleteMeal_ExistingMeal_ReturnsNoContent
-  id: DeleteMeal_ExistingMeal_ReturnsNoContent
-  parent: CaloriesCounterAPI.Test.Controllers.MealsControllerTest
+- uid: CaloriesCounterAPI.Test.Controllers.UserControllerTest.GetUser_WhenThereIsNone
+  commentId: M:CaloriesCounterAPI.Test.Controllers.UserControllerTest.GetUser_WhenThereIsNone
+  id: GetUser_WhenThereIsNone
+  parent: CaloriesCounterAPI.Test.Controllers.UserControllerTest
   langs:
   - csharp
   - vb
-  name: DeleteMeal_ExistingMeal_ReturnsNoContent()
-  nameWithType: MealsControllerTest.DeleteMeal_ExistingMeal_ReturnsNoContent()
-  fullName: CaloriesCounterAPI.Test.Controllers.MealsControllerTest.DeleteMeal_ExistingMeal_ReturnsNoContent()
+  name: GetUser_WhenThereIsNone()
+  nameWithType: UserControllerTest.GetUser_WhenThereIsNone()
+  fullName: CaloriesCounterAPI.Test.Controllers.UserControllerTest.GetUser_WhenThereIsNone()
   type: Method
   source:
     remote:
-      path: CaloriesCounterAPI.Test/Controllers/MealsControllerTest.cs
+      path: CaloriesCounterAPI.Test/Controllers/UserControllerTest.cs
       branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
-    id: DeleteMeal_ExistingMeal_ReturnsNoContent
-    path: CaloriesCounterAPI.Test/Controllers/MealsControllerTest.cs
-    startLine: 90
+    id: GetUser_WhenThereIsNone
+    path: CaloriesCounterAPI.Test/Controllers/UserControllerTest.cs
+    startLine: 73
   assemblies:
   - CaloriesCounterAPI.Test
   namespace: CaloriesCounterAPI.Test.Controllers
@@ -198,37 +161,37 @@ items:
     content: >-
       [TestMethod]
 
-      public Task DeleteMeal_ExistingMeal_ReturnsNoContent()
+      public Task GetUser_WhenThereIsNone()
     return:
       type: System.Threading.Tasks.Task
     content.vb: >-
       <TestMethod>
 
-      Public Function DeleteMeal_ExistingMeal_ReturnsNoContent() As Task
-  overload: CaloriesCounterAPI.Test.Controllers.MealsControllerTest.DeleteMeal_ExistingMeal_ReturnsNoContent*
+      Public Function GetUser_WhenThereIsNone() As Task
+  overload: CaloriesCounterAPI.Test.Controllers.UserControllerTest.GetUser_WhenThereIsNone*
   attributes:
   - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
     ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
     arguments: []
-- uid: CaloriesCounterAPI.Test.Controllers.MealsControllerTest.AppendProductToMeal_ExistingProductInMeal_ReturnsOk
-  commentId: M:CaloriesCounterAPI.Test.Controllers.MealsControllerTest.AppendProductToMeal_ExistingProductInMeal_ReturnsOk
-  id: AppendProductToMeal_ExistingProductInMeal_ReturnsOk
-  parent: CaloriesCounterAPI.Test.Controllers.MealsControllerTest
+- uid: CaloriesCounterAPI.Test.Controllers.UserControllerTest.CreateUser
+  commentId: M:CaloriesCounterAPI.Test.Controllers.UserControllerTest.CreateUser
+  id: CreateUser
+  parent: CaloriesCounterAPI.Test.Controllers.UserControllerTest
   langs:
   - csharp
   - vb
-  name: AppendProductToMeal_ExistingProductInMeal_ReturnsOk()
-  nameWithType: MealsControllerTest.AppendProductToMeal_ExistingProductInMeal_ReturnsOk()
-  fullName: CaloriesCounterAPI.Test.Controllers.MealsControllerTest.AppendProductToMeal_ExistingProductInMeal_ReturnsOk()
+  name: CreateUser()
+  nameWithType: UserControllerTest.CreateUser()
+  fullName: CaloriesCounterAPI.Test.Controllers.UserControllerTest.CreateUser()
   type: Method
   source:
     remote:
-      path: CaloriesCounterAPI.Test/Controllers/MealsControllerTest.cs
+      path: CaloriesCounterAPI.Test/Controllers/UserControllerTest.cs
       branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
-    id: AppendProductToMeal_ExistingProductInMeal_ReturnsOk
-    path: CaloriesCounterAPI.Test/Controllers/MealsControllerTest.cs
-    startLine: 114
+    id: CreateUser
+    path: CaloriesCounterAPI.Test/Controllers/UserControllerTest.cs
+    startLine: 95
   assemblies:
   - CaloriesCounterAPI.Test
   namespace: CaloriesCounterAPI.Test.Controllers
@@ -236,14 +199,14 @@ items:
     content: >-
       [TestMethod]
 
-      public Task AppendProductToMeal_ExistingProductInMeal_ReturnsOk()
+      public Task CreateUser()
     return:
       type: System.Threading.Tasks.Task
     content.vb: >-
       <TestMethod>
 
-      Public Function AppendProductToMeal_ExistingProductInMeal_ReturnsOk() As Task
-  overload: CaloriesCounterAPI.Test.Controllers.MealsControllerTest.AppendProductToMeal_ExistingProductInMeal_ReturnsOk*
+      Public Function CreateUser() As Task
+  overload: CaloriesCounterAPI.Test.Controllers.UserControllerTest.CreateUser*
   attributes:
   - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
     ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
@@ -516,18 +479,12 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: CaloriesCounterAPI.Test.Controllers.MealsControllerTest.CalculateKcalForMeal*
-  commentId: Overload:CaloriesCounterAPI.Test.Controllers.MealsControllerTest.CalculateKcalForMeal
-  href: CaloriesCounterAPI.Test.Controllers.MealsControllerTest.html#CaloriesCounterAPI_Test_Controllers_MealsControllerTest_CalculateKcalForMeal
-  name: CalculateKcalForMeal
-  nameWithType: MealsControllerTest.CalculateKcalForMeal
-  fullName: CaloriesCounterAPI.Test.Controllers.MealsControllerTest.CalculateKcalForMeal
-- uid: CaloriesCounterAPI.Test.Controllers.MealsControllerTest.GetMeal_ReturnsListOfMeals*
-  commentId: Overload:CaloriesCounterAPI.Test.Controllers.MealsControllerTest.GetMeal_ReturnsListOfMeals
-  href: CaloriesCounterAPI.Test.Controllers.MealsControllerTest.html#CaloriesCounterAPI_Test_Controllers_MealsControllerTest_GetMeal_ReturnsListOfMeals
-  name: GetMeal_ReturnsListOfMeals
-  nameWithType: MealsControllerTest.GetMeal_ReturnsListOfMeals
-  fullName: CaloriesCounterAPI.Test.Controllers.MealsControllerTest.GetMeal_ReturnsListOfMeals
+- uid: CaloriesCounterAPI.Test.Controllers.UserControllerTest.GetUser_WhenThereIsTwo*
+  commentId: Overload:CaloriesCounterAPI.Test.Controllers.UserControllerTest.GetUser_WhenThereIsTwo
+  href: CaloriesCounterAPI.Test.Controllers.UserControllerTest.html#CaloriesCounterAPI_Test_Controllers_UserControllerTest_GetUser_WhenThereIsTwo
+  name: GetUser_WhenThereIsTwo
+  nameWithType: UserControllerTest.GetUser_WhenThereIsTwo
+  fullName: CaloriesCounterAPI.Test.Controllers.UserControllerTest.GetUser_WhenThereIsTwo
 - uid: System.Threading.Tasks.Task
   commentId: T:System.Threading.Tasks.Task
   parent: System.Threading.Tasks
@@ -573,21 +530,21 @@ references:
     name: Tasks
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
-- uid: CaloriesCounterAPI.Test.Controllers.MealsControllerTest.GetMealsByDate_ReturnsListOfMealsForSpecificDate*
-  commentId: Overload:CaloriesCounterAPI.Test.Controllers.MealsControllerTest.GetMealsByDate_ReturnsListOfMealsForSpecificDate
-  href: CaloriesCounterAPI.Test.Controllers.MealsControllerTest.html#CaloriesCounterAPI_Test_Controllers_MealsControllerTest_GetMealsByDate_ReturnsListOfMealsForSpecificDate
-  name: GetMealsByDate_ReturnsListOfMealsForSpecificDate
-  nameWithType: MealsControllerTest.GetMealsByDate_ReturnsListOfMealsForSpecificDate
-  fullName: CaloriesCounterAPI.Test.Controllers.MealsControllerTest.GetMealsByDate_ReturnsListOfMealsForSpecificDate
-- uid: CaloriesCounterAPI.Test.Controllers.MealsControllerTest.DeleteMeal_ExistingMeal_ReturnsNoContent*
-  commentId: Overload:CaloriesCounterAPI.Test.Controllers.MealsControllerTest.DeleteMeal_ExistingMeal_ReturnsNoContent
-  href: CaloriesCounterAPI.Test.Controllers.MealsControllerTest.html#CaloriesCounterAPI_Test_Controllers_MealsControllerTest_DeleteMeal_ExistingMeal_ReturnsNoContent
-  name: DeleteMeal_ExistingMeal_ReturnsNoContent
-  nameWithType: MealsControllerTest.DeleteMeal_ExistingMeal_ReturnsNoContent
-  fullName: CaloriesCounterAPI.Test.Controllers.MealsControllerTest.DeleteMeal_ExistingMeal_ReturnsNoContent
-- uid: CaloriesCounterAPI.Test.Controllers.MealsControllerTest.AppendProductToMeal_ExistingProductInMeal_ReturnsOk*
-  commentId: Overload:CaloriesCounterAPI.Test.Controllers.MealsControllerTest.AppendProductToMeal_ExistingProductInMeal_ReturnsOk
-  href: CaloriesCounterAPI.Test.Controllers.MealsControllerTest.html#CaloriesCounterAPI_Test_Controllers_MealsControllerTest_AppendProductToMeal_ExistingProductInMeal_ReturnsOk
-  name: AppendProductToMeal_ExistingProductInMeal_ReturnsOk
-  nameWithType: MealsControllerTest.AppendProductToMeal_ExistingProductInMeal_ReturnsOk
-  fullName: CaloriesCounterAPI.Test.Controllers.MealsControllerTest.AppendProductToMeal_ExistingProductInMeal_ReturnsOk
+- uid: CaloriesCounterAPI.Test.Controllers.UserControllerTest.GetUser_WhenThereIsOne*
+  commentId: Overload:CaloriesCounterAPI.Test.Controllers.UserControllerTest.GetUser_WhenThereIsOne
+  href: CaloriesCounterAPI.Test.Controllers.UserControllerTest.html#CaloriesCounterAPI_Test_Controllers_UserControllerTest_GetUser_WhenThereIsOne
+  name: GetUser_WhenThereIsOne
+  nameWithType: UserControllerTest.GetUser_WhenThereIsOne
+  fullName: CaloriesCounterAPI.Test.Controllers.UserControllerTest.GetUser_WhenThereIsOne
+- uid: CaloriesCounterAPI.Test.Controllers.UserControllerTest.GetUser_WhenThereIsNone*
+  commentId: Overload:CaloriesCounterAPI.Test.Controllers.UserControllerTest.GetUser_WhenThereIsNone
+  href: CaloriesCounterAPI.Test.Controllers.UserControllerTest.html#CaloriesCounterAPI_Test_Controllers_UserControllerTest_GetUser_WhenThereIsNone
+  name: GetUser_WhenThereIsNone
+  nameWithType: UserControllerTest.GetUser_WhenThereIsNone
+  fullName: CaloriesCounterAPI.Test.Controllers.UserControllerTest.GetUser_WhenThereIsNone
+- uid: CaloriesCounterAPI.Test.Controllers.UserControllerTest.CreateUser*
+  commentId: Overload:CaloriesCounterAPI.Test.Controllers.UserControllerTest.CreateUser
+  href: CaloriesCounterAPI.Test.Controllers.UserControllerTest.html#CaloriesCounterAPI_Test_Controllers_UserControllerTest_CreateUser
+  name: CreateUser
+  nameWithType: UserControllerTest.CreateUser
+  fullName: CaloriesCounterAPI.Test.Controllers.UserControllerTest.CreateUser

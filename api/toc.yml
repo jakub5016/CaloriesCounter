@@ -32,19 +32,6 @@ items:
   items:
   - uid: CaloriesCounterAPI.Data.CaloriesCounterAPIContext
     name: CaloriesCounterAPIContext
-- uid: CaloriesCounterAPI.Migrations
-  name: CaloriesCounterAPI.Migrations
-  items:
-  - uid: CaloriesCounterAPI.Migrations.AAA
-    name: AAA
-  - uid: CaloriesCounterAPI.Migrations.Init
-    name: Init
-  - uid: CaloriesCounterAPI.Migrations.Initial
-    name: Initial
-  - uid: CaloriesCounterAPI.Migrations.User
-    name: User
-  - uid: CaloriesCounterAPI.Migrations.catbs
-    name: catbs
 - uid: CaloriesCounterAPI.Models
   name: CaloriesCounterAPI.Models
   items:
@@ -63,4 +50,6 @@ items:
     name: MealsControllerTest
   - uid: CaloriesCounterAPI.Test.Controllers.ProductControlerTest
     name: ProductControlerTest
+  - uid: CaloriesCounterAPI.Test.Controllers.UserControllerTest
+    name: UserControllerTest
 memberLayout: SamePage

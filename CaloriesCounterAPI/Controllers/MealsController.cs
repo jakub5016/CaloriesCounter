@@ -66,10 +66,18 @@ namespace CaloriesCounterAPI.Controllers
         public async Task<IActionResult> PutMeal(int id, EditMealDTO mealDTO)
         {
             var meal = await _context.Meal.Include(m => m.Products).FirstOrDefaultAsync(m => m.Id == id);
+            if (meal == null)
+            {
+                return NoContent();
+            }
             meal.Type = mealDTO.Type;
             meal.AmountOfProduct = mealDTO.AmountOfProduct;
             meal.Date = mealDTO.Date;
-            meal.Products.Clear();
+            if (meal.Products != null)
+            {
+                meal.Products.Clear();
+
+            }
 
             foreach (var index in mealDTO.ProductIds)
             {
@@ -79,8 +87,14 @@ namespace CaloriesCounterAPI.Controllers
                 {
                     return NoContent();
                 }
-
-                meal.Products.Add(product);
+                if (meal.Products != null)
+                {
+                    meal.Products.Add(product);
+                }
+                else
+                {
+                    meal.Products = new List<Product>([product]);
+                }
             }
 
             if (!meal.CalculateKcalForMeal())
@@ -186,7 +200,10 @@ namespace CaloriesCounterAPI.Controllers
             {
                 return NotFound("Meal not found");
             }
-
+            if (meal.Products == null)
+            {
+                return NotFound("There is no Product in this meal");
+            }
             var product = meal.Products.FirstOrDefault(p => p.ID == productId);
             var productList = meal.Products.ToList();
             var index = productList.FindIndex(p => p.ID == productId);
@@ -194,8 +211,10 @@ namespace CaloriesCounterAPI.Controllers
             {
                 return NotFound("Product not found in the meal");
             }
-
-            meal.AmountOfProduct.RemoveAt(index);
+            if (meal.AmountOfProduct != null)
+            {
+                meal.AmountOfProduct.RemoveAt(index);
+            }
             meal.Products.Remove(product);
             meal.CalculateKcalForMeal();
             await _context.SaveChangesAsync();
@@ -238,6 +257,10 @@ namespace CaloriesCounterAPI.Controllers
             else
             {
                 meal.Products.Add(product);
+                if (meal.AmountOfProduct == null)
+                {
+                    meal.AmountOfProduct = new List<int>();
+                }
                 meal.AmountOfProduct.Add(quantity);
             }
             if (!meal.CalculateKcalForMeal())

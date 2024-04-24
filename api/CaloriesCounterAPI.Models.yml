@@ -39,6 +39,7 @@ references:
   fullName: CaloriesCounterAPI.Models.Product
 - uid: CaloriesCounterAPI.Models.User
   commentId: T:CaloriesCounterAPI.Models.User
+  parent: CaloriesCounterAPI.Models
   href: CaloriesCounterAPI.Models.User.html
   name: User
   nameWithType: User
