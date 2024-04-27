@@ -69,6 +69,7 @@ function App() {
         }
         else{
           setUser(null)
+          setLoadingUser(false)
         }
       })
       .catch(()=>{

@@ -130,7 +130,7 @@ function AddToMeal() {
       {/* <p>Meal ID: {id}</p> */}
       <div style={{display:"flex", justifyContent:"center"}}>
         <SearchIcon />
-        <InputBase sx= {{marginLeft: "3px"}} placeholder="Wyszukaj" onChange={e => handleSearch(e.target.value, setData, setAmountArray)}/>
+        <InputBase sx= {{marginLeft: "3px"}} placeholder="Wyszukaj" onChange={e => handlehSearch(e.target.value, setData, setAmountArray)}/>
       </div>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
