@@ -22,6 +22,10 @@ namespace CaloriesCounterAPI.Controllers
         {
             _context = context;
         }
+        // public Product SearchProductByName1(string name)
+        // {
+        //     return _context.Product.FirstOrDefault(p => p.Name == name);
+        // }
 
         // GET: api/Product
         /// <summary>
@@ -58,6 +62,13 @@ namespace CaloriesCounterAPI.Controllers
         [HttpPost]
         public async Task<ActionResult<Product>> PostNewProduct(CreateProductDTO productDTO)
         {
+            var existingProduct = this.SearchProductByName1(productDTO.Name);
+
+            if (existingProduct != null)
+            {
+                // A product with this name already exists
+                return Conflict($"A product with the name '{productDTO.Name}' already exists.");
+            }
             var newProduct = new Product
             {
                 Protein = productDTO.Protein,
@@ -66,7 +77,6 @@ namespace CaloriesCounterAPI.Controllers
                 Name = productDTO.Name,
                 Kcal = productDTO.Kcal
             };
-
             _context.Product.Add(newProduct);
             await _context.SaveChangesAsync();
             return Ok();
@@ -109,5 +119,9 @@ namespace CaloriesCounterAPI.Controllers
 
             return NoContent();
         }
+        private Product SearchProductByName1(string name)
+        {
+            return _context.Product.FirstOrDefault(p => p.Name == name);        }
     }
+    
 }

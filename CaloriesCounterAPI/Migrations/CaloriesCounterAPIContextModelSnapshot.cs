@@ -31,7 +31,7 @@ namespace CaloriesCounterAPI.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<List<int>>("AmmoutOfProduct")
+                    b.Property<List<int>>("AmountOfProduct")
                         .HasColumnType("integer[]");
 
                     b.Property<int>("CarbsForMeal")
@@ -82,6 +82,9 @@ namespace CaloriesCounterAPI.Migrations
                         .HasColumnType("integer");
 
                     b.HasKey("ID");
+
+                    b.HasIndex("Name")
+                        .IsUnique();
 
                     b.ToTable("Product");
                 });
