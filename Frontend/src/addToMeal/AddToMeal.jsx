@@ -7,12 +7,15 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { Button, InputBase } from '@mui/material';
+import { Button, IconButton, InputBase } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import fetchAllProducts from "./fetchAllProducts";
 import handleSearch from "./handleSearch";
 import ApiAdd from "./apiAdd/ApiAdd";
 import HumanAdd from "./humanAdd/HumanAdd";
+import deleteProduct from "./deletePoduct";
+import RemoveIcon from '@mui/icons-material/Remove';
+
 
 function appendMealList(id, data, amountArray, date=null, type=null){
   let promises = [];
@@ -98,6 +101,15 @@ function AddToMeal() {
     });
   };
 
+  const handleDelete = async (id) =>{
+    try {
+      await deleteProduct(id);
+      window.location.reload();
+    } catch (error) {
+      console.error('Error deleting product: ', error);
+    }
+  } 
+
   const handleSubmit = async () => {
     try {
       await (appendMealList(id, data, amountArray, state.date, state.type));
@@ -110,7 +122,7 @@ function AddToMeal() {
   return (
     <div style={{display:"flex", flexDirection:"row"}}>
 
-    {openHuman && <HumanAdd setOpenHuman={setOpenHuman}/>}
+    {openHuman && <HumanAdd sx={{marginRight:"30px"}} setOpenHuman={setOpenHuman}/>}
     {!openHuman && <Button sx={{fontSize:"40px", border:"1px solid"}} onClick={()=>setOpenHuman(!openApi)}>.<br/>.<br/>.<br/></Button>}
 
     <Paper style={{display:"flex", flexDirection:"column", alignItems:"center"}}>
@@ -131,6 +143,7 @@ function AddToMeal() {
               <TableCell align="left" sx={{ fontWeight: 'bold' }}>Protein&nbsp;(g)</TableCell>
               <TableCell align="left" sx={{ fontWeight: 'bold' }}>Amount</TableCell>
               <TableCell align="left" sx={{ fontWeight: 'bold', borderBottom: "none"}}></TableCell>
+              
             </TableRow>
           </TableHead>
           <TableBody>
@@ -154,6 +167,10 @@ function AddToMeal() {
                                     }}}
                   />
                 </TableCell>
+                <TableCell align="left" ><IconButton 
+                      style={{border:"1px solid", color:"primary", marginRight: "0px", backgroundColor:"white"}}
+                      onClick={()=>{handleDelete(product.id)}}
+                      ><RemoveIcon/></IconButton></TableCell>
               </TableRow>
             ))}
           </TableBody>
