@@ -16,6 +16,8 @@ You can follow [Quick start](https://dotnet.github.io/docfx/) on docfx documenta
 
 There is two ways to run this application fist is using docker, second is running manually. 
 * **Using docker** 
+<!-- dotnet dev-certs https -ep "$env:USERPROFILE\.aspnet\https\aspnetapp.pfx"  -p $CREDENTIAL_PLACEHOLDER$
+dotnet dev-certs https --trust -->
     If you want to run **Calories Counter** using docker you just have to run ```docker-compose up``` in main directory. It will create three containers 
     + db - for database (Postgre running on port 5432)
     + backend - for ASP.NET API service running on port 7261

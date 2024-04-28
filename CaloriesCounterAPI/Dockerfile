@@ -1,34 +1,32 @@
-FROM mcr.microsoft.com/dotnet/sdk:8.0	
+# Start with the ASP.NET base image
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /app
 
-RUN mkdir backend
+# Copy the project files and restore dependencies
+COPY . .
 
-COPY . backend
-WORKDIR backend
+# Generate appsettings.json with connection string
+RUN echo "{ \
+    \"Logging\": { \
+        \"LogLevel\": { \
+            \"Default\": \"Information\", \
+            \"Microsoft.AspNetCore\": \"Warning\" \
+        } \
+    }, \
+    \"AllowedHosts\": \"*\", \
+    \"ConnectionStrings\": { \
+        \"CaloriesCounterAPIContext\": \"server=db;port=5432;username=admin;password=admin;database=CaloriesCounterAPIContext-d03a527c-85d6-4eab-9ebd-51f977a70b0f\" \
+    } \
+}" > appsettings.json
 
+# Build the application
 RUN dotnet tool install --global dotnet-ef
-RUN apt-get install openssl
-ENV PATH="$PATH:/root/.dotnet/tools" 
+ENV PATH="${PATH}:/root/.dotnet/tools"
 
-CMD [ "bash" , "setup.sh" ]
-# FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
-# WORKDIR /app
-# EXPOSE 8080
+# Expose port 80 for the ASP.NET application
+EXPOSE 7261
 
-# # Use the SDK image to build the application
-# FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
-# WORKDIR /src
-# COPY ["CaloriesCouter/CaloriesCouter.csproj", "CaloriesCouter/"]
-# RUN dotnet restore "CaloriesCouter/CaloriesCouter.csproj"
-# COPY . .
-# WORKDIR "/src/CaloriesCouter"
-# RUN dotnet build "CaloriesCouter.csproj" -c Release -o /app/build
-
-# # Publish the application
-# FROM build AS publish
-# RUN dotnet publish "CaloriesCouter.csproj" -c Release -o /app/publish
-
-# # Create the final runtime image
-# FROM base AS final
-# WORKDIR /app
-# COPY --from=publish /app/publish .
-# ENTRYPOINT ["dotnet", "CaloriesCouter.dll"]
+# Set the entry point to run the ASP.NET application
+COPY setup.sh .
+RUN chmod +x setup.sh
+ENTRYPOINT ["./setup.sh"]

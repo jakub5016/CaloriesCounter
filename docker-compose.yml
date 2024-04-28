@@ -14,19 +14,27 @@ services:
       retries: 3
     
     ports:
-        - 5432:5432
+        - "5432:5432"
 
 
   frontend:
-    build: ./Frontend
-    depends_on:
-      - backend
+    image: node:alpine
+    container_name: vite_docker
     ports:
-        - 5173:5173
+      - 5173:5173
+    working_dir: /srv/app
+    volumes:
+      - type: bind
+        source: ./frontend
+        target: /srv/app
+    tty: true
+    command: sh -c 'npm i --force && npm run dev'
 
   backend:
     build: ./CaloriesCounterAPI
     depends_on:
       - db
+    volumes:
+      - .:/CaloriesCounter
     ports:
-        - 7261:7261
+        - "7261:7261"
