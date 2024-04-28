@@ -4,7 +4,11 @@ items:
   commentId: N:CaloriesCounterAPI.Migrations
   id: CaloriesCounterAPI.Migrations
   children:
-  - CaloriesCounterAPI.Migrations.INIT
+  - CaloriesCounterAPI.Migrations.AAA
+  - CaloriesCounterAPI.Migrations.Init
+  - CaloriesCounterAPI.Migrations.Initial
+  - CaloriesCounterAPI.Migrations.User
+  - CaloriesCounterAPI.Migrations.catbs
   langs:
   - csharp
   - vb
@@ -15,9 +19,33 @@ items:
   assemblies:
   - CaloriesCounterAPI
 references:
-- uid: CaloriesCounterAPI.Migrations.INIT
-  commentId: T:CaloriesCounterAPI.Migrations.INIT
-  href: CaloriesCounterAPI.Migrations.INIT.html
-  name: INIT
-  nameWithType: INIT
-  fullName: CaloriesCounterAPI.Migrations.INIT
+- uid: CaloriesCounterAPI.Migrations.AAA
+  commentId: T:CaloriesCounterAPI.Migrations.AAA
+  href: CaloriesCounterAPI.Migrations.AAA.html
+  name: AAA
+  nameWithType: AAA
+  fullName: CaloriesCounterAPI.Migrations.AAA
+- uid: CaloriesCounterAPI.Migrations.Initial
+  commentId: T:CaloriesCounterAPI.Migrations.Initial
+  href: CaloriesCounterAPI.Migrations.Initial.html
+  name: Initial
+  nameWithType: Initial
+  fullName: CaloriesCounterAPI.Migrations.Initial
+- uid: CaloriesCounterAPI.Migrations.catbs
+  commentId: T:CaloriesCounterAPI.Migrations.catbs
+  href: CaloriesCounterAPI.Migrations.catbs.html
+  name: catbs
+  nameWithType: catbs
+  fullName: CaloriesCounterAPI.Migrations.catbs
+- uid: CaloriesCounterAPI.Migrations.Init
+  commentId: T:CaloriesCounterAPI.Migrations.Init
+  href: CaloriesCounterAPI.Migrations.Init.html
+  name: Init
+  nameWithType: Init
+  fullName: CaloriesCounterAPI.Migrations.Init
+- uid: CaloriesCounterAPI.Migrations.User
+  commentId: T:CaloriesCounterAPI.Migrations.User
+  href: CaloriesCounterAPI.Migrations.User.html
+  name: User
+  nameWithType: User
+  fullName: CaloriesCounterAPI.Migrations.User

@@ -6,7 +6,9 @@ items:
   parent: CaloriesCounterAPI.Controllers
   children:
   - CaloriesCounterAPI.Controllers.MealsController.#ctor(CaloriesCounterAPI.Data.CaloriesCounterAPIContext)
+  - CaloriesCounterAPI.Controllers.MealsController.AppendProductToMeal(System.Int32,System.Int32,System.Int32)
   - CaloriesCounterAPI.Controllers.MealsController.DeleteMeal(System.Int32)
+  - CaloriesCounterAPI.Controllers.MealsController.DeleteProductFromMeal(System.Int32,System.Int32)
   - CaloriesCounterAPI.Controllers.MealsController.GetMeal
   - CaloriesCounterAPI.Controllers.MealsController.GetMealsByDate(System.DateOnly)
   - CaloriesCounterAPI.Controllers.MealsController.PostMeal(CaloriesCounterAPI.DTO.CreateMealDTO)
@@ -21,14 +23,16 @@ items:
   source:
     remote:
       path: CaloriesCounterAPI/Controllers/MealsController.cs
-      branch: Documentation
+      branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: MealsController
     path: CaloriesCounterAPI/Controllers/MealsController.cs
-    startLine: 14
+    startLine: 17
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Controllers
+  summary: Controller for managing meal-related operations.
+  example: []
   syntax:
     content: >-
       [EnableCors("FrontendPolicy")]
@@ -258,11 +262,11 @@ items:
   source:
     remote:
       path: CaloriesCounterAPI/Controllers/MealsController.cs
-      branch: Documentation
+      branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: .ctor
     path: CaloriesCounterAPI/Controllers/MealsController.cs
-    startLine: 21
+    startLine: 24
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Controllers
@@ -290,14 +294,16 @@ items:
   source:
     remote:
       path: CaloriesCounterAPI/Controllers/MealsController.cs
-      branch: Documentation
+      branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: GetMeal
     path: CaloriesCounterAPI/Controllers/MealsController.cs
-    startLine: 27
+    startLine: 33
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Controllers
+  summary: Retrieves all meals.
+  example: []
   syntax:
     content: >-
       [HttpGet]
@@ -328,14 +334,16 @@ items:
   source:
     remote:
       path: CaloriesCounterAPI/Controllers/MealsController.cs
-      branch: Documentation
+      branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: GetMealsByDate
     path: CaloriesCounterAPI/Controllers/MealsController.cs
-    startLine: 34
+    startLine: 44
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Controllers
+  summary: Retrieves meals by date.
+  example: []
   syntax:
     content: >-
       [HttpGet("{Date}")]
@@ -344,6 +352,7 @@ items:
     parameters:
     - id: Date
       type: System.DateOnly
+      description: Date to filter meals.
     return:
       type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult{System.Collections.Generic.List{CaloriesCounterAPI.Models.Meal}}}
     content.vb: >-
@@ -371,14 +380,16 @@ items:
   source:
     remote:
       path: CaloriesCounterAPI/Controllers/MealsController.cs
-      branch: Documentation
+      branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: PutMeal
     path: CaloriesCounterAPI/Controllers/MealsController.cs
-    startLine: 50
+    startLine: 64
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Controllers
+  summary: Modifies a meal.
+  example: []
   syntax:
     content: >-
       [HttpPut("{id}")]
@@ -387,8 +398,10 @@ items:
     parameters:
     - id: id
       type: System.Int32
+      description: Identifier of the meal to modify.
     - id: mealDTO
       type: CaloriesCounterAPI.DTO.EditMealDTO
+      description: Data for modifying the meal.
     return:
       type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.IActionResult}
     content.vb: >-
@@ -419,14 +432,16 @@ items:
   source:
     remote:
       path: CaloriesCounterAPI/Controllers/MealsController.cs
-      branch: Documentation
+      branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: PostMeal
     path: CaloriesCounterAPI/Controllers/MealsController.cs
-    startLine: 100
+    startLine: 116
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Controllers
+  summary: Creates a new meal.
+  example: []
   syntax:
     content: >-
       [HttpPost]
@@ -435,6 +450,7 @@ items:
     parameters:
     - id: mealDTO
       type: CaloriesCounterAPI.DTO.CreateMealDTO
+      description: Data for creating the meal.
     return:
       type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult{CaloriesCounterAPI.Models.Meal}}
     content.vb: >-
@@ -460,14 +476,16 @@ items:
   source:
     remote:
       path: CaloriesCounterAPI/Controllers/MealsController.cs
-      branch: Documentation
+      branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: DeleteMeal
     path: CaloriesCounterAPI/Controllers/MealsController.cs
-    startLine: 140
+    startLine: 159
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Controllers
+  summary: Deletes a meal.
+  example: []
   syntax:
     content: >-
       [HttpDelete("{id}")]
@@ -476,6 +494,7 @@ items:
     parameters:
     - id: id
       type: System.Int32
+      description: Identifier of the meal to delete.
     return:
       type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.IActionResult}
     content.vb: >-
@@ -492,6 +511,113 @@ items:
   nameWithType.vb: MealsController.DeleteMeal(Integer)
   fullName.vb: CaloriesCounterAPI.Controllers.MealsController.DeleteMeal(Integer)
   name.vb: DeleteMeal(Integer)
+- uid: CaloriesCounterAPI.Controllers.MealsController.DeleteProductFromMeal(System.Int32,System.Int32)
+  commentId: M:CaloriesCounterAPI.Controllers.MealsController.DeleteProductFromMeal(System.Int32,System.Int32)
+  id: DeleteProductFromMeal(System.Int32,System.Int32)
+  parent: CaloriesCounterAPI.Controllers.MealsController
+  langs:
+  - csharp
+  - vb
+  name: DeleteProductFromMeal(int, int)
+  nameWithType: MealsController.DeleteProductFromMeal(int, int)
+  fullName: CaloriesCounterAPI.Controllers.MealsController.DeleteProductFromMeal(int, int)
+  type: Method
+  source:
+    remote:
+      path: CaloriesCounterAPI/Controllers/MealsController.cs
+      branch: master
+      repo: https://github.com/jakub5016/CaloriesCounterBackend.git
+    id: DeleteProductFromMeal
+    path: CaloriesCounterAPI/Controllers/MealsController.cs
+    startLine: 180
+  assemblies:
+  - CaloriesCounterAPI
+  namespace: CaloriesCounterAPI.Controllers
+  summary: Deletes a product from a meal.
+  example: []
+  syntax:
+    content: >-
+      [HttpDelete("{mealId}/Products/{productId}")]
+
+      public Task<IActionResult> DeleteProductFromMeal(int mealId, int productId)
+    parameters:
+    - id: mealId
+      type: System.Int32
+      description: Identifier of the meal.
+    - id: productId
+      type: System.Int32
+      description: Identifier of the product to delete.
+    return:
+      type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.IActionResult}
+    content.vb: >-
+      <HttpDelete("{mealId}/Products/{productId}")>
+
+      Public Function DeleteProductFromMeal(mealId As Integer, productId As Integer) As Task(Of IActionResult)
+  overload: CaloriesCounterAPI.Controllers.MealsController.DeleteProductFromMeal*
+  attributes:
+  - type: Microsoft.AspNetCore.Mvc.HttpDeleteAttribute
+    ctor: Microsoft.AspNetCore.Mvc.HttpDeleteAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: '{mealId}/Products/{productId}'
+  nameWithType.vb: MealsController.DeleteProductFromMeal(Integer, Integer)
+  fullName.vb: CaloriesCounterAPI.Controllers.MealsController.DeleteProductFromMeal(Integer, Integer)
+  name.vb: DeleteProductFromMeal(Integer, Integer)
+- uid: CaloriesCounterAPI.Controllers.MealsController.AppendProductToMeal(System.Int32,System.Int32,System.Int32)
+  commentId: M:CaloriesCounterAPI.Controllers.MealsController.AppendProductToMeal(System.Int32,System.Int32,System.Int32)
+  id: AppendProductToMeal(System.Int32,System.Int32,System.Int32)
+  parent: CaloriesCounterAPI.Controllers.MealsController
+  langs:
+  - csharp
+  - vb
+  name: AppendProductToMeal(int, int, int)
+  nameWithType: MealsController.AppendProductToMeal(int, int, int)
+  fullName: CaloriesCounterAPI.Controllers.MealsController.AppendProductToMeal(int, int, int)
+  type: Method
+  source:
+    remote:
+      path: CaloriesCounterAPI/Controllers/MealsController.cs
+      branch: master
+      repo: https://github.com/jakub5016/CaloriesCounterBackend.git
+    id: AppendProductToMeal
+    path: CaloriesCounterAPI/Controllers/MealsController.cs
+    startLine: 211
+  assemblies:
+  - CaloriesCounterAPI
+  namespace: CaloriesCounterAPI.Controllers
+  summary: Appends a product to a meal.
+  example: []
+  syntax:
+    content: >-
+      [HttpPatch("{id}/AppendProduct/{productId}/{quantity}")]
+
+      public Task<IActionResult> AppendProductToMeal(int id, int productId, int quantity)
+    parameters:
+    - id: id
+      type: System.Int32
+      description: Identifier of the meal.
+    - id: productId
+      type: System.Int32
+      description: Identifier of the product to append.
+    - id: quantity
+      type: System.Int32
+      description: Quantity of the product to append.
+    return:
+      type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.IActionResult}
+    content.vb: >-
+      <HttpPatch("{id}/AppendProduct/{productId}/{quantity}")>
+
+      Public Function AppendProductToMeal(id As Integer, productId As Integer, quantity As Integer) As Task(Of IActionResult)
+  overload: CaloriesCounterAPI.Controllers.MealsController.AppendProductToMeal*
+  attributes:
+  - type: Microsoft.AspNetCore.Mvc.HttpPatchAttribute
+    ctor: Microsoft.AspNetCore.Mvc.HttpPatchAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: '{id}/AppendProduct/{productId}/{quantity}'
+  nameWithType.vb: MealsController.AppendProductToMeal(Integer, Integer, Integer)
+  fullName.vb: CaloriesCounterAPI.Controllers.MealsController.AppendProductToMeal(Integer, Integer, Integer)
+  name.vb: AppendProductToMeal(Integer, Integer, Integer)
 references:
 - uid: CaloriesCounterAPI.Controllers
   commentId: N:CaloriesCounterAPI.Controllers
@@ -9872,3 +9998,15 @@ references:
   name: DeleteMeal
   nameWithType: MealsController.DeleteMeal
   fullName: CaloriesCounterAPI.Controllers.MealsController.DeleteMeal
+- uid: CaloriesCounterAPI.Controllers.MealsController.DeleteProductFromMeal*
+  commentId: Overload:CaloriesCounterAPI.Controllers.MealsController.DeleteProductFromMeal
+  href: CaloriesCounterAPI.Controllers.MealsController.html#CaloriesCounterAPI_Controllers_MealsController_DeleteProductFromMeal_System_Int32_System_Int32_
+  name: DeleteProductFromMeal
+  nameWithType: MealsController.DeleteProductFromMeal
+  fullName: CaloriesCounterAPI.Controllers.MealsController.DeleteProductFromMeal
+- uid: CaloriesCounterAPI.Controllers.MealsController.AppendProductToMeal*
+  commentId: Overload:CaloriesCounterAPI.Controllers.MealsController.AppendProductToMeal
+  href: CaloriesCounterAPI.Controllers.MealsController.html#CaloriesCounterAPI_Controllers_MealsController_AppendProductToMeal_System_Int32_System_Int32_System_Int32_
+  name: AppendProductToMeal
+  nameWithType: MealsController.AppendProductToMeal
+  fullName: CaloriesCounterAPI.Controllers.MealsController.AppendProductToMeal

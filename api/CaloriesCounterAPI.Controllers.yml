@@ -5,8 +5,9 @@ items:
   id: CaloriesCounterAPI.Controllers
   children:
   - CaloriesCounterAPI.Controllers.MealsController
-  - CaloriesCounterAPI.Controllers.ProductControler
-  - CaloriesCounterAPI.Controllers.WeatherForecastController
+  - CaloriesCounterAPI.Controllers.NutritionAPIController
+  - CaloriesCounterAPI.Controllers.ProductController
+  - CaloriesCounterAPI.Controllers.UserController
   langs:
   - csharp
   - vb
@@ -19,19 +20,49 @@ items:
 references:
 - uid: CaloriesCounterAPI.Controllers.MealsController
   commentId: T:CaloriesCounterAPI.Controllers.MealsController
+  parent: CaloriesCounterAPI.Controllers
   href: CaloriesCounterAPI.Controllers.MealsController.html
   name: MealsController
   nameWithType: MealsController
   fullName: CaloriesCounterAPI.Controllers.MealsController
-- uid: CaloriesCounterAPI.Controllers.ProductControler
-  commentId: T:CaloriesCounterAPI.Controllers.ProductControler
-  href: CaloriesCounterAPI.Controllers.ProductControler.html
-  name: ProductControler
-  nameWithType: ProductControler
-  fullName: CaloriesCounterAPI.Controllers.ProductControler
-- uid: CaloriesCounterAPI.Controllers.WeatherForecastController
-  commentId: T:CaloriesCounterAPI.Controllers.WeatherForecastController
-  href: CaloriesCounterAPI.Controllers.WeatherForecastController.html
-  name: WeatherForecastController
-  nameWithType: WeatherForecastController
-  fullName: CaloriesCounterAPI.Controllers.WeatherForecastController
+- uid: CaloriesCounterAPI.Controllers.NutritionAPIController
+  commentId: T:CaloriesCounterAPI.Controllers.NutritionAPIController
+  href: CaloriesCounterAPI.Controllers.NutritionAPIController.html
+  name: NutritionAPIController
+  nameWithType: NutritionAPIController
+  fullName: CaloriesCounterAPI.Controllers.NutritionAPIController
+- uid: CaloriesCounterAPI.Controllers.ProductController
+  commentId: T:CaloriesCounterAPI.Controllers.ProductController
+  parent: CaloriesCounterAPI.Controllers
+  href: CaloriesCounterAPI.Controllers.ProductController.html
+  name: ProductController
+  nameWithType: ProductController
+  fullName: CaloriesCounterAPI.Controllers.ProductController
+- uid: CaloriesCounterAPI.Controllers.UserController
+  commentId: T:CaloriesCounterAPI.Controllers.UserController
+  href: CaloriesCounterAPI.Controllers.UserController.html
+  name: UserController
+  nameWithType: UserController
+  fullName: CaloriesCounterAPI.Controllers.UserController
+- uid: CaloriesCounterAPI.Controllers
+  commentId: N:CaloriesCounterAPI.Controllers
+  href: CaloriesCounterAPI.html
+  name: CaloriesCounterAPI.Controllers
+  nameWithType: CaloriesCounterAPI.Controllers
+  fullName: CaloriesCounterAPI.Controllers
+  spec.csharp:
+  - uid: CaloriesCounterAPI
+    name: CaloriesCounterAPI
+    href: CaloriesCounterAPI.html
+  - name: .
+  - uid: CaloriesCounterAPI.Controllers
+    name: Controllers
+    href: CaloriesCounterAPI.Controllers.html
+  spec.vb:
+  - uid: CaloriesCounterAPI
+    name: CaloriesCounterAPI
+    href: CaloriesCounterAPI.html
+  - name: .
+  - uid: CaloriesCounterAPI.Controllers
+    name: Controllers
+    href: CaloriesCounterAPI.Controllers.html

@@ -18,14 +18,16 @@ items:
   source:
     remote:
       path: CaloriesCounterAPI/Models/Meal.cs
-      branch: Documentation
+      branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: MealType
     path: CaloriesCounterAPI/Models/Meal.cs
-    startLine: 4
+    startLine: 7
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Models
+  summary: Represents the type of meal.
+  example: []
   syntax:
     content: public enum MealType
     content.vb: Public Enum MealType
@@ -43,11 +45,11 @@ items:
   source:
     remote:
       path: CaloriesCounterAPI/Models/Meal.cs
-      branch: Documentation
+      branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: Breakfast
     path: CaloriesCounterAPI/Models/Meal.cs
-    startLine: 6
+    startLine: 9
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Models
@@ -69,11 +71,11 @@ items:
   source:
     remote:
       path: CaloriesCounterAPI/Models/Meal.cs
-      branch: Documentation
+      branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: Dinner
     path: CaloriesCounterAPI/Models/Meal.cs
-    startLine: 7
+    startLine: 10
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Models
@@ -95,11 +97,11 @@ items:
   source:
     remote:
       path: CaloriesCounterAPI/Models/Meal.cs
-      branch: Documentation
+      branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: Supper
     path: CaloriesCounterAPI/Models/Meal.cs
-    startLine: 8
+    startLine: 11
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.Models

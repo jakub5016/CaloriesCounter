@@ -7,6 +7,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CaloriesCounterAPI.Controllers
 {
+    /// <summary>
+    /// Controller for managing user-related operations.
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class UserController : ControllerBase
@@ -19,12 +22,19 @@ namespace CaloriesCounterAPI.Controllers
         }
 
         // GET: api/User
+        /// <summary>
+        /// Retrieves the user.
+        /// </summary>
         [HttpGet]
         public async Task<ActionResult<User>> GetUser()
         {
             return await _context.User.FirstOrDefaultAsync();
         }
-
+        // POST: api/User
+        /// <summary>
+        /// Creates a new user.
+        /// </summary>
+        /// <param name="userGot">Data for creating the user.</param>
         [HttpPost]
         public async Task<ActionResult<User>> CreateUser(UserDTO userGot)
         {
@@ -43,7 +53,11 @@ namespace CaloriesCounterAPI.Controllers
 
             return Ok();
         }
-
+        // DELETE: api/User/{id}
+        /// <summary>
+        /// Deletes a user by ID.
+        /// </summary>
+        /// <param name="id">Identifier of the user to delete.</param>
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteUsertById(int id)
         {

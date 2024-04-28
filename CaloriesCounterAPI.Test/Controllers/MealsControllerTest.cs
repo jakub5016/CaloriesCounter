@@ -36,15 +36,16 @@ public class MealsControllerTest
         Assert.Equal(24, result.CarbsForMeal);
         Assert.Equal(4, result.ProteinForMeal);
     }
-    [Fact]
+    [TestMethod]
     public async Task GetMeal_ReturnsListOfMeals()
     {
         // Arrange
         var options = new DbContextOptionsBuilder<CaloriesCounterAPIContext>()
-            .UseInMemoryDatabase(databaseName: "Test_MealsDatabase")
+            .UseInMemoryDatabase(databaseName: "Test_MealsDatabase2")
             .Options;
         using (var context = new CaloriesCounterAPIContext(options))
         {
+            context.Database.EnsureDeleted();
             context.Meal.AddRange(GetTestProducts());
             context.SaveChanges();
         }
@@ -61,7 +62,7 @@ public class MealsControllerTest
             Assert.Equal(4, model.Count());
         }
     }
-    [Fact]
+    [TestMethod]
     public async Task GetMealsByDate_ReturnsListOfMealsForSpecificDate()
     {
         // Arrange
@@ -70,7 +71,8 @@ public class MealsControllerTest
             .Options;
         using (var context = new CaloriesCounterAPIContext(options))
         {
-           context.Meal.AddRange(GetTestProducts());
+            context.Database.EnsureDeleted();
+            context.Meal.AddRange(GetTestProducts());
             context.SaveChanges();
         }
 
@@ -86,7 +88,7 @@ public class MealsControllerTest
             Assert.Equal(2, model.Count());
         }
     }
-    [Fact]
+    [TestMethod]
     public async Task DeleteMeal_ExistingMeal_ReturnsNoContent()
     {
         // Arrange
@@ -95,6 +97,7 @@ public class MealsControllerTest
             .Options;
         using (var context = new CaloriesCounterAPIContext(options))
         {
+            context.Database.EnsureDeleted();
             context.Meal.Add(new Meal { Id = 1 });
             context.SaveChanges();
         }
@@ -109,7 +112,7 @@ public class MealsControllerTest
             Assert.IsType<NoContentResult>(result);
         }
     }
-    [Fact]
+    [TestMethod]
     public async Task AppendProductToMeal_ExistingProductInMeal_ReturnsOk()
     {
         // Arrange
@@ -118,6 +121,7 @@ public class MealsControllerTest
             .Options;
         using (var context = new CaloriesCounterAPIContext(options))
         {
+            context.Database.EnsureDeleted();
             var meal = new Meal
             {
                 Id = 10,

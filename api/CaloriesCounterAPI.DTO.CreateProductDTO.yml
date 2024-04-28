@@ -20,14 +20,16 @@ items:
   source:
     remote:
       path: CaloriesCounterAPI/DTO/CreateProductDTO.cs
-      branch: Documentation
+      branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: CreateProductDTO
     path: CaloriesCounterAPI/DTO/CreateProductDTO.cs
-    startLine: 4
+    startLine: 7
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.DTO
+  summary: Data transfer object for creating a new product.
+  example: []
   syntax:
     content: public class CreateProductDTO
     content.vb: Public Class CreateProductDTO
@@ -55,14 +57,16 @@ items:
   source:
     remote:
       path: CaloriesCounterAPI/DTO/CreateProductDTO.cs
-      branch: Documentation
+      branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: Name
     path: CaloriesCounterAPI/DTO/CreateProductDTO.cs
-    startLine: 6
+    startLine: 12
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.DTO
+  summary: Gets or sets the name of the product.
+  example: []
   syntax:
     content: public string Name { get; set; }
     parameters: []
@@ -84,14 +88,16 @@ items:
   source:
     remote:
       path: CaloriesCounterAPI/DTO/CreateProductDTO.cs
-      branch: Documentation
+      branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: Kcal
     path: CaloriesCounterAPI/DTO/CreateProductDTO.cs
-    startLine: 7
+    startLine: 17
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.DTO
+  summary: Gets or sets the calorie content of the product.
+  example: []
   syntax:
     content: public int Kcal { get; set; }
     parameters: []
@@ -113,14 +119,16 @@ items:
   source:
     remote:
       path: CaloriesCounterAPI/DTO/CreateProductDTO.cs
-      branch: Documentation
+      branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: Fat
     path: CaloriesCounterAPI/DTO/CreateProductDTO.cs
-    startLine: 9
+    startLine: 22
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.DTO
+  summary: Gets or sets the fat content of the product.
+  example: []
   syntax:
     content: public int Fat { get; set; }
     parameters: []
@@ -142,14 +150,16 @@ items:
   source:
     remote:
       path: CaloriesCounterAPI/DTO/CreateProductDTO.cs
-      branch: Documentation
+      branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: Carbs
     path: CaloriesCounterAPI/DTO/CreateProductDTO.cs
-    startLine: 11
+    startLine: 27
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.DTO
+  summary: Gets or sets the carbohydrates content of the product.
+  example: []
   syntax:
     content: public int Carbs { get; set; }
     parameters: []
@@ -171,14 +181,16 @@ items:
   source:
     remote:
       path: CaloriesCounterAPI/DTO/CreateProductDTO.cs
-      branch: Documentation
+      branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: Protein
     path: CaloriesCounterAPI/DTO/CreateProductDTO.cs
-    startLine: 13
+    startLine: 32
   assemblies:
   - CaloriesCounterAPI
   namespace: CaloriesCounterAPI.DTO
+  summary: Gets or sets the protein content of the product.
+  example: []
   syntax:
     content: public int Protein { get; set; }
     parameters: []

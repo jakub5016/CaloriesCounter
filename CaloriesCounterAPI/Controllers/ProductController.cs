@@ -41,6 +41,7 @@ namespace CaloriesCounterAPI.Controllers
         /// <summary>
         /// Retrieves a product by ID.
         /// </summary>
+        /// <param name="id">Identifier of the product.</param>
         [HttpGet("{id}")]
         public async Task<ActionResult<Product>> GetProductById(int id)
         {
@@ -59,6 +60,7 @@ namespace CaloriesCounterAPI.Controllers
         /// <summary>
         /// Adds a new product.
         /// </summary>
+        /// <param name="productDTO">Data for creating the product.</param>
         [HttpPost]
         public async Task<ActionResult<Product>> PostNewProduct(CreateProductDTO productDTO)
         {
@@ -86,6 +88,7 @@ namespace CaloriesCounterAPI.Controllers
         /// <summary>
         /// Searches for products by name.
         /// </summary>
+        /// <param name="search">Search query string.</param>
         [HttpPost("search")]
         public async Task<ActionResult<IEnumerable<Product>>> SearchProductByName(String search)
         {
@@ -105,6 +108,7 @@ namespace CaloriesCounterAPI.Controllers
         /// <summary>
         /// Deletes a product by ID.
         /// </summary>
+        /// <param name="id">Identifier of the product to delete.</param>
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteProductById(int id)
         {

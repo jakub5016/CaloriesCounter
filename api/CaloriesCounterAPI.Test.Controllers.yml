@@ -1,0 +1,37 @@
+### YamlMime:ManagedReference
+items:
+- uid: CaloriesCounterAPI.Test.Controllers
+  commentId: N:CaloriesCounterAPI.Test.Controllers
+  id: CaloriesCounterAPI.Test.Controllers
+  children:
+  - CaloriesCounterAPI.Test.Controllers.MealsControllerTest
+  - CaloriesCounterAPI.Test.Controllers.ProductControlerTest
+  - CaloriesCounterAPI.Test.Controllers.UserControllerTest
+  langs:
+  - csharp
+  - vb
+  name: CaloriesCounterAPI.Test.Controllers
+  nameWithType: CaloriesCounterAPI.Test.Controllers
+  fullName: CaloriesCounterAPI.Test.Controllers
+  type: Namespace
+  assemblies:
+  - CaloriesCounterAPI.Test
+references:
+- uid: CaloriesCounterAPI.Test.Controllers.MealsControllerTest
+  commentId: T:CaloriesCounterAPI.Test.Controllers.MealsControllerTest
+  href: CaloriesCounterAPI.Test.Controllers.MealsControllerTest.html
+  name: MealsControllerTest
+  nameWithType: MealsControllerTest
+  fullName: CaloriesCounterAPI.Test.Controllers.MealsControllerTest
+- uid: CaloriesCounterAPI.Test.Controllers.ProductControlerTest
+  commentId: T:CaloriesCounterAPI.Test.Controllers.ProductControlerTest
+  href: CaloriesCounterAPI.Test.Controllers.ProductControlerTest.html
+  name: ProductControlerTest
+  nameWithType: ProductControlerTest
+  fullName: CaloriesCounterAPI.Test.Controllers.ProductControlerTest
+- uid: CaloriesCounterAPI.Test.Controllers.UserControllerTest
+  commentId: T:CaloriesCounterAPI.Test.Controllers.UserControllerTest
+  href: CaloriesCounterAPI.Test.Controllers.UserControllerTest.html
+  name: UserControllerTest
+  nameWithType: UserControllerTest
+  fullName: CaloriesCounterAPI.Test.Controllers.UserControllerTest

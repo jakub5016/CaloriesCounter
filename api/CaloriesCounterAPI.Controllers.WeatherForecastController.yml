@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: CaloriesCounterAPI/Controllers/WeatherForecastController.cs
-      branch: Documentation
+      branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: WeatherForecastController
     path: CaloriesCounterAPI/Controllers/WeatherForecastController.cs
@@ -245,7 +245,7 @@ items:
   source:
     remote:
       path: CaloriesCounterAPI/Controllers/WeatherForecastController.cs
-      branch: Documentation
+      branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: .ctor
     path: CaloriesCounterAPI/Controllers/WeatherForecastController.cs
@@ -277,7 +277,7 @@ items:
   source:
     remote:
       path: CaloriesCounterAPI/Controllers/WeatherForecastController.cs
-      branch: Documentation
+      branch: master
       repo: https://github.com/jakub5016/CaloriesCounterBackend.git
     id: Get
     path: CaloriesCounterAPI/Controllers/WeatherForecastController.cs

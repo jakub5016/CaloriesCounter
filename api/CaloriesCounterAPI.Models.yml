@@ -7,6 +7,7 @@ items:
   - CaloriesCounterAPI.Models.Meal
   - CaloriesCounterAPI.Models.MealType
   - CaloriesCounterAPI.Models.Product
+  - CaloriesCounterAPI.Models.User
   langs:
   - csharp
   - vb
@@ -36,6 +37,13 @@ references:
   name: Product
   nameWithType: Product
   fullName: CaloriesCounterAPI.Models.Product
+- uid: CaloriesCounterAPI.Models.User
+  commentId: T:CaloriesCounterAPI.Models.User
+  parent: CaloriesCounterAPI.Models
+  href: CaloriesCounterAPI.Models.User.html
+  name: User
+  nameWithType: User
+  fullName: CaloriesCounterAPI.Models.User
 - uid: CaloriesCounterAPI.Models
   commentId: N:CaloriesCounterAPI.Models
   href: CaloriesCounterAPI.html
