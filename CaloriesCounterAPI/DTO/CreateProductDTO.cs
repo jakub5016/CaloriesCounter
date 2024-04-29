@@ -10,6 +10,7 @@ namespace CaloriesCounterAPI.DTO
         /// <summary>
         /// Gets or sets the name of the product.
         /// </summary>
+        
         public string Name { get; set; }
 
         /// <summary>
